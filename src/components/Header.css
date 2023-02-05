@@ -1,40 +1,92 @@
 #header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: transform 0.5s ease-in-out;
 }
 
 #header:hover {
     transform: scale(1.1);
+    text-shadow: 2px 2px 2px #0000002a;
 }
 
 h1#title {
     text-transform: uppercase;
-    text-shadow: 0px -20px 20px #ffffff;
-    background: linear-gradient(to right, #239ec9 0%, #046f5b 100%);
+    background: linear-gradient(to top, #128fbb 0%, #18ef86 100%);
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-    font-size: xxx-large;
+    font-size: xx-large;
+    margin: 0px 0px;
+}
+
+h2 {
+  margin: 0px 3px;
+  font-weight: 400;
+  background-image: linear-gradient(45deg, #045e9f, #028635);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 2px 2px 5px #0000002a;
+}
+
+section {
+  position: relative;
+  margin: 1px;
+}
+
+.subtitle {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    font-style: normal;
+    font-size: small;
+}
+
+h2.subheading { position: relative; }
+
+h2.subheading:before,
+h2.subheading:after {
+	content: '[';
+	display: inline-block;
+	position: relative;
+	top: 1px;
+	height: 100%;
+	font-size: 1.25em;
+	color: #028635;
+	transition: all 0.5s ease-in-out;
+}
+h2.subheading:before {
+  color: #045e9f
+}
+h2.subheading:after { content: ']'; }
+
+h2.subheading:hover:before { 
+	transform: translateX(-5px);
+}
+
+h2.subheading:hover:after { 
+	transform: translateX(5px);
 }
 
 img#about {
-  width: 128px;
-  height: 128px;
+  width: 100px;
+  height: 100px;
   margin: 10px 10px 0;
   background-color: white;
-  padding: 3px;
+  padding: 2px;
   border-radius: 50%;
   border: 1px solid #7fa1b9;
-  box-shadow: 0px 0px 9px -3px #000;
+  box-shadow: 0px 0px 15px -3px #000;
 }
-
 
 @media only screen and (max-width: 600px) {
   h1#title {
     margin-bottom: 10px;
-    font-size: xx-large;
+    font-size: x-large;
+    float: left;
+    position: relative;
+    top: 2vh;
   }
 
   img#about {
@@ -42,5 +94,17 @@ img#about {
     height: 64px;
     margin-right: 10px;
     float: left;
+  }
+  #header {
+    display: inline-flex;
+    align-items: center;
+    transform: translateX(-20px);
+  }
+  section {
+    position: relative;
+    margin: 5px;
+  }
+  h2.subheading {
+    font-size: medium;
   }
 }

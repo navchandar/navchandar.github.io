@@ -2,7 +2,7 @@ import React from "react";
 import Logo from './images/logo.png'
 import './Header.css'
 
-const Header = () => {
+export const Header = () => {
   return React.createElement('div',
     { 'id': 'header' },
 
@@ -16,4 +16,21 @@ const Header = () => {
   )
 }
 
-export default Header
+export const Subtitle = () => {
+  return <section>
+    <div class="subtitle">
+      <h2 class="subheading">Quality Assurance Engineer</h2>
+    </div>
+    <div class="subtitle">
+      <h2 class="subheading">Automation Consultant</h2>
+      <h2 class="subheading">Senior Test Engineer</h2>
+    </div>
+    <div class="subtitle">
+      <h2 class="subheading">Software Developer</h2>
+      <h2 class="subheading">DevOps Specialist</h2>
+      <h2 class="subheading">Test Architect</h2>
+    </div>
+  </section>
+
+};
+
