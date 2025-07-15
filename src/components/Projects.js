@@ -3,18 +3,18 @@ import './Projects.css';
 
 const projects = [
     {
-        title: 'Daily Naukri Update',
-        description: 'Automatically update your Naukri profiles daily using Selenium script',
+        title: 'Naukri Updater',
+        description: 'Automatically update your Naukri profiles daily using Selenium based script',
         link: 'https://github.com/navchandar/Naukri/',
     },
     {
         title: 'Look Like Scanned',
-        description: 'Python based CLI to turn any image/ PDF into a “scanned” version',
+        description: 'Python based CLI tool to turn any image/ PDF into a “scanned” format',
         link: 'https://navchandar.github.io/look-like-scanned/',
     },
     {
         title: 'Civic Media Scout',
-        description: 'An Open Source government department contact information for a more connected democracy',
+        description: 'Curating publicly available contact information from official government websites',
         link: 'https://navchandar.github.io/civic-media-scout/',
     },
     {
