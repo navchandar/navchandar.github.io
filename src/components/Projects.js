@@ -4,7 +4,7 @@ import './Projects.css';
 const projects = [
   {
     title: 'Daily Naukri Update',
-    description: 'Auto-refresh your Naukri profile daily using Selenium',
+    description: 'Automatically update your Naukri profiles daily using Selenium script',
     link: 'https://github.com/navchandar/Naukri/',
   },
   {
@@ -14,12 +14,12 @@ const projects = [
   },
   {
     title: 'Civic Media Scout',
-    description: 'A Crowdsourcing official contacts for a more connected democracy',
+    description: 'An Open Source government department contact information for a more connected democracy',
     link: 'https://navchandar.github.io/civic-media-scout/',
   },
   {
     title: 'Random Name Generator',
-    description: 'Python data provider module. Test with random data',
+    description: 'Python data provider module. Useful for testing with random data',
     link: 'https://github.com/navchandar/Python-Random-Name-Generator/',
   },
 ];

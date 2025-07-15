@@ -1,0 +1,31 @@
+.work-history {
+  padding: 1rem;
+  background-color: #f4f4f477;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.work-history h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.work-history ul {
+  list-style: none;
+  padding: 0;
+}
+
+.work-history li {
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0;
+  background: rgba(255, 255, 255, 0.832);
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  cursor: help;
+  transition: background-color 0.3s ease;
+}
+
+.work-history li:hover {
+  background-color: #e9f5ff;
+}

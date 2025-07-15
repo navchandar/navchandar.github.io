@@ -2,6 +2,7 @@
 import './App.css';
 import { Header, Subtitle } from './components/Header';
 import Footer from './components/Footer';
+import WorkHistory from './components/WorkHistory';
 import Projects from './components/Projects';
 
 function App() {
@@ -10,8 +11,9 @@ function App() {
       <Header/>
       <Subtitle/>
       
+      <WorkHistory />
       <Projects />
-      
+
       <br/>
       <br/>
 
