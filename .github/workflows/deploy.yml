@@ -28,8 +28,8 @@ jobs:
         run: npm run build
 
       - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
-          publish_branch: gh-pages
+        env:
+          CI: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run deploy
+
