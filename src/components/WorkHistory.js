@@ -2,56 +2,65 @@ import React from 'react';
 import './WorkHistory.css';
 
 const workData = [
-  {
-    company: 'IBM',
-    start: 'Jan 2014',
-    end: 'Apr 2018',
-    title: 'Sr System Engineer',
-    company_official_name: 'IBM India Pvt Ltd',
-  },
-  {
-    company: 'Deloitte',
-    start: 'May 2018',
-    end: 'Dec 2020',
-    title: 'Consultant',
-    company_official_name: 'Deloitte Consulting India Pvt Ltd',
-  },
-  {
-    company: 'Techsophy',
-    start: 'Dec 2020',
-    end: 'Mar 2021',
-    title: 'Sr SDET',
-    company_official_name: 'Techsophy Information Solutions Pvt Ltd',
-  },
-  {
-    company: '9Yards Technology',
-    start: 'May 2021',
-    end: 'Jan 2023',
-    title: 'Sr Automation Engineer',
-    company_official_name: '9Yards IT Technology Pvt Ltd',
-  },
-  {
-    company: 'Hitachi Digital Services',
-    start: 'Jan 2023',
-    end: 'Present',
-    title: 'Sr QA Automation Engineer',
-    company_official_name: 'Hitachi Vantara Software Services India Private Limited',
-  },
+    {
+        company: 'IBM',
+        company_official_name: 'IBM India Pvt Ltd',
+        start: 'Jan 2014',
+        end: 'Apr 2018',
+        title: 'Sr System Engineer',
+        logo: require('./images/ibm.png'),
+    },
+    {
+        company: 'Deloitte',
+        company_official_name: 'Deloitte Consulting India Pvt Ltd',
+        start: 'May 2018',
+        end: 'Dec 2020',
+        title: 'Consultant',
+        logo: require('./images/deloitte.png'),
+    },
+    {
+        company: 'Techsophy',
+        company_official_name: 'Techsophy Information Solutions Pvt Ltd',
+        start: 'Dec 2020',
+        end: 'Mar 2021',
+        title: 'Sr SDET',
+        logo: require('./images/techsophy.png'),
+    },
+    {
+        company: '9Yards Technology',
+        company_official_name: '9Yards IT Technology Pvt Ltd',
+        start: 'May 2021',
+        end: 'Jan 2023',
+        title: 'Sr Automation Engineer',
+        logo: require('./images/9yards.png'),
+    },
+    {
+        company: 'Hitachi Digital Services',
+        company_official_name: 'Hitachi Vantara Software Services India Private Limited',
+        start: 'Jan 2023',
+        end: 'Present',
+        title: 'Sr QA Automation Engineer',
+        logo: require('./images/hitachi.png'),
+    },
 ];
 
 function WorkHistory() {
-  return (
-    <div className="work-history">
-      <h2>Work History</h2>
-      <ul>
-        {workData.map((job, index) => (
-          <li key={index} title={`${job.title} at ${job.company_official_name}`}>
-            <strong>{job.company}</strong> — {job.start} to {job.end}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+    return (
+        <div className="work-history">
+            <h3>My Work History</h3>
+            <ul>
+                {workData.map((job, index) => (
+                    <li key={index} title={`${job.title} at ${job.company_official_name}`}>
+                        <img src={job.logo} alt={`${job.company} logo`} className="company-logo" />
+                        <div>
+                            <strong>{job.company}</strong> — {job.start} to {job.end}
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
 }
+
 
 export default WorkHistory;

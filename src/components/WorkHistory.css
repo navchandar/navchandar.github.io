@@ -1,31 +1,42 @@
 .work-history {
-  padding: 1rem;
-  background-color: #f4f4f477;
-  border-radius: 8px;
-  margin: 2rem auto;
-  max-width: 600px;
+    padding: 1rem;
+    background-color: #f4f4f477;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+.company-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    margin-right: 0.75rem;
+    vertical-align: middle;
 }
 
 .work-history h2 {
-  text-align: center;
-  margin-bottom: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .work-history ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .work-history li {
-  padding: 0.75rem 1rem;
-  margin: 0.5rem 0;
-  background: rgba(255, 255, 255, 0.832);
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  cursor: help;
-  transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    margin: 0.5rem 0;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    transition: background-color 0.3s ease;
 }
 
 .work-history li:hover {
-  background-color: #e9f5ff;
+    background-color: #e9f5ff;
 }
