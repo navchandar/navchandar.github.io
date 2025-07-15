@@ -20,10 +20,7 @@ export const Subtitle = () => {
   return <section>
     <div class="subtitle">
       <h2 class="subheading">Quality Assurance Engineer</h2>
-    </div>
-    <div class="subtitle">
       <h2 class="subheading">Automation Consultant</h2>
-      <h2 class="subheading">Senior Test Engineer</h2>
     </div>
     <div class="subtitle">
       <h2 class="subheading">Software Developer</h2>

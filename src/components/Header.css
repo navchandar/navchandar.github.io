@@ -1,5 +1,6 @@
 #header {
     transition: transform 0.5s ease-in-out;
+    display: inline-block;
 }
 
 #header:hover {
@@ -86,7 +87,7 @@ img#about {
     font-size: x-large;
     float: left;
     position: relative;
-    top: 2vh;
+    top: 3vh;
   }
 
   img#about {
@@ -96,9 +97,8 @@ img#about {
     float: left;
   }
   #header {
-    display: inline-flex;
     align-items: center;
-    transform: translateX(-20px);
+    transform: translateX(-2vw);
   }
   section {
     position: relative;
