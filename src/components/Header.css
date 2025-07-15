@@ -1,21 +1,21 @@
 #header {
-    transition: transform 0.5s ease-in-out;
-    display: inline-block;
+  transition: transform 0.5s ease-in-out;
+  display: inline-block;
 }
 
 #header:hover {
-    transform: scale(1.1);
-    text-shadow: 2px 2px 2px #0000002a;
+  transform: scale(1.1);
+  text-shadow: 2px 2px 2px #0000002a;
 }
 
 h1#title {
-    text-transform: uppercase;
-    background: linear-gradient(to top, #128fbb 0%, #18ef86 100%);
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    font-size: xx-large;
-    margin: 0px 0px;
+  text-transform: uppercase;
+  background: linear-gradient(to top, #128fbb 0%, #18ef86 100%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: xx-large;
+  margin: 0px 0px;
 }
 
 h2 {
@@ -34,40 +34,46 @@ section {
 }
 
 .subtitle {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-content: center;
-    align-items: center;
-    font-style: normal;
-    font-size: small;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  font-style: normal;
+  font-size: small;
 }
 
-h2.subheading { position: relative; }
+h2.subheading {
+  position: relative;
+}
 
 h2.subheading:before,
 h2.subheading:after {
-	content: '[';
-	display: inline-block;
-	position: relative;
-	top: 1px;
-	height: 100%;
-	font-size: 1.25em;
-	color: #028635;
-	transition: all 0.5s ease-in-out;
+  content: '[';
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  height: 100%;
+  font-size: 1.25em;
+  color: #028635;
+  transition: all 0.5s ease-in-out;
 }
+
 h2.subheading:before {
   color: #045e9f
 }
-h2.subheading:after { content: ']'; }
 
-h2.subheading:hover:before { 
-	transform: translateX(-5px);
+h2.subheading:after {
+  content: ']';
 }
 
-h2.subheading:hover:after { 
-	transform: translateX(5px);
+h2.subheading:hover:before {
+  transform: translateX(-5px);
+}
+
+h2.subheading:hover:after {
+  transform: translateX(5px);
 }
 
 img#about {
@@ -96,15 +102,18 @@ img#about {
     margin-right: 10px;
     float: left;
   }
+
   #header {
     align-items: center;
     transform: translateX(-2vw);
   }
+
   section {
     position: relative;
     margin: 5px;
   }
+
   h2.subheading {
-    font-size: medium;
+    font-size: small;
   }
 }

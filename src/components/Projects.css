@@ -54,3 +54,14 @@ a:hover {
   color: #0056b3;
   border-bottom: 2px solid #0056b3;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .projects {
+    padding: 0;
+  }
+
+  .project-list {
+    gap: 0.5rem;
+  }
+}
