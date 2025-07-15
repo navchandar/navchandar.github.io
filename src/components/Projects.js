@@ -3,23 +3,23 @@ import './Projects.css';
 
 const projects = [
   {
-    title: 'Naukri',
-    description: 'Selenium Automation script that updates your Naukri profile Daily.',
+    title: 'Daily Naukri Update',
+    description: 'Auto-refresh your Naukri profile daily using Selenium',
     link: 'https://github.com/navchandar/Naukri',
   },
   {
     title: 'Look Like Scanned',
-    description: 'Python based CLI tool that lets you make digital documents look like they were scanned.',
+    description: 'Python based CLI to turn any image/ PDF into a “scanned” version',
     link: 'https://navchandar.github.io/look-like-scanned/',
   },
   {
     title: 'Civic Media Scout',
-    description: 'A civic-tech initiative focused on compiling and curating publicly available official government contact information.',
+    description: 'A Crowdsourcing official contacts for a more connected democracy',
     link: 'https://navchandar.github.io/civic-media-scout/',
   },
   {
     title: 'Random Name Generator',
-    description: 'Python data provider module - Useful for testing Name/Address fields with random data.',
+    description: 'Python data provider module. Test with random data',
     link: 'https://github.com/navchandar/Python-Random-Name-Generator',
   },
 ];
@@ -27,7 +27,7 @@ const projects = [
 function Projects() {
   return (
     <div className="projects">
-      <h2>My Projects</h2>
+      <h3>Projects</h3>
       <div className="project-list">
         {projects.map((project, index) => (
           <div className="project-card" key={index}>
