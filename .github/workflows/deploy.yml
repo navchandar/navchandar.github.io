@@ -27,9 +27,14 @@ jobs:
       - name: Build the React app
         run: npm run build
 
+      - name: Configure Git identity
+        run: |
+          git config --global user.email "navchandar@users.noreply.github.com"
+          git config --global user.name "navchandar"
+
       - name: Deploy to gh-pages branch
         env:
           CI: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN  }}
         run: npm run deploy
 
