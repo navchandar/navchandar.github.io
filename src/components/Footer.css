@@ -9,7 +9,7 @@
     height: auto;
     left: 0;
     line-height: 1em;
-    position: absolute;
+    position: fixed;
     text-align: center;
     width: 100%;
     font-size: 0.75em;

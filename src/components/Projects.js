@@ -5,7 +5,7 @@ const projects = [
   {
     title: 'Daily Naukri Update',
     description: 'Auto-refresh your Naukri profile daily using Selenium',
-    link: 'https://github.com/navchandar/Naukri',
+    link: 'https://github.com/navchandar/Naukri/',
   },
   {
     title: 'Look Like Scanned',
@@ -20,14 +20,14 @@ const projects = [
   {
     title: 'Random Name Generator',
     description: 'Python data provider module. Test with random data',
-    link: 'https://github.com/navchandar/Python-Random-Name-Generator',
+    link: 'https://github.com/navchandar/Python-Random-Name-Generator/',
   },
 ];
 
 function Projects() {
   return (
     <div className="projects">
-      <h3>Projects</h3>
+      <h3>My Projects</h3>
       <div className="project-list">
         {projects.map((project, index) => (
           <div className="project-card" key={index}>
