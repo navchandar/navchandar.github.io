@@ -16,8 +16,8 @@
 
 .social-links {
     display: inline-flex;
-    gap: 10px;
-    margin-bottom: 5px;
+    gap: 25px;
+    margin-bottom: 2px;
 }
 
 .social-icon {

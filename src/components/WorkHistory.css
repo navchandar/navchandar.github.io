@@ -61,7 +61,8 @@
     margin-top: 10px;
     padding-left: 10px;
     font-size: 0.95em;
-    color: #333333bb;
+    color: #333;
+    text-align: left;
 }
 
 @media only screen and (max-width: 600px) {
