@@ -2,7 +2,7 @@
     padding: 0.5rem;
     background-color: #f4f4f477;
     border-radius: 8px;
-    margin: 1rem auto;
+    margin: 0.75rem auto;
     margin-bottom: 0px;
     max-width: 600px;
 }
@@ -58,9 +58,15 @@
 }
 
 .job-summary {
+    opacity: 1;
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.job-summary div.hide {
+    opacity: 0;
+    display: none;
 }
 
 .job-item:hover {
@@ -73,12 +79,14 @@
     overflow: hidden;
     transition: max-height 0.4s ease, opacity 0.4s ease;
     opacity: 0;
+    display: none;
     padding-left: 50px;
 }
 
 .job-details.show {
     max-height: 200px;
     opacity: 1;
+    display: block;
     margin-top: 10px;
 }
 

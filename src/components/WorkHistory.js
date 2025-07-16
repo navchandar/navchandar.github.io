@@ -85,7 +85,7 @@ function WorkHistory() {
                     >
                         <div className="job-summary">
                             <img src={job.logo} alt={`${job.company} logo`} className="company-logo" />
-                            <div>
+                            <div className={`${expandedIndex === index ? 'hide' : ''}`}>
                                 <strong>{job.company}</strong> — {job.start} to {job.end}
                             </div>
                         </div>
