@@ -53,11 +53,11 @@ function Projects() {
                     const stats = repoStats[project.repo] || { stars: '-', forks: '-' };
                     return (
                         <div className="project-card" key={index}>
-                            <h3>
+                            <h4>
                                 <a href={project.link} target="_blank" rel="noopener noreferrer">
                                     {project.title}
                                 </a>
-                            </h3>
+                            </h4>
                             <p>{project.description}</p>
                             <div className="repo-stats">
                                 <span className="badge stars" title={`GitHub Stars: ${stats.stars}`}>⭐ {stats.stars}</span>

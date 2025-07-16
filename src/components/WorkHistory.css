@@ -16,11 +16,6 @@
     vertical-align: middle;
 }
 
-.work-history h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
 .work-history ul {
     list-style: none;
     padding: 0;
@@ -63,6 +58,10 @@
     font-size: 0.95em;
     color: #333;
     text-align: left;
+}
+
+.job-details p {
+    margin: 3px;
 }
 
 @media only screen and (max-width: 600px) {
