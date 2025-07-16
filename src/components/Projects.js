@@ -1,6 +1,13 @@
 import React from 'react';
 import './Projects.css';
-import repoStats from './data/repoStats.json';
+
+let repoStats = {};
+try {
+  repoStats = require('../data/repoStats.json');
+} catch (err) {
+  console.warn('⚠️ repoStats.json not found, using empty data.');
+}
+
 
 
 const projects = [
