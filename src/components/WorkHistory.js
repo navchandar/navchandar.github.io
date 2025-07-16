@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-
+import React, { useState, useRef, useEffect } from 'react';
 import './WorkHistory.css';
+
 
 const workData = [
     {
@@ -51,30 +51,49 @@ const workData = [
 ];
 
 
+
 function WorkHistory() {
     const [expandedIndex, setExpandedIndex] = useState(null);
+    const containerRef = useRef(null);
 
     const toggleExpand = (index) => {
-        setExpandedIndex(expandedIndex === index ? null : index);
+        setExpandedIndex(prev => (prev === index ? null : index));
     };
 
+    // Collapse on outside click
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (containerRef.current && !containerRef.current.contains(event.target)) {
+                setExpandedIndex(null);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
     return (
-        <div className="work-history">
+        <div className="work-history" ref={containerRef}>
             <h3>My Work History</h3>
-            <ul>
+            <ul className="job-list">
                 {workData.map((job, index) => (
-                    <li key={index} onClick={() => toggleExpand(index)} className="job-item">
-                        <img src={job.logo} alt={`${job.company} logo`} className="company-logo" />
-                        <div>
-                            <strong>{job.company}</strong> — {job.start} to {job.end}
-                        </div>
-                        {expandedIndex === index && (
-                            <div className="job-details">
-                                <p><i>{job.company_official_name}</i></p>
-                                <p><strong>Role:</strong> {job.title}</p>
-                                <p><strong>Location:</strong> {job.location}</p>
+                    <li
+                        key={index}
+                        className={`job-item ${expandedIndex === index ? 'expanded' : ''}`}
+                        onClick={() => toggleExpand(index)}
+                    >
+                        <div className="job-summary">
+                            <img src={job.logo} alt={`${job.company} logo`} className="company-logo" />
+                            <div>
+                                <strong>{job.company}</strong> — {job.start} to {job.end}
                             </div>
-                        )}
+                        </div>
+                        <div className={`job-details ${expandedIndex === index ? 'show' : ''}`}>
+                            <p><i>{job.company_official_name}</i></p>
+                            <p><strong>Role:</strong> {job.title}</p>
+                            <p><strong>Location:</strong> {job.location}</p>
+                        </div>
                     </li>
                 ))}
             </ul>
