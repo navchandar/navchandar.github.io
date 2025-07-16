@@ -3,9 +3,9 @@ import './Projects.css';
 
 let repoStats = {};
 try {
-  repoStats = require('../data/repoStats.json');
+    repoStats = require('../data/repoStats.json');
 } catch (err) {
-  console.warn('⚠️ repoStats.json not found, using empty data.');
+    console.warn('⚠️ repoStats.json not found, using empty data.');
 }
 
 
@@ -59,7 +59,10 @@ function Projects() {
                                 </a>
                             </h3>
                             <p>{project.description}</p>
-                            <p>⭐ {stats.stars} | 🍴 {stats.forks}</p>
+                            <div className="repo-stats">
+                                <span className="badge stars" title="GitHub Stars">⭐ {stats.stars}</span>
+                                <span className="badge forks" title="GitHub Forks">🍴 {stats.forks}</span>
+                            </div>
                         </div>
                     );
                 })}
@@ -67,5 +70,6 @@ function Projects() {
         </div>
     );
 }
+
 
 export default Projects;
