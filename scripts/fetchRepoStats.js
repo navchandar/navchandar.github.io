@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const https = require('https');
 
 const projects = [
@@ -20,7 +21,6 @@ function fetchRepoData(repo) {
     return new Promise((resolve, reject) => {
         https.get(url, options, (res) => {
             let data = '';
-
             res.on('data', (chunk) => (data += chunk));
             res.on('end', () => {
                 try {
@@ -49,9 +49,15 @@ async function fetchStats() {
         }
     }
 
-    const json = JSON.stringify(results, null, 4);
-    fs.writeFileSync('src/data/repoStats.json', json);
-    console.log('✅ GitHub repo stats saved to src/data/repoStats.json');
+    console.log(results);
+    const outputDir = path.join(__dirname, '../src/data');
+    const outputPath = path.join(outputDir, 'repoStats.json');
+
+    // Ensure the directory exists
+    fs.mkdirSync(outputDir, { recursive: true });
+
+    fs.writeFileSync(outputPath, JSON.stringify(results, null, 4));
+    console.log(`✅ GitHub repo stats saved to ${outputPath}`);
 }
 
 fetchStats();
