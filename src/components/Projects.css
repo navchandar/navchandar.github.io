@@ -66,20 +66,34 @@ a:hover {
   padding: 2px 5px;
   margin-right: 4px;
   border-radius: 6px;
-  font-size: 0.3rem;
+  font-size: 0.8rem;
   font-weight: 500;
   background-color: #f3f4f6;
   cursor: default;
 }
 
 .stars {
-  background-color: #fef3c7;
-  color: #92400e;
+  background-color: #fff7d5;
+  color: #a13f03;
 }
 
 .forks {
   background-color: #dbeafe;
-  color: #1e3a8a;
+  color: #aaf2fa;
+}
+
+.stars:hover {
+  background-color: #fae89a;
+  color: #9c3b00;
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.forks:hover {
+  background-color: #73dde9;
+  color: #001b67;
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
 }
 
 .repo-stats {

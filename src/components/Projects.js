@@ -36,7 +36,7 @@ const projects = [
         repo: 'navchandar/Naukri',
     },
     {
-        title: 'Labratory',
+        title: 'Laboratory',
         description: 'Multiple creative experiments and interactive web apps for fun and learning',
         link: 'https://navchandar.github.io/lab/',
         repo: 'navchandar/lab',
@@ -60,8 +60,8 @@ function Projects() {
                             </h3>
                             <p>{project.description}</p>
                             <div className="repo-stats">
-                                <span className="badge stars" title="GitHub Stars">⭐ {stats.stars}</span>
-                                <span className="badge forks" title="GitHub Forks">🍴 {stats.forks}</span>
+                                <span className="badge stars" title={`GitHub Stars: ${stats.stars}`}>⭐ {stats.stars}</span>
+                                <span className="badge forks" title={`GitHub Forks: ${stats.forks}`}>⑂ {stats.forks}</span>
                             </div>
                         </div>
                     );
