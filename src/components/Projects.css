@@ -108,4 +108,9 @@ a:hover {
   .project-list {
     gap: 0.5rem;
   }
+
+  .project-card h3 {
+    font-size: small;
+  }
+
 }

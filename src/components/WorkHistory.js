@@ -70,8 +70,8 @@ function WorkHistory() {
                         </div>
                         {expandedIndex === index && (
                             <div className="job-details">
-                                <p><strong>Company Name:</strong> {job.company_official_name}</p>
-                                <p><strong>Job Role:</strong> {job.title}</p>
+                                <p><i>{job.company_official_name}</i></p>
+                                <p><strong>Role:</strong> {job.title}</p>
                                 <p><strong>Location:</strong> {job.location}</p>
                             </div>
                         )}

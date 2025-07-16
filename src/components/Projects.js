@@ -26,7 +26,7 @@ const projects = [
     {
         title: 'Random Name Generator',
         description: 'Python data provider module. Useful for testing with random data',
-        link: 'https://navchandar.github.io/Python-Random-Name-Generator//',
+        link: 'https://navchandar.github.io/Python-Random-Name-Generator/',
         repo: 'navchandar/Python-Random-Name-Generator',
     },
     {
