@@ -3,6 +3,7 @@
     background-color: #f4f4f477;
     border-radius: 8px;
     margin: 1rem auto;
+    margin-bottom: 0px;
     max-width: 600px;
 }
 
@@ -40,6 +41,27 @@
 
 .work-history li:hover {
     background-color: #e9f5ff;
+}
+
+
+.job-item {
+    cursor: pointer;
+    margin-bottom: 1em;
+    padding: 10px;
+    border: 1px solid #cccccc9e;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.job-item:hover {
+    background-color: #f9f9f9d5;
+}
+
+.job-details {
+    margin-top: 10px;
+    padding-left: 10px;
+    font-size: 0.95em;
+    color: #333333bb;
 }
 
 @media only screen and (max-width: 600px) {

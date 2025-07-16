@@ -19,7 +19,7 @@ const projects = [
     },
     {
         title: 'Civic Media Scout',
-        description: 'Curating publicly available contact information from official government websites',
+        description: 'Web app to curate publicly available contact information from official government websites',
         link: 'https://navchandar.github.io/civic-media-scout/',
         repo: 'navchandar/civic-media-scout',
     },

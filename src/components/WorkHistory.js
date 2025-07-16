@@ -8,6 +8,7 @@ const workData = [
         start: 'Jan 2014',
         end: 'Apr 2018',
         title: 'Sr System Engineer',
+        location: 'Mumbai, India',
         logo: require('./images/ibm.png'),
     },
     {
@@ -16,6 +17,7 @@ const workData = [
         start: 'May 2018',
         end: 'Dec 2020',
         title: 'Consultant',
+        location: 'Hyderabad, India',
         logo: require('./images/deloitte.png'),
     },
     {
@@ -24,6 +26,7 @@ const workData = [
         start: 'Dec 2020',
         end: 'Mar 2021',
         title: 'Sr SDET',
+        location: 'Hyderabad, India',
         logo: require('./images/techsophy.png'),
     },
     {
@@ -32,6 +35,7 @@ const workData = [
         start: 'May 2021',
         end: 'Jan 2023',
         title: 'Sr Automation Engineer',
+        location: 'Noida, India',
         logo: require('./images/9yards.png'),
     },
     {
@@ -40,21 +44,36 @@ const workData = [
         start: 'Jan 2023',
         end: 'Present',
         title: 'Sr QA Automation Engineer',
+        location: 'Bengaluru, India',
         logo: require('./images/hitachi.png'),
     },
 ];
 
+
 function WorkHistory() {
+    const [expandedIndex, setExpandedIndex] = useState(null);
+
+    const toggleExpand = (index) => {
+        setExpandedIndex(expandedIndex === index ? null : index);
+    };
+
     return (
         <div className="work-history">
             <h3>My Work History</h3>
             <ul>
                 {workData.map((job, index) => (
-                    <li key={index} title={`${job.title} at ${job.company_official_name}`}>
+                    <li key={index} onClick={() => toggleExpand(index)} className="job-item">
                         <img src={job.logo} alt={`${job.company} logo`} className="company-logo" />
                         <div>
                             <strong>{job.company}</strong> — {job.start} to {job.end}
                         </div>
+                        {expandedIndex === index && (
+                            <div className="job-details">
+                                <p><strong>Company Name:</strong> {job.company_official_name}</p>
+                                <p><strong>Job Role:</strong> {job.title}</p>
+                                <p><strong>Location:</strong> {job.location}</p>
+                            </div>
+                        )}
                     </li>
                 ))}
             </ul>
