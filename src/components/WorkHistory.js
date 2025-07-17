@@ -9,7 +9,8 @@ const workData = [
         start: 'Jan 2014',
         end: 'Apr 2018',
         title: 'Sr System Engineer',
-        location: 'Mumbai, India',
+        location: 'Mumbai, India (On-site)',
+        team_size: 10,
         logo: require('./images/ibm.png'),
     },
     {
@@ -18,7 +19,8 @@ const workData = [
         start: 'May 2018',
         end: 'Dec 2020',
         title: 'Consultant',
-        location: 'Hyderabad, India',
+        location: 'Hyderabad, India (Remote)',
+        team_size: 15,
         logo: require('./images/deloitte.png'),
     },
     {
@@ -27,7 +29,8 @@ const workData = [
         start: 'Dec 2020',
         end: 'Mar 2021',
         title: 'Sr SDET',
-        location: 'Hyderabad, India',
+        location: 'Hyderabad, India (Remote)',
+        team_size: 6,
         logo: require('./images/techsophy.png'),
     },
     {
@@ -36,16 +39,18 @@ const workData = [
         start: 'May 2021',
         end: 'Jan 2023',
         title: 'Sr Automation Engineer',
-        location: 'Noida, India',
+        location: 'Noida, India (Remote)',
+        team_size: 10,
         logo: require('./images/9yards.png'),
     },
     {
         company: 'Hitachi Digital Services',
         company_official_name: 'Hitachi Vantara Software Services India Private Limited',
-        start: 'Jan 2023',
+        start: 'Feb 2023',
         end: 'Present',
         title: 'Sr QA Automation Engineer',
-        location: 'Bengaluru, India',
+        location: 'Bengaluru, India (Hybrid)',
+        team_size: 10,
         logo: require('./images/hitachi.png'),
     },
 ];
@@ -84,7 +89,8 @@ function WorkHistory() {
                         onClick={() => toggleExpand(index)}
                     >
                         <div className="job-summary">
-                            <img src={job.logo} alt={`${job.company} logo`} className="company-logo" />
+                            <img src={job.logo} alt={`${job.company} logo`}
+                                className={`company-logo ${expandedIndex === index ? 'bigger_logo' : ''}`} />
                             <div className={`${expandedIndex === index ? 'hide' : ''}`}>
                                 <strong>{job.company}</strong> — {job.start} to {job.end}
                             </div>
@@ -92,6 +98,7 @@ function WorkHistory() {
                         <div className={`job-details ${expandedIndex === index ? 'show' : ''}`}>
                             <p><i>{job.company_official_name}</i></p>
                             <p><strong>Role:</strong> {job.title}</p>
+                            <p><strong>Team Size:</strong> {job.team_size}</p>
                             <p><strong>Location:</strong> {job.location}</p>
                         </div>
                     </li>

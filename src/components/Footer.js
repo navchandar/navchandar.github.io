@@ -23,6 +23,17 @@ const Footer = () => {
         <a href="https://stackoverflow.com/users/7964299/naveen?tab=profile/" target="_blank" rel="noopener noreferrer" aria-label="Stack Overflow Profile" title="Stack Overflow Profile">
           <svg className="social-icon" xmlns="http://www.w3.org/2000/svg" width="512" height="512" fill="currentColor" viewBox="0 0 512 512"><path d="M392,440V320h40V480H64V320h40V440Z" /><path d="M149.1,308.77l198.57,40.87,8.4-39.32L157.5,269.45Zm26.27-93.12L359.22,300,376,263.76,192.18,178.92Zm50.95-89,156,127.78,25.74-30.52-156-127.78ZM328,32,294.61,55.8,415.43,216.17,448,192ZM144,400H348V360H144Z" /></svg>
         </a>
+
+        <a href="https://www.credly.com/users/naveenchandar/badges/" target="_blank" rel="noopener noreferrer" aria-label="Credly Badges" title="Credly Badges">
+          <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.0 16.0" preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(0.000000,16.000000) scale(0.100000,-0.100000)" stroke="none" fill="currentColor"> <path d="M50 151 c-34 -6 -35 -8 -44 -63 -7 -47 -5 -60 8 -73 13 -13 26 -14 73 -8 l58 8 8 58 c12 83 -5 96 -103 78z m66 -57 c-1 -32 -7 -50 -20 -59 -29 -21 -56 -2 -56 39 0 41 14 54 71 65 4 0 6 -20 5 -45z"></path> <path d="M67 103 c-4 -3 -7 -17 -7 -30 0 -26 21 -31 39 -9 9 11 8 15 -4 20 -9 3 -13 10 -10 16 7 11 -8 14 -18 3z"></path></g>
+          </svg>
+        </a>
+        <a href="https://skillsoft.digitalbadges.skillsoft.com/profile/naveenchandar/wallet/" target="_blank" rel="noopener noreferrer" aria-label="Skillsoft Badges" title="Skillsoft Badges">
+          <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.0 32.0" preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)" stroke="none" fill="currentColor"> <path d="M10 235 c0 -53 4 -75 13 -75 16 0 120 63 124 75 3 11 -101 75 -123 75 -11 0 -14 -17 -14 -75z"></path> <path d="M170 235 c0 -49 4 -75 11 -75 20 0 129 64 129 76 0 14 -102 74 -125 74 -12 0 -15 -15 -15 -75z"></path><path d="M100 81 c0 -45 3 -81 6 -81 20 0 124 67 122 78 -2 8 -31 29 -65 49 l-63 35 0 -81z"></path></g>
+          </svg>
+        </a>
       </div>
 
       <i>

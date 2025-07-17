@@ -14,6 +14,17 @@
     margin-right: 0.75rem;
     margin-left: 0.5rem;
     vertical-align: middle;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.company-logo:hover {
+    width: 70px;
+    height: 70px;
+}
+
+.bigger_logo {
+    width: 100px !important;
+    height: 100px !important;
 }
 
 .work-history ul {
@@ -33,7 +44,6 @@
     transition: background-color 0.2s ease;
     width: 100%;
     max-width: 600px;
-    margin: auto;
 }
 
 .work-history li:hover {
@@ -64,6 +74,11 @@
     gap: 10px;
 }
 
+.job-summary div {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
 .job-summary div.hide {
     opacity: 0;
     display: none;
@@ -77,17 +92,17 @@
 .job-details {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease, opacity 0.4s ease;
     opacity: 0;
     display: none;
-    padding-left: 50px;
+    text-align: left;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .job-details.show {
     max-height: 200px;
     opacity: 1;
     display: block;
-    margin-top: 10px;
+    margin: 5px 0px;
 }
 
 .job-details p {
