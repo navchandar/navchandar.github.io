@@ -1,10 +1,9 @@
 #footer {
-    background-image: linear-gradient(to bottom, #eee0, #5ac3bd8c 100%);
+    background-image: linear-gradient(to bottom, #eeeeee10, #5ac3bea2 100%);
     bottom: 0;
     left: 0;
     cursor: default;
     height: auto;
-    line-height: 0.7em;
     position: fixed;
     text-align: center;
     width: 100%;
