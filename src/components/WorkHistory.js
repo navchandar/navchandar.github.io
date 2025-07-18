@@ -12,6 +12,7 @@ const workData = [
         location: 'Mumbai, India (On-site)',
         team_size: 10,
         domains: 'Insurance, Enterprise Software',
+        tools_used: 'Python, Selenium, ALM, SharePoint, SoapUI',
         logo: require('./images/ibm.png'),
     },
     {
@@ -23,6 +24,7 @@ const workData = [
         location: 'Hyderabad, India (Remote)',
         team_size: 15,
         domains: 'Insurance, FinTech',
+        tools_used: 'Robot Framework, Java, MS Power Automate',
         logo: require('./images/deloitte.png'),
     },
     {
@@ -34,6 +36,7 @@ const workData = [
         location: 'Hyderabad, India (Remote)',
         team_size: 6,
         domains: 'Mapping',
+        tools_used: 'Python, Postman, GitHub',
         logo: require('./images/techsophy.png'),
     },
     {
@@ -45,6 +48,7 @@ const workData = [
         location: 'Noida, India (Remote)',
         team_size: 10,
         domains: 'E-commerce, Payments',
+        tools_used: 'Protractor, Node.js, Jenkins, PowerShell, BlazeMeter',
         logo: require('./images/9yards.png'),
     },
     {
@@ -56,6 +60,7 @@ const workData = [
         location: 'Bengaluru, India (Hybrid)',
         team_size: 10,
         domains: 'IoT (Internet of Things), R&D',
+        tools_used: 'SeleniumBase, Pytest, Jenkins, Docker, JMeter, MongoDB, Azure',
         logo: require('./images/hitachi.png'),
     },
 ];
@@ -120,7 +125,7 @@ function WorkHistory() {
                                 <p><i>{job.company_official_name}</i></p>
                                 <p><strong>Role:</strong> {job.title}</p>
                                 <p><strong>Domains:</strong> {job.domains}</p>
-                                <p><strong>Team Size:</strong> {job.team_size}</p>
+                                <p><strong>Tech Stack:</strong> {job.tools_used}</p>
                                 <p><strong>Location:</strong> {job.location}</p>
                             </div>
                         </li>
@@ -132,5 +137,73 @@ function WorkHistory() {
 }
 
 
+// Add Certifications
+const certifications = [
+    {
+        title: 'ISTQB Certified Advanced Level Test Automation Engineer',
+        issuer: 'Indian Testing Board',
+        logo: require('./images/istqb.png'),
+        url: 'https://istqb.org/',
 
-export default WorkHistory;
+    },
+    {
+        title: 'ISTQB Certified Tester Foundation Level (CTFL)',
+        issuer: 'Indian Testing Board',
+        logo: require('./images/istqb.png'),
+        url: 'https://istqb.org/',
+    },
+    {
+        title: 'ITIL v3 Foundation Certified in IT Service Management',
+        issuer: 'Axelos',
+        logo: require('./images/axelos.png'),
+        url: 'https://www.axelos.com/',
+    },
+    {
+        title: 'Certified Selenium Professional',
+        issuer: 'Vskills',
+        logo: require('./images/vskills.png'),
+        url: 'https://www.vskills.in/',
+    },
+    {
+        title: 'Certified SAFe 5 Practitioner',
+        issuer: 'Scaled Agile',
+        logo: require('./images/safe.png'),
+        url: 'https://scaledagile.com/',
+    },
+];
+
+
+function Certifications() {
+    return (
+        <div className="certifications">
+            <h3>Certifications</h3>
+            <ul className="certification-list">
+                {certifications.map((cert, index) => (
+                    <li key={index} className="certification-item">
+                        <img src={cert.logo} alt={`${cert.issuer} logo`} className="cert-logo" />
+                        <div className="cert-info">
+                            <a href={cert.url} target="_blank" rel="noopener noreferrer">
+                                <strong>{cert.title}</strong>
+                            </a>
+                            <div className="issuer">{cert.issuer}</div>
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+}
+
+
+
+function WorkHistoryPage() {
+    return (
+        <div>
+            <WorkHistory />
+            <Certifications />
+        </div>
+    );
+}
+
+
+export default WorkHistoryPage;
