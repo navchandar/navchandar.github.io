@@ -53,6 +53,19 @@
     box-shadow: 0px 3px 5px #4e2fff61;
 }
 
+.work-history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.work-history-header button {
+    padding: 5px 12px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
 
 .job-list {
     list-style: none;
