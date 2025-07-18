@@ -140,17 +140,17 @@ function WorkHistory() {
 // Add Certifications
 const certifications = [
     {
-        title: 'ISTQB Certified Advanced Level Test Automation Engineer',
-        issuer: 'Indian Testing Board',
-        logo: require('./images/istqb.png'),
-        url: 'https://istqb.org/',
-
-    },
-    {
         title: 'ISTQB Certified Tester Foundation Level (CTFL)',
         issuer: 'Indian Testing Board',
         logo: require('./images/istqb.png'),
         url: 'https://istqb.org/',
+    },
+    {
+        title: 'ISTQB Certified Advanced Level Test Automation Engineer (CTAL-TAE)',
+        issuer: 'Indian Testing Board',
+        logo: require('./images/istqb.png'),
+        url: 'https://istqb.org/',
+
     },
     {
         title: 'ITIL v3 Foundation Certified in IT Service Management',
@@ -176,11 +176,11 @@ const certifications = [
 function Certifications() {
     return (
         <div className="certifications">
-            <h3>Certifications</h3>
+            <h3>My Certifications</h3>
             <ul className="certification-list">
                 {certifications.map((cert, index) => (
                     <li key={index} className="certification-item">
-                        <img src={cert.logo} alt={`${cert.issuer} logo`} className="cert-logo" />
+                        <img src={cert.logo} alt={`${cert.issuer} logo`} className="company-logo" />
                         <div className="cert-info">
                             <a href={cert.url} target="_blank" rel="noopener noreferrer">
                                 <strong>{cert.title}</strong>
