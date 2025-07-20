@@ -14,9 +14,6 @@ function App() {
       <WorkHistory />
       <Projects />
 
-      <br/>
-      <br/>
-
       <Footer/>
     </div>
   );
