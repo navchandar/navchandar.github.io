@@ -37,7 +37,7 @@ const Footer = () => {
 
 
   return (
-    <div>
+    <>
       <h3 className={`footer-title ${showTitle ? 'visible' : ''}`}>My Socials</h3>
       <div id="footer">
         <div className="social-links">
@@ -76,7 +76,7 @@ const Footer = () => {
           <p>Copyright © {new Date().getFullYear()} All Rights Reserved</p>
         </i>
       </div>
-    </div>
+    </>
   );
 }
 
