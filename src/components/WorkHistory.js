@@ -143,32 +143,32 @@ const certifications = [
         title: 'ISTQB Certified Tester Foundation Level (CTFL)',
         issuer: 'Indian Testing Board',
         logo: require('./images/istqb.png'),
-        url: 'https://istqb.org/',
+        url: 'https://istqb.in/foundation/certified-tester2/102214-naveenchandar-shanmugam/',
     },
     {
         title: 'ISTQB Certified Advanced Level Test Automation Engineer (CTAL-TAE)',
         issuer: 'Indian Testing Board',
         logo: require('./images/istqb.png'),
-        url: 'https://istqb.org/',
+        url: 'https://istqb.in/advanced/certified-testers/7487-naveenchandar-shanmugam',
 
     },
     {
         title: 'ITIL v3 Foundation Certified in IT Service Management',
         issuer: 'Axelos',
         logo: require('./images/axelos.png'),
-        url: 'https://www.axelos.com/',
+        url: 'https://www.axelos.com/successful-candidates-register/',
     },
     {
         title: 'Certified Selenium Professional',
         issuer: 'Vskills',
         logo: require('./images/vskills.png'),
-        url: 'https://www.vskills.in/',
+        url: 'https://www.vskills.in/certification/31823-certified-selenium-professional-naveenchandar-shanmugam/',
     },
     {
         title: 'Certified SAFe 5 Practitioner',
         issuer: 'Scaled Agile',
         logo: require('./images/safe.png'),
-        url: 'https://scaledagile.com/',
+        url: 'hhttps://scaledagile.com/certification/safe-practitioner/',
     },
 ];
 
@@ -179,7 +179,7 @@ function Certifications() {
             <h3>My Certifications</h3>
             <ul className="certification-list">
                 {certifications.map((cert, index) => (
-                    <li key={index} className="certification-item">
+                    <li key={index} className="certification-item job-item">
                         <img src={cert.logo} alt={`${cert.issuer} logo`} className="company-logo" />
                         <div className="cert-info">
                             <a href={cert.url} target="_blank" rel="noopener noreferrer">

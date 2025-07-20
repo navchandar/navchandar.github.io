@@ -135,13 +135,12 @@
 }
 
 .certifications {
-    margin-top: 2rem;
-    padding: 1rem;
     border-radius: 8px;
     text-align: center;
     max-width: 635px;
     display: inline-grid;
-    margin: 10px;
+    margin: 0px;
+    padding: 0 1rem 0 1rem;
 }
 
 .certification-list {
@@ -209,5 +208,9 @@
     .bigger_logo {
         height: 50px !important;
         width: 50px !important;
+    }
+
+    .cert-info a {
+        font-size: 0.8em;
     }
 }
