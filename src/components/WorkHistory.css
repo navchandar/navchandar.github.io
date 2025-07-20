@@ -164,7 +164,7 @@
 
 .cert-info a {
     color: #2c3e50;
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
 
 .cert-info a:hover {
@@ -213,5 +213,9 @@
 
     .cert-info a {
         font-size: 0.8em;
+    }
+
+    .issuer {
+        font-size: .8rem;
     }
 }
