@@ -142,4 +142,8 @@ img#about {
   h2.subheading {
     font-size: small;
   }
+
+  a:hover {
+    border-bottom-width: 1px;
+  }
 }
