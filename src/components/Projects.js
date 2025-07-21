@@ -32,7 +32,7 @@ const projects = [
     {
         title: 'Naukri Updater',
         description: 'Automatically update your Naukri profiles daily using Selenium based script',
-        link: 'https://github.com/navchandar/Naukri/',
+        link: 'https://github.com/navchandar/Naukri/?tab=readme-ov-file#daily-naukri-update/',
         repo: 'navchandar/Naukri',
     },
     {
