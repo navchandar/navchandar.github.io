@@ -16,7 +16,7 @@ const Footer = () => {
       const distanceFromBottom = docHeight - scrollBottom;
 
       // Display socials title when user nears bottom 
-      if (scrollBottom >= docHeight - 10) {
+      if (scrollBottom >= docHeight - 25) {
         setShowTitle(true);
       } else {
         setShowTitle(false);
