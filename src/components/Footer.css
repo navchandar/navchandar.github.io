@@ -29,8 +29,19 @@
 }
 
 .social-icon:hover {
-    transform: translateY(-3px);
+    transform: scale(1.7) translateY(-3px) !important;
     color: #007bff;
+}
+
+
+.social-links a {
+    border-bottom: none;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    border-bottom: none;
+    text-decoration: none;
 }
 
 /* Style for the copyright text */

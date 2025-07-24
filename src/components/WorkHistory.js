@@ -187,11 +187,9 @@ function Certifications() {
                     <li key={index} className="certification-item job-item">
                         <img src={cert.logo} alt={`${cert.issuer} logo`} className="company-logo" />
                         <div className="cert-info">
-                            <a href={cert.url} target="_blank" rel="noopener noreferrer">
-                                <strong>{cert.title}</strong>
-                            </a>
-                            <div className="issuer">{cert.issuer}</div>
-                            <div className="issuer">{cert.id}</div>
+                            <a href={cert.url} target="_blank" rel="noopener noreferrer">{cert.title}</a>
+                            <div className="issuer" title={`Certified by ${cert.issuer}`}>{cert.issuer}</div>
+                            <div className="issuer" title={`Certificate ID: ${cert.id}`}>{cert.id}</div>
                         </div>
                     </li>
                 ))}
