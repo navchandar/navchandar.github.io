@@ -200,13 +200,15 @@
     }
 
     .company-logo {
-        height: 40px;
-        width: 40px;
+        height: 35px;
+        width: 35px;
+        padding-left: 2px;
+        padding-right: 2px;
     }
 
     .company-logo:hover {
-        width: 40px;
-        height: 40px;
+        height: 35px;
+        width: 35px;
     }
 
     .bigger_logo {
