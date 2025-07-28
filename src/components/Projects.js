@@ -47,7 +47,7 @@ const projects = [
 function Projects() {
     return (
         <div className="projects">
-            <h3>My Projects</h3>
+            <h3>My Featured Projects</h3>
             <div className="project-list">
                 {projects.map((project, index) => {
                     const stats = repoStats[project.repo] || { stars: '-', forks: '-' };

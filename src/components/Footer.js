@@ -16,7 +16,7 @@ const Footer = () => {
       const distanceFromBottom = docHeight - scrollBottom;
 
       // Display socials title when user nears bottom 
-      if (scrollBottom >= docHeight - 25) {
+      if (scrollBottom >= docHeight - 100) {
         setShowTitle(true);
       } else {
         setShowTitle(false);
@@ -38,7 +38,7 @@ const Footer = () => {
 
   return (
     <>
-      <h3 className={`footer-title ${showTitle ? 'visible' : ''}`}>My Socials</h3>
+      <h3 className={`footer-title ${showTitle ? 'visible' : ''}`}>My Social Links</h3>
       <div id="footer">
         <div className="social-links">
           <a href="https://www.linkedin.com/in/naveenchandar/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" title="LinkedIn Profile">

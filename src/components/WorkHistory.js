@@ -173,7 +173,14 @@ const certifications = [
         issuer: 'Scaled Agile',
         id: '65685153-1832',
         logo: require('./images/safe.png'),
-        url: 'hhttps://scaledagile.com/certification/safe-practitioner/',
+        url: 'https://scaledagile.com/certification/safe-practitioner/',
+    },
+    {
+        title: 'Bachelor of Engineering',
+        issuer: 'Anna University',
+        id: '286454',
+        logo: require('./images/ceg.png'),
+        url: 'https://www.annauniv.edu/',
     },
 ];
 
@@ -181,7 +188,7 @@ const certifications = [
 function Certifications() {
     return (
         <div className="certifications">
-            <h3>My Certifications</h3>
+            <h3>My Credentials</h3>
             <ul className="certification-list">
                 {certifications.map((cert, index) => (
                     <li key={index} className="certification-item job-item">
