@@ -5,6 +5,7 @@
     margin: 0.75rem auto;
     margin-bottom: 0px;
     max-width: 635px;
+    overflow-x: hidden;
 }
 
 .company-logo {
@@ -106,6 +107,8 @@
 
 .job-summary div.hide {
     opacity: 0;
+    width: 0;
+    height: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
@@ -114,18 +117,24 @@
     background-color: #f9f9f9d5;
 }
 
-
 .job-details {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
     text-align: left;
     visibility: hidden;
-    transition: max-height 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
-
+    width: 0px;
+    height: 0px;
+    transition:
+            max-height 0.4s ease,
+            opacity 0.3s ease 0.2s, /* delay opacity until box expands */
+            visibility 0.3s ease 0.3s;
 }
 
 .job-details.show {
+    text-align: left;
+    width: auto;
+    height: auto;
     max-height: 200px;
     opacity: 1;
     visibility: visible;
@@ -227,6 +236,7 @@
     .issuer {
         font-size: .8rem;
     }
+
     .job-summary {
         gap: 2px;
     }
