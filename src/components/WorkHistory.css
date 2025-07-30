@@ -27,6 +27,10 @@
     height: 100px !important;
 }
 
+.cert-logo {
+    scale: 0.8;
+}
+
 .work-history ul {
     list-style: none;
     padding: 0;
@@ -102,7 +106,6 @@
 
 .job-summary div {
     opacity: 1;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 .job-summary div.hide {
@@ -110,7 +113,7 @@
     width: 0;
     height: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    transition: max-height 0.3s ease, height 0.3s ease, opacity 0.5s ease 0.3s;
 }
 
 .job-item:hover {
@@ -127,8 +130,7 @@
     visibility: hidden;
     transition:
         max-height 0.3s ease,
-        height 0.3s ease,
-        opacity 0.5s ease;
+        height 0.3s ease;
 }
 
 .job-details.show {
@@ -141,7 +143,7 @@
     margin: 5px 0px;
     cursor: text;
     margin-left: -15px;
-    transition: max-height 0.3s ease, height 0.3s ease, opacity 0.5s ease;
+    transition: max-height 0.3s ease, height 0.3s ease;
 }
 
 .job-details p {
@@ -164,6 +166,7 @@
     padding: 0;
     display: inline-block;
     text-align: left;
+    width: 600px;
 }
 
 .certification-item {
@@ -172,7 +175,7 @@
     cursor: default;
     box-shadow: 0 1px 2px #00000038;
     margin-bottom: 5px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .cert-info {
