@@ -12,7 +12,7 @@ export const Header = () => {
       src: Logo
     }),
 
-    React.createElement('h1', {id: 'title'}, 'Naveen chandar')
+    React.createElement('h1', { id: 'title' }, 'Naveen chandar')
   )
 }
 

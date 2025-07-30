@@ -67,7 +67,6 @@ const workData = [
 
 
 
-
 function WorkHistory() {
     const [expandedIndex, setExpandedIndex] = useState(null);
     const [expandAll, setExpandAll] = useState(false);
@@ -140,6 +139,13 @@ function WorkHistory() {
 // Add Certifications
 const certifications = [
     {
+        title: 'Certified SAFe 5 Practitioner',
+        issuer: 'Scaled Agile',
+        id: '65685153-1832',
+        logo: require('./images/safe.png'),
+        url: 'https://scaledagile.com/certification/safe-practitioner/',
+    },
+    {
         title: 'ISTQB Certified Tester Foundation Level (CTFL)',
         issuer: 'Indian Testing Board',
         id: 'ITB - CTFL - 0093927',
@@ -167,13 +173,6 @@ const certifications = [
         id: '1083ZMF170900105',
         logo: require('./images/vskills.png'),
         url: 'https://www.vskills.in/certification/31823-certified-selenium-professional-naveenchandar-shanmugam/',
-    },
-    {
-        title: 'Certified SAFe 5 Practitioner',
-        issuer: 'Scaled Agile',
-        id: '65685153-1832',
-        logo: require('./images/safe.png'),
-        url: 'https://scaledagile.com/certification/safe-practitioner/',
     },
     {
         title: 'Bachelor of Engineering',

@@ -16,11 +16,7 @@ const Footer = () => {
       const distanceFromBottom = docHeight - scrollBottom;
 
       // Display socials title when user nears bottom 
-      if (scrollBottom >= docHeight - 100) {
-        setShowTitle(true);
-      } else {
-        setShowTitle(false);
-      }
+      setShowTitle(scrollBottom >= docHeight - 100);
 
       // Make icons big as user nears bottom (0 to 1.5x)
       const newScale = distanceFromBottom < 250
@@ -37,7 +33,7 @@ const Footer = () => {
 
 
   return (
-    <>
+    <footer className="footer" role="contentinfo">
       <h3 className={`footer-title ${showTitle ? 'visible' : ''}`}>My Social Links</h3>
       <div id="footer">
         <div className="social-links">
@@ -76,7 +72,7 @@ const Footer = () => {
           <p>Copyright © {new Date().getFullYear()} All Rights Reserved</p>
         </i>
       </div>
-    </>
+    </footer>
   );
 }
 
