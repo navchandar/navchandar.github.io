@@ -66,6 +66,44 @@ const workData = [
 ];
 
 
+function JobItem({ job, index, isExpanded, toggleExpand }) {
+    return (
+        <li
+            className={`job-item ${isExpanded ? 'expanded' : ''}`}
+            onClick={(e) => {
+                if (e.target.closest('.job-details')) return;
+                toggleExpand(index);
+            }}
+        >
+            <div
+                className="job-summary"
+                role="button"
+                tabIndex={0}
+                aria-expanded={isExpanded}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') toggleExpand(index);
+                }}
+            >
+                <img
+                    src={job.logo}
+                    alt={`${job.company} logo`}
+                    className={`company-logo ${isExpanded ? 'bigger_logo' : ''}`}
+                />
+                <div className={`${isExpanded ? 'hide' : ''}`}>
+                    <strong>{job.company}</strong> — {job.start} to {job.end}
+                </div>
+            </div>
+            <div className={`job-details ${isExpanded ? 'show' : ''}`}>
+                <p><i>{job.company_official_name}</i></p>
+                <p><strong>Role:</strong> {job.title}</p>
+                <p><strong>Domains:</strong> {job.domains}</p>
+                <p><strong>Tech Stack:</strong> {job.tools_used}</p>
+                <p><strong>Location:</strong> {job.location}</p>
+            </div>
+        </li>
+    );
+}
+
 
 function WorkHistory() {
     const [expandedIndex, setExpandedIndex] = useState(null);
@@ -73,14 +111,12 @@ function WorkHistory() {
     const containerRef = useRef(null);
 
     const toggleExpand = (index) => {
-        // Disable individual toggle when all are expanded
         if (expandAll) return;
         setExpandedIndex(prev => (prev === index ? null : index));
     };
 
     const toggleExpandAll = () => {
         setExpandAll(prev => !prev);
-        // Reset individual selection
         setExpandedIndex(null);
     };
 
@@ -105,36 +141,15 @@ function WorkHistory() {
                 </button>
             </div>
             <ul className="job-list">
-                {workData.map((job, index) => {
-                    const isExpanded = expandAll || expandedIndex === index;
-                    return (
-                        <li
-                            key={index}
-                            className={`job-item ${isExpanded ? 'expanded' : ''}`}
-                            onClick={(e) => {
-                                    if (e.target.closest('.job-details')) return;
-                                    toggleExpand(index);
-                                }}
-                            aria-expanded={isExpanded}
-
-                        >
-                            <div className="job-summary">
-                                <img src={job.logo} alt={`${job.company} logo`}
-                                    className={`company-logo ${isExpanded ? 'bigger_logo' : ''}`} />
-                                <div className={`${isExpanded ? 'hide' : ''}`}>
-                                    <strong>{job.company}</strong> — {job.start} to {job.end}
-                                </div>
-                            </div>
-                            <div className={`job-details ${isExpanded ? 'show' : ''}`}>
-                                <p><i>{job.company_official_name}</i></p>
-                                <p><strong>Role:</strong> {job.title}</p>
-                                <p><strong>Domains:</strong> {job.domains}</p>
-                                <p><strong>Tech Stack:</strong> {job.tools_used}</p>
-                                <p><strong>Location:</strong> {job.location}</p>
-                            </div>
-                        </li>
-                    );
-                })}
+                {workData.map((job, index) => (
+                    <JobItem
+                        key={index}
+                        job={job}
+                        index={index}
+                        isExpanded={expandAll || expandedIndex === index}
+                        toggleExpand={toggleExpand}
+                    />
+                ))}
             </ul>
         </div>
     );

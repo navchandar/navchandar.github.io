@@ -43,6 +43,27 @@ const projects = [
     },
 ];
 
+function ProjectCard({ project, stats }) {
+    return (
+        <div className="project-card">
+            <h4>
+                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                    {project.title}
+                </a>
+            </h4>
+            <p>{project.description}</p>
+            <div className="repo-stats">
+                <span className="badge stars" title={`GitHub Stars: ${stats.stars}`}>
+                    <span className="star-icon">⭐</span> {stats.stars}
+                </span>
+                <span className="badge forks" title={`GitHub Forks: ${stats.forks}`}>
+                    <span className="fork-icon">⑂</span> {stats.forks}
+                </span>
+            </div>
+        </div>
+    );
+}
+
 
 function Projects() {
     return (
@@ -51,27 +72,13 @@ function Projects() {
             <div className="project-list">
                 {projects.map((project, index) => {
                     const stats = repoStats[project.repo] || { stars: '-', forks: '-' };
-                    return (
-                        <div className="project-card" key={index}>
-                            <h4>
-                                <a href={project.link} target="_blank" rel="noopener noreferrer">
-                                    {project.title}
-                                </a>
-                            </h4>
-                            <p>{project.description}</p>
-                            <div className="repo-stats">
-                                <span className="badge stars" title={`GitHub Stars: ${stats.stars}`}>
-                                    <span className="star-icon">⭐</span> {stats.stars}</span>
-                                <span className="badge forks" title={`GitHub Forks: ${stats.forks}`}>
-                                    <span className="fork-icon">⑂</span> {stats.forks}</span>
-                            </div>
-                        </div>
-                    );
+                    return <ProjectCard key={index} project={project} stats={stats} />;
                 })}
             </div>
         </div>
     );
 }
+
 
 
 export default Projects;
