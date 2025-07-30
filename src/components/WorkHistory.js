@@ -166,14 +166,14 @@ const certifications = [
         url: 'https://scaledagile.com/certification/safe-practitioner/',
     },
     {
-        title: 'ISTQB Certified Tester Foundation Level (CTFL)',
+        title: 'ISTQB Certified Tester Foundation Level',
         issuer: 'Indian Testing Board',
         id: 'ITB - CTFL - 0093927',
         logo: require('./images/istqb.png'),
         url: 'https://istqb.in/foundation/certified-tester2/102214-naveenchandar-shanmugam/',
     },
     {
-        title: 'ISTQB Certified Advanced Level Test Automation Engineer (CTAL-TAE)',
+        title: 'ISTQB Certified Advanced Level Test Automation Engineer',
         issuer: 'Indian Testing Board',
         id: 'ITB - CTAL-TAE - 000037',
         logo: require('./images/istqb.png'),
