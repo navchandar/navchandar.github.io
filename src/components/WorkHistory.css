@@ -101,12 +101,13 @@
 
 .job-summary div {
     opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 .job-summary div.hide {
     opacity: 0;
-    display: none;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 .job-item:hover {
@@ -118,15 +119,16 @@
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    display: none;
     text-align: left;
-    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    visibility: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
+
 }
 
 .job-details.show {
     max-height: 200px;
     opacity: 1;
-    display: block;
+    visibility: visible;
     margin: 5px 0px;
 }
 

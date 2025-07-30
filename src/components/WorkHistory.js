@@ -111,7 +111,12 @@ function WorkHistory() {
                         <li
                             key={index}
                             className={`job-item ${isExpanded ? 'expanded' : ''}`}
-                            onClick={() => toggleExpand(index)}
+                            onClick={(e) => {
+                                    if (e.target.closest('.job-details')) return;
+                                    toggleExpand(index);
+                                }}
+                            aria-expanded={isExpanded}
+
                         >
                             <div className="job-summary">
                                 <img src={job.logo} alt={`${job.company} logo`}
