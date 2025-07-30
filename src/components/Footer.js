@@ -33,7 +33,7 @@ const Footer = () => {
 
 
   return (
-    <footer className="footer" role="contentinfo">
+    <>
       <h3 className={`footer-title ${showTitle ? 'visible' : ''}`}>My Social Links</h3>
       <div id="footer">
         <div className="social-links">
@@ -72,7 +72,7 @@ const Footer = () => {
           <p>Copyright © {new Date().getFullYear()} All Rights Reserved</p>
         </i>
       </div>
-    </footer>
+    </>
   );
 }
 
