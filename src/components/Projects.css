@@ -48,7 +48,7 @@
   padding: 2px 5px;
   margin-right: 4px;
   border-radius: 6px;
-  font-size: 0.8rem;
+  font-size: 1em;
   font-weight: 500;
   background-color: #f3f4f6;
   cursor: default;
@@ -63,6 +63,21 @@
 .forks {
   background-color: #dbeafe;
   color: #02727e;
+}
+
+.fork-icon {
+  font-size: 1.5em;
+  line-height: 0;
+  font-weight: bold;
+  margin: 0px;
+  padding: 0px;
+}
+
+.star-icon {
+  line-height: 1em;
+  font-weight: bold;
+  margin: 0px;
+  padding: 0px;
 }
 
 .stars:hover {

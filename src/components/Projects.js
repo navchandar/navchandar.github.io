@@ -60,8 +60,10 @@ function Projects() {
                             </h4>
                             <p>{project.description}</p>
                             <div className="repo-stats">
-                                <span className="badge stars" title={`GitHub Stars: ${stats.stars}`}>⭐ {stats.stars}</span>
-                                <span className="badge forks" title={`GitHub Forks: ${stats.forks}`}>⑂ {stats.forks}</span>
+                                <span className="badge stars" title={`GitHub Stars: ${stats.stars}`}>
+                                    <span className="star-icon">⭐</span> {stats.stars}</span>
+                                <span className="badge forks" title={`GitHub Forks: ${stats.forks}`}>
+                                    <span className="fork-icon">⑂</span> {stats.forks}</span>
                             </div>
                         </div>
                     );
