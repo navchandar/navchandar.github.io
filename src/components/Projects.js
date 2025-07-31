@@ -19,7 +19,7 @@ const projects = [
   {
     title: "Civic Media Scout",
     description:
-      "Web app to curate publicly available contact information from official government websites",
+      "Web app to curate publicly available contact information from official govt websites",
     link: "https://navchandar.github.io/civic-media-scout/",
     repo: "navchandar/civic-media-scout",
   },
@@ -50,7 +50,7 @@ function ProjectCard({ project, stats }) {
   return (
     <div className="project-card">
       <h4>
-        <a href={project.link} target="_blank" rel="noopener">
+        <a href={project.link} target="_blank" rel="noopener noreferrer">
           {project.title}
         </a>
       </h4>

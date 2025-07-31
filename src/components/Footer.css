@@ -22,14 +22,14 @@
 }
 
 .social-icon {
-    transition: transform 0.2s ease-in-out;
     width: 24px;
     height: 24px;
     color: #252525d8;
 }
 
 .social-icon:hover {
-    transform: scale(1.7) translateY(-3px) !important;
+    transform: scale(1.8) translateY(-5px) !important;
+    transition: transform 0.4s ease;
     color: #007bff;
 }
 
