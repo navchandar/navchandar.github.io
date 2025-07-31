@@ -22,15 +22,15 @@ function App() {
       ticking = false;
     };
 
-    const handleScroll = () => {
+    const scrollHandler = () => {
       if (!ticking) {
         window.requestAnimationFrame(updateProgressBar);
         ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", scrollHandler, { passive: true });
+    return () => window.removeEventListener("scroll", scrollHandler);
   }, []);
 
   return (
