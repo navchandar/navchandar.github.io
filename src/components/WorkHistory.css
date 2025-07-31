@@ -1,20 +1,20 @@
 .work-history {
-    padding: 0.5rem;
-    background-color: #f4f4f477;
-    border-radius: 8px;
     margin: 0.75rem auto;
     margin-bottom: 0px;
+    border-radius: 8px;
+    background-color: #f4f4f477;
+    padding: 0.5rem;
     max-width: 635px;
 }
 
 .company-logo {
+    vertical-align: middle;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+    margin-right: 0.75rem;
+    margin-left: 0.5rem;
     width: 64px;
     height: 64px;
     object-fit: contain;
-    margin-right: 0.75rem;
-    margin-left: 0.5rem;
-    vertical-align: middle;
-    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
 }
 
 .company-logo:hover {
@@ -32,29 +32,29 @@
 }
 
 .work-history ul {
-    list-style: none;
     padding: 0;
+    list-style: none;
 }
 
 .work-history li {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 0.25rem 1rem;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
     transition: background-color 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 0.25rem 1rem;
     width: 100%;
     max-width: 600px;
 }
 
 .work-history li:hover {
-    background-color: #e9f5ff;
-    border-image: linear-gradient(to right, #8bffeaeb, #7eb9faed) 1;
-    border-style: solid;
     box-shadow: 0px 3px 5px #4e2fff61;
+    border-style: solid;
+    border-image: linear-gradient(to right, #8bffeaeb, #7eb9faed) 1;
+    background-color: #e9f5ff;
 }
 
 .work-history-header {
@@ -65,42 +65,42 @@
 }
 
 .work-history-header button {
-    cursor: pointer;
-    font-size: 10px;
-    padding: 5px 12px;
-    border: none;
-    text-decoration: none;
     align-self: end;
+    cursor: pointer;
+    border: none;
     background: none;
+    padding: 5px 12px;
     padding: 10px 10px;
+    font-size: 10px;
+    text-decoration: none;
 }
 
 .work-history-header button:hover {
-    text-shadow: 0px 0px 1px #000000bf;
     text-decoration: underline;
+    text-shadow: 0px 0px 1px #000000bf;
 }
 
 .job-list {
-    list-style: none;
     padding: 0;
+    list-style: none;
 }
 
 .job-item {
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    padding: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background-color: #f9f9f9;
-    border-radius: 5px;
     position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    padding: 10px;
 }
 
 .job-summary {
-    opacity: 1;
     display: flex;
     align-items: center;
     gap: 10px;
+    opacity: 1;
     transition: opacity .3s ease-in-out;
 }
 
@@ -109,11 +109,11 @@
 }
 
 .job-summary div.hide {
+    visibility: hidden;
     opacity: 0;
+    transition: max-height 0.3s ease, height 0.3s ease, opacity 0.5s ease 0.3s;
     width: 0;
     height: 0;
-    visibility: hidden;
-    transition: max-height 0.3s ease, height 0.3s ease, opacity 0.5s ease 0.3s;
 }
 
 .job-item:hover {
@@ -121,26 +121,26 @@
 }
 
 .job-details {
+    visibility: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, height 0.3s ease;
     width: 0px;
     height: 0px;
     max-height: 0;
-    opacity: 0;
     overflow: hidden;
     text-align: left;
-    visibility: hidden;
-    transition: max-height 0.3s ease, height 0.3s ease;
 }
 
 .job-details.show {
+    visibility: visible;
+    opacity: 1;
+    transition: max-height 0.3s ease, height 0.3s ease;
+    cursor: text;
+    margin: 5px 0px 5px -10px;
     width: auto;
     height: auto;
     max-height: 200px;
-    opacity: 1;
     text-align: left;
-    visibility: visible;
-    cursor: text;
-    margin: 5px 0px 5px -10px;
-    transition: max-height 0.3s ease, height 0.3s ease;
 }
 
 .job-details p {
@@ -148,30 +148,30 @@
 }
 
 .certifications {
-    border-radius: 8px;
-    text-align: center;
-    max-width: 635px;
     display: inline-grid;
-    margin: 0px;
-    padding: 0 1rem 0 1rem;
     cursor: default;
+    margin: 0px;
+    border-radius: 8px;
     background-color: #f4f4f477;
+    padding: 0 1rem 0 1rem;
+    max-width: 635px;
+    text-align: center;
 }
 
 .certification-list {
-    list-style: none;
-    padding: 0;
     display: inline-block;
-    text-align: left;
+    padding: 0;
     width: 600px;
+    list-style: none;
+    text-align: left;
 }
 
 .certification-item {
     display: flex;
     align-items: center;
     cursor: default;
-    box-shadow: 0 1px 2px #00000038;
     margin-bottom: 5px;
+    box-shadow: 0 1px 2px #00000038;
     padding: 10px;
 }
 
@@ -182,8 +182,8 @@
 
 .cert-info a {
     color: #2c3e50;
-    font-size: 0.95rem;
     font-weight: bold;
+    font-size: 0.95rem;
 }
 
 .cert-info a:hover {
@@ -191,22 +191,22 @@
 }
 
 .issuer {
-    font-size: 0.9rem;
     color: #171717;
     font-style: italic;
+    font-size: 0.9rem;
 }
 
 @media only screen and (max-width: 600px) {
     .work-history {
-        padding: 0.5rem 1rem;
         margin: 0 2%;
+        padding: 0.5rem 1rem;
     }
 
     .work-history li {
         gap: 0px;
         padding: .1rem 0.1rem;
-        text-align: left;
         font-size: small;
+        text-align: left;
     }
 
     .work-history-header button {
@@ -214,20 +214,20 @@
     }
 
     .company-logo {
-        height: 35px;
-        width: 35px;
-        padding-left: 2px;
         padding-right: 2px;
+        padding-left: 2px;
+        width: 35px;
+        height: 35px;
     }
 
     .company-logo:hover {
-        height: 35px;
         width: 35px;
+        height: 35px;
     }
 
     .bigger_logo {
-        height: 50px !important;
         width: 50px !important;
+        height: 50px !important;
     }
 
     .cert-info a {
@@ -243,8 +243,8 @@
     }
 
     .certification-list {
-        width: 95%;
         margin: 0 2%;
+        width: 95%;
     }
 
     .job-details.show {

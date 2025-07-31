@@ -1,70 +1,70 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 .progress-bar {
-  position: sticky;
-  top: 0;
-  left: 0;
-  height: 3px;
-  width: 0%;
-  z-index: 9999;
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  transition: width 0.3s ease;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    z-index: 9999;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    transition: width 0.3s ease;
 }
 
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
 
-  to {
-    transform: rotate(360deg);
-  }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 
 .fade-in {
-  opacity: 0;
-  animation: fadeInAnimation ease 1s;
-  animation-fill-mode: forwards;
+    opacity: 0;
+    animation: fadeInAnimation ease 1s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

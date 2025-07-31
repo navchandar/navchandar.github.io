@@ -1,6 +1,6 @@
 #header {
-  transition: transform 0.5s ease-in-out;
   display: inline-block;
+  transition: transform 0.5s ease-in-out;
 }
 
 #header:hover {
@@ -9,21 +9,21 @@
 }
 
 h1#title {
-  text-transform: uppercase;
   background: linear-gradient(to top, #128fbb 0%, #18ef86 100%);
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
   -webkit-background-clip: text;
-  font-size: xx-large;
   margin: 0px 0px;
+  font-size: xx-large;
 }
 
 h2 {
   margin: 0px 3px;
-  font-weight: 400;
   background-image: linear-gradient(45deg, #045e9f, #028635);
-  color: transparent;
   background-clip: text;
+  color: transparent;
+  font-weight: 400;
   -webkit-background-clip: text;
   text-shadow: 2px 2px 5px #0000002a;
 }
@@ -35,10 +35,10 @@ section {
 
 .subtitle {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   flex-direction: row;
+  flex-wrap: wrap;
   align-content: center;
+  justify-content: center;
   align-items: center;
   font-style: normal;
   font-size: small;
@@ -50,14 +50,14 @@ h2.subheading {
 
 h2.subheading:before,
 h2.subheading:after {
-  content: '[';
   display: inline-block;
   position: relative;
   top: 1px;
-  height: 100%;
-  font-size: 1.25em;
-  color: #028635;
   transition: all 0.5s ease-in-out;
+  height: 100%;
+  content: '[';
+  color: #028635;
+  font-size: 1.25em;
 }
 
 h2.subheading:before {
@@ -78,12 +78,12 @@ h2.subheading:hover:after {
 
 h3 {
   background-image: linear-gradient(45deg, #045e9f, #028635);
-  color: transparent;
   background-clip: text;
+  color: transparent;
   -webkit-background-clip: text;
-  text-shadow: 1px 1px 2px #0000002a;
   margin: 8px;
   font-size: 1.4rem;
+  text-shadow: 1px 1px 2px #0000002a;
 }
 
 h4 {
@@ -91,42 +91,42 @@ h4 {
 }
 
 a {
+  transition: border-color 0.3s ease, color 0.3s ease;
+  border-bottom: 2px solid transparent;
   color: #007bff;
   text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.3s ease, color 0.3s ease;
 }
 
 a:hover {
-  color: #0056b3;
   border-bottom: 2px solid #0056b3;
+  color: #0056b3;
 }
 
 img#about {
-  width: 100px;
-  height: 100px;
   margin: 10px 10px 0;
+  box-shadow: 0px 0px 15px -3px #000;
+  border: 1px solid #7fa1b9;
+  border-radius: 50%;
   background-color: white;
   padding: 2px;
-  border-radius: 50%;
-  border: 1px solid #7fa1b9;
-  box-shadow: 0px 0px 15px -3px #000;
+  width: 100px;
+  height: 100px;
 }
 
 @media only screen and (max-width: 600px) {
   h1#title {
-    margin-bottom: 10px;
-    font-size: x-large;
-    float: left;
     position: relative;
     top: 2rem;
+    float: left;
+    margin-bottom: 10px;
+    font-size: x-large;
   }
 
   img#about {
+    float: left;
+    margin-right: 10px;
     width: 64px;
     height: 64px;
-    margin-right: 10px;
-    float: left;
   }
 
   #header {

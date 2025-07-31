@@ -1,115 +1,115 @@
 .projects {
-  padding: 1rem;
-  text-align: center;
+    padding: 1rem;
+    text-align: center;
 }
 
 .project-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1em;
 }
 
 .project-card {
-  background: #d9d9d963;
-  border: 1px solid #acacac;
-  border-radius: 8px;
-  padding: 0.5rem;
-  width: 12%;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    border: 1px solid #acacac;
+    border-radius: 8px;
+    background: #d9d9d963;
+    padding: 0.5rem;
+    width: 12%;
 }
 
 .project-card:hover {
-  background-color: #e9f5ff;
-  border-image: linear-gradient(to right, #8bffeaeb, #7eb9faed) 1;
-  border-style: solid;
-  box-shadow: 0px 3px 5px #4e2fff61;
+    box-shadow: 0px 3px 5px #4e2fff61;
+    border-style: solid;
+    border-image: linear-gradient(to right, #8bffeaeb, #7eb9faed) 1;
+    background-color: #e9f5ff;
 }
 
 .project-card a {
-  color: #000000e8;
-  text-decoration: none;
+    color: #000000e8;
+    text-decoration: none;
 }
 
 .project-card a:hover {
-  color: #007bff;
+    color: #007bff;
 }
 
 
 .project-card p {
-  margin: 0 auto;
-  font-size: smaller;
+    margin: 0 auto;
+    font-size: smaller;
 }
 
 .badge {
-  display: inline-block;
-  padding: 2px 5px;
-  margin-right: 4px;
-  border-radius: 6px;
-  font-size: 1em;
-  font-weight: 500;
-  background-color: #f3f4f6;
-  cursor: default;
-  min-width: 30px;
+    display: inline-block;
+    cursor: default;
+    margin-right: 4px;
+    border-radius: 6px;
+    background-color: #f3f4f6;
+    padding: 2px 5px;
+    min-width: 30px;
+    font-weight: 500;
+    font-size: 1em;
 }
 
 .stars {
-  background-color: #fff7d5;
-  color: #a13f03;
+    background-color: #fff7d5;
+    color: #a13f03;
 }
 
 .forks {
-  background-color: #dbeafe;
-  color: #02727e;
+    background-color: #dbeafe;
+    color: #02727e;
 }
 
 .fork-icon {
-  font-size: 1.5em;
-  line-height: 0;
-  font-weight: bold;
-  margin: 0px;
-  padding: 0px;
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 0;
 }
 
 .star-icon {
-  line-height: 1em;
-  font-weight: bold;
-  margin: 0px;
-  padding: 0px;
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+    line-height: 1em;
 }
 
 .stars:hover {
-  background-color: #000000;
-  color: #ffffff;
-  transform: scale(1.1);
-  transition: transform .3s ease-in-out, color .3s ease, background-color .3s ease;
+    transform: scale(1.1);
+    transition: transform .3s ease-in-out, color .3s ease, background-color .3s ease;
+    background-color: #000000;
+    color: #ffffff;
 }
 
 .forks:hover {
-  background-color: #00748a;
-  color: #ffffff;
-  transform: scale(1.1);
-  transition: transform .3s ease-in-out, color .3s ease, background-color .3s ease;
+    transform: scale(1.1);
+    transition: transform .3s ease-in-out, color .3s ease, background-color .3s ease;
+    background-color: #00748a;
+    color: #ffffff;
 }
 
 .repo-stats {
-  margin-top: 5px;
+    margin-top: 5px;
 }
 
 @media only screen and (max-width: 600px) {
-  .projects {
-    padding: 0;
-  }
+    .projects {
+        padding: 0;
+    }
 
-  .project-list {
-    gap: 0.5rem;
-    margin-bottom: 3rem;
-  }
+    .project-list {
+        gap: 0.5rem;
+        margin-bottom: 3rem;
+    }
 
-  .project-card {
-    width: 80%;
-  }
+    .project-card {
+        width: 80%;
+    }
 
 }
