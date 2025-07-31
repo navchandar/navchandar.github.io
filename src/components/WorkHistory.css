@@ -140,9 +140,8 @@
     opacity: 1;
     text-align: left;
     visibility: visible;
-    margin: 5px 0px;
     cursor: text;
-    margin-left: -15px;
+    margin: 5px 0px 5px -10px;
     transition: max-height 0.3s ease, height 0.3s ease;
 }
 
@@ -204,7 +203,7 @@
 @media only screen and (max-width: 600px) {
     .work-history {
         padding: 0.5rem 1rem;
-        margin: 0;
+        margin: 0 2%;
     }
 
     .work-history li {
@@ -245,5 +244,14 @@
 
     .job-summary {
         gap: 2px;
+    }
+
+    .certification-list {
+        width: 95%;
+        margin: 0 2%;
+    }
+
+    .job-details.show {
+        margin: 5px 0px 5px 0px;
     }
 }
