@@ -7,24 +7,43 @@ const Footer = () => {
   const [scale, setScale] = useState(1);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight;
-      const winHeight = window.innerHeight;
-      const scrollBottom = scrollY + winHeight;
-      const distanceFromBottom = docHeight - scrollBottom;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const { scrollY, innerHeight } = window;
+          const { scrollHeight } = document.documentElement;
 
-      // Display socials title when user nears bottom
-      setShowTitle(scrollBottom >= docHeight - 100);
+          const scrollBottom = scrollY + innerHeight;
+          const distanceFromBottom = scrollHeight - scrollBottom;
 
-      // Make icons big as user nears bottom (0 to 1.5x)
-      const newScale =
-        distanceFromBottom < 250 ? 1 + (1 - distanceFromBottom / 250) * 0.5 : 1;
+          // Show title up when nearing end of the page
+          setShowTitle(distanceFromBottom <= 100);
 
-      setScale(newScale);
+          // Scale icons smoothly from 1 to 1.5 max
+          const maxDistance = 250;
+          const clampedDistance = Math.max(
+            0,
+            Math.min(maxDistance, distanceFromBottom)
+          );
+          const newScale =
+            1 + ((maxDistance - clampedDistance) / maxDistance) * 0.5;
+
+          setScale((prev) =>
+            Math.abs(prev - newScale) > 0.01 ? newScale : prev
+          );
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Initial call
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

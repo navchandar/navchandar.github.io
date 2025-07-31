@@ -50,7 +50,7 @@ function ProjectCard({ project, stats }) {
   return (
     <div className="project-card">
       <h4>
-        <a href={project.link} target="_blank" rel="noopener noreferrer">
+        <a href={project.link} target="_blank" rel="noopener">
           {project.title}
         </a>
       </h4>

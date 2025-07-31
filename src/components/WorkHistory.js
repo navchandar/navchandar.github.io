@@ -23,7 +23,8 @@ const workData = [
     location: "Hyderabad, India (Remote)",
     team_size: 15,
     domains: "Insurance, FinTech",
-    tools_used: "Robot Framework, Java, MS Power Automate",
+    tools_used:
+      "Robot Framework, Python, Selenium, Java, Guidewire, BitBucket, Power Automate",
     logo: require("./images/deloitte.png"),
   },
   {
@@ -35,7 +36,7 @@ const workData = [
     location: "Hyderabad, India (Remote)",
     team_size: 6,
     domains: "Mapping",
-    tools_used: "Python, Postman, GitHub",
+    tools_used: "Python, PyTest, Postman, Allure, GitHub",
     logo: require("./images/techsophy.png"),
   },
   {
@@ -47,7 +48,8 @@ const workData = [
     location: "Noida, India (Remote)",
     team_size: 10,
     domains: "E-commerce, Payments",
-    tools_used: "Protractor, Node.js, Jenkins, PowerShell, BlazeMeter",
+    tools_used:
+      "Node.js, Protractor, Jenkins, PowerShell, GitHub, Sauce Labs, BlazeMeter",
     logo: require("./images/9yards.png"),
   },
   {
@@ -60,28 +62,35 @@ const workData = [
     location: "Bengaluru, India (Hybrid)",
     team_size: 10,
     domains: "IoT (Internet of Things), R&D",
-    tools_used: "SeleniumBase, Pytest, Jenkins, Docker, JMeter, MongoDB, Azure",
+    tools_used:
+      "SeleniumBase, Pytest, Jenkins, Docker, JMeter, MongoDB, Postman, RabbitMQ, Azure",
     logo: require("./images/hitachi.png"),
   },
 ];
 
 function JobItem({ job, index, isExpanded, toggleExpand }) {
+  const handleItemClick = (e) => {
+    if (e.target.closest(".job-details")) return;
+    toggleExpand(index);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      toggleExpand(index);
+    }
+  };
+
   return (
     <li
       className={`job-item ${isExpanded ? "expanded" : ""}`}
-      onClick={(e) => {
-        if (e.target.closest(".job-details")) return;
-        toggleExpand(index);
-      }}
+      onClick={handleItemClick}
     >
       <div
         className="job-summary"
         role="button"
         tabIndex={0}
         aria-expanded={isExpanded}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") toggleExpand(index);
-        }}
+        onKeyDown={handleKeyDown}
       >
         <img
           src={job.logo}
