@@ -42,7 +42,7 @@ const Footer = () => {
 
     window.addEventListener("scroll", scrollHandler, { passive: true });
     // Initial call
-    handleScroll();
+    scrollHandler();
     return () => window.removeEventListener("scroll", scrollHandler);
   }, []);
 
