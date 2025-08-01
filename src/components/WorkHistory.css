@@ -199,7 +199,7 @@
 
 @media only screen and (max-width: 768px) {
     .work-history {
-        margin: 0 2%;
+        margin: 5% 3% 0% 3%;
         padding: 0.5rem 1rem;
     }
 
@@ -229,6 +229,11 @@
     .bigger_logo {
         width: 50px !important;
         height: 50px !important;
+    }
+
+    .certifications {
+        margin: 5% 3% 0% 3%;
+        padding: 0.5rem;
     }
 
     .cert-info a {

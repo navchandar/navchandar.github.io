@@ -112,4 +112,10 @@
         width: 80%;
     }
 
+    .repo-stats {
+        scale: 0.9;
+        margin-top: 5px;
+    }
+
+
 }
