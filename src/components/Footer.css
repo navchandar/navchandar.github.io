@@ -24,7 +24,7 @@
 .social-icon {
     width: 24px;
     height: 24px;
-    color: #252525d8;
+    color: #1a1a1a;
 }
 
 .social-icon:hover {
@@ -32,8 +32,12 @@
     transition: transform 0.3s ease, color 0.1s ease;
 }
 
+a[href*='linkedin.com'] svg:hover  > g > path:nth-child(1) {
+    fill: #0077B5;
+}
+
 a[href*='linkedin.com'] svg:hover {
-    color: #0077B5;
+    color: #ffffff;
 }
 
 a[href*='github.com'] svg:hover {
