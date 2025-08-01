@@ -5,13 +5,13 @@
 
 #header:hover {
   transform: scale(1.1);
-  text-shadow: 2px 2px 2px #0000002a;
+  text-shadow: 1px 1px 5px #0909094d;
 }
 
 h1#title {
-  background: linear-gradient(to top, #128fbb 0%, #18ef86 100%);
+  background: linear-gradient(0deg, #fff 0, #f6fbff);
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: #ffffff9e;
   text-transform: uppercase;
   -webkit-background-clip: text;
   margin: 0px 0px;
@@ -19,13 +19,13 @@ h1#title {
 }
 
 h2 {
-  margin: 0px 3px;
-  background-image: linear-gradient(45deg, #045e9f, #028635);
+  margin: 0 3px;
+  background-image: linear-gradient(0deg, #fff, #787878);
   background-clip: text;
-  color: transparent;
+  color: #ffffffbd;
   font-weight: 400;
+  text-shadow: 2px 2px 5px #0000005c;
   -webkit-background-clip: text;
-  text-shadow: 2px 2px 5px #0000002a;
 }
 
 section {
@@ -77,9 +77,9 @@ h2.subheading:hover:after {
 }
 
 h3 {
-  background-image: linear-gradient(45deg, #045e9f, #028635);
+  background-image: linear-gradient(0deg, #fff, #787878);
   background-clip: text;
-  color: transparent;
+  color: #ffffffbd;
   -webkit-background-clip: text;
   margin: 8px;
   font-size: 1.4rem;

@@ -4,7 +4,7 @@
     left: 0;
     z-index: 10;
     cursor: default;
-    background-image: linear-gradient(to bottom, #eeeeee10, #5ac3bea2 100%);
+    background-image: linear-gradient(180deg, #eee0, #445a69);
     padding: 6px 0px;
     width: 100%;
     height: auto;

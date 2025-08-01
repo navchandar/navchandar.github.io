@@ -1,9 +1,9 @@
 .work-history {
-    margin: 0.75rem auto;
-    margin-bottom: 0px;
+    margin: .75rem auto 0;
+    box-shadow: 0 0 15px #0000001f;
     border-radius: 8px;
-    background-color: #f4f4f477;
-    padding: 0.5rem;
+    background-color: #f4f4f41a;
+    padding: 0.5rem 1rem;
     max-width: 635px;
 }
 
@@ -92,7 +92,7 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #f9f9f9a1;
     padding: 10px;
 }
 
@@ -150,10 +150,11 @@
 .certifications {
     display: inline-grid;
     cursor: default;
-    margin: 0px;
+    margin: .75rem auto 0;
+    box-shadow: 0 0 15px #0000001f;
     border-radius: 8px;
-    background-color: #f4f4f477;
-    padding: 0 1rem 0 1rem;
+    background-color: #f4f4f41a;
+    padding: 0.5rem 2rem;
     max-width: 635px;
     text-align: center;
 }
