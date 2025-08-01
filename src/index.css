@@ -34,7 +34,7 @@ code {
 
 .glass-container {
     backdrop-filter: blur(1px);
-    background: transparent;
+    background: none;
     -webkit-backdrop-filter: blur(1px);
     border: 0;
     padding: 0;
@@ -42,7 +42,11 @@ code {
 
 
 @media only screen and (max-width: 768px) {
-    body {
-        background-attachment: scroll;
+
+    .glass-container {
+        backdrop-filter: blur(0.5px);
+        -webkit-backdrop-filter: blur(0.5px);
     }
+
+
 }
