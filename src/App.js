@@ -34,7 +34,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App fade-in">
+    <div className="App fade-in glass-container">
       <div className="progress-bar" id="ProgressBar"></div>
 
       <Header />
