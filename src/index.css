@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #eeeeee;
+    background-color: #465b6b;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
@@ -34,7 +34,7 @@ code {
 
 .glass-container {
     backdrop-filter: blur(1px);
-    background: rgba(255, 255, 255, 0.1);
+    background: transparent;
     -webkit-backdrop-filter: blur(1px);
     border: 0;
     padding: 0;

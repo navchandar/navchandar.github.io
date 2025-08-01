@@ -6,45 +6,44 @@ const Footer = () => {
   const [showTitle, setShowTitle] = useState(false);
   const [scale, setScale] = useState(1);
 
+  function handleScrollEffects() {
+    const { scrollY, innerHeight } = window;
+    const { scrollHeight } = document.documentElement;
+
+    const scrollBottom = scrollY + innerHeight;
+    const distanceFromBottom = scrollHeight - scrollBottom;
+
+    // Show title up when nearing end of the page
+    setShowTitle(distanceFromBottom <= 100);
+
+    // Scale icons smoothly from 1 to 1.5 max
+    const maxDistance = 250;
+    const clampedDistance = Math.max(
+      0,
+      Math.min(maxDistance, distanceFromBottom)
+    );
+    const newScale = 1 + ((maxDistance - clampedDistance) / maxDistance) * 0.5;
+
+    setScale((prev) => (Math.abs(prev - newScale) > 0.01 ? newScale : prev));
+  }
+
   useEffect(() => {
     let ticking = false;
 
-    const handleScroll = () => {
+    const scrollHandler = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          const { scrollY, innerHeight } = window;
-          const { scrollHeight } = document.documentElement;
-
-          const scrollBottom = scrollY + innerHeight;
-          const distanceFromBottom = scrollHeight - scrollBottom;
-
-          // Show title up when nearing end of the page
-          setShowTitle(distanceFromBottom <= 100);
-
-          // Scale icons smoothly from 1 to 1.5 max
-          const maxDistance = 250;
-          const clampedDistance = Math.max(
-            0,
-            Math.min(maxDistance, distanceFromBottom)
-          );
-          const newScale =
-            1 + ((maxDistance - clampedDistance) / maxDistance) * 0.5;
-
-          setScale((prev) =>
-            Math.abs(prev - newScale) > 0.01 ? newScale : prev
-          );
+          handleScrollEffects();
           ticking = false;
         });
         ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
+    window.addEventListener("scroll", scrollHandler, { passive: true });
     // Initial call
     handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", scrollHandler);
   }, []);
 
   return (
