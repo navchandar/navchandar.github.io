@@ -77,11 +77,11 @@ h2.subheading:hover:after {
 }
 
 h3 {
+    margin: 10px;
     background-image: linear-gradient(0deg, #fff, #787878);
     background-clip: text;
     color: #ffffffbd;
     -webkit-background-clip: text;
-    margin: 8px;
     font-size: 1.4rem;
     text-shadow: 1px 1px 5px #000000;
 }

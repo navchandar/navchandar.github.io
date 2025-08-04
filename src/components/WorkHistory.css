@@ -213,6 +213,14 @@
         padding: 0.5rem 1rem;
     }
 
+    .work-history-header {
+        margin-bottom: 10px;
+    }
+
+    .work-history-header h3 {
+        padding-right: 20px;
+    }
+
     .work-history li {
         gap: 0px;
         padding: .1rem 0.1rem;
@@ -221,7 +229,9 @@
     }
 
     .work-history-header button {
-        padding-left: 1px;
+        padding: 0px;
+        padding-left: 4px;
+        text-shadow: 0 0 1px #000000bf;
     }
 
     .company-logo {

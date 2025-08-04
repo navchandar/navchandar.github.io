@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 import "./App.css";
 import { Header, Subtitle } from "./components/Header";
@@ -6,55 +6,52 @@ import Footer from "./components/Footer";
 import WorkHistory from "./components/WorkHistory";
 import Projects from "./components/Projects";
 
-let lastScrollTop = 0;
-let currentOffset = 0;
-
-function handleScrollEffects() {
-  const scrollTop = window.scrollY;
-  const scrollDirection = scrollTop > lastScrollTop ? "down" : "up";
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollPercent = (scrollTop / docHeight) * 100;
-
-  // display scroll progress in the UI top element
-  const progressBar = document.getElementById("ProgressBar");
-  if (progressBar) {
-    progressBar.style.width = `${scrollPercent}%`;
-  }
-
-  // Adjust background position based on scroll direction
-  const movement = 3; // pixels per scroll event
-  currentOffset += scrollDirection === "down" ? -movement : movement;
-
-  // Limit the offset range
-  const maxOffset = 100;
-  const minOffset = -100;
-  currentOffset = Math.max(minOffset, Math.min(maxOffset, currentOffset));
-
-  document.body.style.backgroundPosition = `center ${currentOffset}px`;
-}
-
-function App() {
+// A custom hook to handle the parallax and scroll effects
+const useParallaxEffect = (progressBarRef) => {
   useEffect(() => {
-    let ticking = false;
+    // Determine the scroll handling method once on mount
+    const isFixedBackgroundSupported =
+      window.CSS && window.CSS.supports("background-attachment", "fixed");
 
-    const scrollHandler = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          handleScrollEffects();
-          ticking = false;
-        });
-        ticking = true;
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+
+      // Update the progress bar
+      if (progressBarRef.current) {
+        progressBarRef.current.style.width = `${scrollPercent}%`;
+      }
+
+      // Apply the parallax effect only if fixed background is not supported
+      if (!isFixedBackgroundSupported) {
+        // Use a multiplier to control the parallax speed
+        const parallaxSpeed = 0.5; // Adjust this value to change the effect
+        document.body.style.setProperty(
+          "--background-offset",
+          `${-scrollTop * parallaxSpeed}px`
+        );
       }
     };
 
-    window.addEventListener("scroll", scrollHandler, { passive: true });
-    return () => window.removeEventListener("scroll", scrollHandler);
-  }, []);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [progressBarRef]);
+};
+
+function App() {
+  const progressBarRef = useRef(null);
+
+  // Use the custom hook to encapsulate the scroll logic
+  useParallaxEffect(progressBarRef);
 
   return (
     <div className="App fade-in glass-container">
-      <div className="progress-bar" id="ProgressBar"></div>
+      <div className="progress-bar" ref={progressBarRef}></div>
 
       <Header />
       <Subtitle />
