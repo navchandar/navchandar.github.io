@@ -11,8 +11,7 @@ body {
     background-position: center var(--background-offset, 0px);
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-
+    background-attachment: scroll;
 }
 
 
