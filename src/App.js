@@ -9,6 +9,9 @@ import Projects from "./components/Projects";
 // A custom hook to handle the parallax and scroll effects
 const useParallaxEffect = (progressBarRef) => {
   useEffect(() => {
+    let lastScrollTop = window.scrollY;
+    let currentOffset = 0;
+
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const docHeight =
@@ -20,11 +23,18 @@ const useParallaxEffect = (progressBarRef) => {
         progressBarRef.current.style.width = `${scrollPercent}%`;
       }
 
-      // Apply parallax effect
-      const parallaxSpeed = 0.75;
+      // Parallax effect: move background opposite to scroll direction
+      const movement = 2; // pixels per scroll event
+      currentOffset += scrollDirection === "down" ? -movement : movement;
+
+      // Clamp the offset to avoid extreme shifts
+      const maxOffset = 100;
+      const minOffset = -100;
+      currentOffset = Math.max(minOffset, Math.min(maxOffset, currentOffset));
+
       document.body.style.setProperty(
         "--background-offset",
-        `${-scrollTop * parallaxSpeed}px`
+        `${currentOffset}px`
       );
     };
 
