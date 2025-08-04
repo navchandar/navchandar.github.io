@@ -28,7 +28,7 @@ const useProgressBar = (progressBarRef) => {
 function App() {
   const progressBarRef = useRef(null);
   // Use the custom hook to encapsulate the scroll logic
-  updateProgressBar(progressBarRef);
+  useProgressBar(progressBarRef);
 
   return (
     <div className="App fade-in glass-container">
