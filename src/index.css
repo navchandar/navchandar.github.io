@@ -6,11 +6,12 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-position 0.1s ease-out;
     background-image: url('./components/images/background.png');
-    background-position: center;
+    background-position: center 0;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: fixed; 
 }
 
 

@@ -6,8 +6,13 @@ import Footer from "./components/Footer";
 import WorkHistory from "./components/WorkHistory";
 import Projects from "./components/Projects";
 
+let lastScrollTop = 0;
+let currentOffset = 0;
+
 function handleScrollEffects() {
   const scrollTop = window.scrollY;
+  const scrollDirection = scrollTop > lastScrollTop ? "down" : "up";
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
   const scrollPercent = (scrollTop / docHeight) * 100;
 
@@ -17,13 +22,16 @@ function handleScrollEffects() {
     progressBar.style.width = `${scrollPercent}%`;
   }
 
-  // increase blur as user scrolls below and decrease when scrolling up
-  const glassContainer = document.querySelector(".glass-container");
-  if (glassContainer) {
-    const blurValue = 1 + (scrollPercent / 100) * 5;
-    glassContainer.style.backdropFilter = `blur(${blurValue}px)`;
-    glassContainer.style.webkitBackdropFilter = `blur(${blurValue}px)`;
-  }
+  // Adjust background position based on scroll direction
+  const movement = 3; // pixels per scroll event
+  currentOffset += scrollDirection === "down" ? -movement : movement;
+
+  // Limit the offset range
+  const maxOffset = 100;
+  const minOffset = -100;
+  currentOffset = Math.max(minOffset, Math.min(maxOffset, currentOffset));
+
+  document.body.style.backgroundPosition = `center ${currentOffset}px`;
 }
 
 function App() {
