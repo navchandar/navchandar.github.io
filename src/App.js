@@ -14,11 +14,13 @@ const useParallaxEffect = (progressBarRef) => {
 
     const handleScroll = () => {
       const scrollTop = window.scrollY;
+      const scrollDirection = scrollTop > lastScrollTop ? "down" : "up";
+      lastScrollTop = scrollTop;
+
+      // Update progress bar
       const docHeight =
         document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercent = (scrollTop / docHeight) * 100;
-
-      // Update progress bar
       if (progressBarRef.current) {
         progressBarRef.current.style.width = `${scrollPercent}%`;
       }
