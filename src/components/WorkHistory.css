@@ -63,7 +63,7 @@
     position: relative;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    margin-bottom: 5px;
+    margin: 10px 0px;
 }
 
 .work-history-header h3 {
@@ -90,6 +90,7 @@
 }
 
 .job-list {
+    margin-bottom: 0;
     padding: 0;
     list-style: none;
 }
@@ -274,6 +275,6 @@
     }
 
     .job-details.show {
-        margin: 5px 0px 5px 0px;
+        margin: 5px 3px 5px -5px;
     }
 }
