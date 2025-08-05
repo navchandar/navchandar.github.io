@@ -29,10 +29,10 @@
 
 .social-icon:hover {
     transform: scale(1.8) translateY(-5px) !important;
-    transition: transform 0.3s ease, color 0.1s ease;
+    transition: transform 0.3s ease, color 0.1s ease, background-color 0.1s ease;
 }
 
-a[href*='linkedin.com'] svg:hover  > g > path:nth-child(1) {
+a[href*='linkedin.com'] svg:hover>g>path:nth-child(1) {
     fill: #0077B5;
 }
 
@@ -41,23 +41,37 @@ a[href*='linkedin.com'] svg:hover {
 }
 
 a[href*='github.com'] svg:hover {
-    color: #24292e;
+    border-radius: 6px;
+    background-color: #ffffffd4;
+    color: #24292f;
 }
 
 a[href*='bsky.app'] svg:hover {
+    border-radius: 6px;
+    background-color: #ffffffd4;
+    padding: 1px 1px 0px 1px;
     color: #1DA1F2;
 }
 
 a[href*='stackoverflow.com'] svg:hover {
-    color: #F48024;
+    border-radius: 7px;
+    background-color: #ffffffd4;
+    padding: 1px 1px 0px 1px;
+    color: #f48024;
 }
 
 a[href*='credly.com'] svg:hover {
+    border-radius: 6px;
+    background-color: #ffffffd4;
+    padding: 1px 1px 0px 1px;
     color: #FF6A00;
 }
 
 a[href*='skillsoft.com'] svg:hover {
-    color: #141C36;
+    border-radius: 6px;
+    background-color: #ffffffd4;
+    padding: 2px 1px 0px 3px;
+    color: #2e4592;
 }
 
 .social-links a {
