@@ -244,24 +244,6 @@ function JobItem({ job, index, isExpanded, toggleExpand }) {
           </div>
         )}
       </div>
-
-      <div className={`job-details ${isExpanded ? "show" : ""}`}>
-        <p>
-          <i>{job.company_official_name}</i>
-        </p>
-        <p>
-          <strong>Role:</strong> {job.title}
-        </p>
-        <p>
-          <strong>Domains:</strong> {job.domains}
-        </p>
-        <p>
-          <strong>Tech Stack:</strong> {job.tools_used}
-        </p>
-        <p>
-          <strong>Location:</strong> {job.location}
-        </p>
-      </div>
     </li>
   );
 }
