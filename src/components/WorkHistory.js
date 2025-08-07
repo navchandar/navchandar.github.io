@@ -237,7 +237,7 @@ function JobItem({ job, index, isExpanded, toggleExpand }) {
                   key={i}
                   title={`Awarded ${award.title} ${award.description}`}
                 >
-                  <strong>{award.title}</strong> ({award.year})
+                  <i>{award.title}</i> ({award.year})
                 </li>
               ))}
             </ul>

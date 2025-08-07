@@ -37,7 +37,7 @@
     list-style: none;
 }
 
-.work-history li {
+.work-history li.job-item {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -51,7 +51,7 @@
     max-width: 600px;
 }
 
-.work-history li:hover {
+.work-history li.job-item:hover {
     box-shadow: 0px 3px 5px #4e2fff61;
     border-style: solid;
     border-image: linear-gradient(to right, #8bffeaeb, #7eb9faed) 1;
@@ -212,26 +212,13 @@
     font-size: 0.9rem;
 }
 
-.awards {
-    margin-top: 1rem;
-    border-left: 3px solid #ccc;
-    padding-left: 1rem;
-}
-
-.awards strong {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #333;
-    font-size: 1rem;
-}
-
 .awards ul {
     padding-left: 1.5rem;
     list-style-type: disc;
 }
 
 .awards li {
-    cursor: help;
+    cursor: context-menu;
     margin-bottom: 0.25rem;
 }
 
@@ -250,7 +237,7 @@
         padding-right: 20px;
     }
 
-    .work-history li {
+    .work-history li.job-item {
         gap: 0px;
         padding: .1rem 0.1rem;
         font-size: small;
