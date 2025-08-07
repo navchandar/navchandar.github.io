@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 
 import "./Footer.css";
+import resume from "./images/onepager.jpg";
 
 const Footer = () => {
   const [showTitle, setShowTitle] = useState(false);
+
+  const [showResume, setShowResume] = useState(false);
+
   const [scale, setScale] = useState(1);
 
   function handleScrollEffects() {
@@ -25,6 +29,24 @@ const Footer = () => {
     const newScale = 1 + ((maxDistance - clampedDistance) / maxDistance) * 0.5;
 
     setScale((prev) => (Math.abs(prev - newScale) > 0.01 ? newScale : prev));
+
+    const socialIcons = document.querySelectorAll(".social-icon");
+    socialIcons.forEach((el) => {
+      if (distanceFromBottom <= 100) {
+        el.classList.add("at-bottom");
+      } else {
+        el.classList.remove("at-bottom");
+      }
+    });
+
+    const socialLinks = document.querySelectorAll(".social-links a svg");
+    socialLinks.forEach((svg) => {
+      if (distanceFromBottom <= 100) {
+        svg.classList.add("at-bottom");
+      } else {
+        svg.classList.remove("at-bottom");
+      }
+    });
   }
 
   useEffect(() => {
@@ -46,8 +68,33 @@ const Footer = () => {
     return () => window.removeEventListener("scroll", scrollHandler);
   }, []);
 
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape") {
+        setShowResume(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
+
   return (
     <>
+      {showResume && (
+        <div className="resume-overlay" onClick={() => setShowResume(false)}>
+          <div
+            className="resume-container"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="close-btn" onClick={() => setShowResume(false)}>
+              ×
+            </button>
+            <img src={resume} alt="Resume" />
+          </div>
+        </div>
+      )}
+
       <h3 className={`footer-title ${showTitle ? "visible" : ""}`}>
         My Social Links
       </h3>
@@ -210,6 +257,28 @@ const Footer = () => {
                 <path d="M170 235 c0 -49 4 -75 11 -75 20 0 129 64 129 76 0 14 -102 74 -125 74 -12 0 -15 -15 -15 -75z"></path>
                 <path d="M100 81 c0 -45 3 -81 6 -81 20 0 124 67 122 78 -2 8 -31 29 -65 49 l-63 35 0 -81z"></path>
               </g>
+            </svg>
+          </a>
+
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              setShowResume(true);
+            }}
+            aria-label="View Resume"
+            title="View Resume"
+          >
+            <svg
+              class="social-icon"
+              style={{ transform: `scale(${scale})` }}
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM13 3.5V9h5.5L13 3.5zM8 14h8v2H8v-2zm0-4h8v2H8v-2z" />
             </svg>
           </a>
         </div>

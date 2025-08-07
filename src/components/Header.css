@@ -46,6 +46,7 @@ section {
 
 h2.subheading {
     position: relative;
+    transition: font-weight .4s ease-in-out;
 }
 
 h2.subheading:before,
@@ -53,27 +54,34 @@ h2.subheading:after {
     display: inline-block;
     position: relative;
     top: 1px;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
     height: 100%;
     content: '[';
-    color: #028635;
+    color: #000;
     font-size: 1.25em;
 }
 
 h2.subheading:before {
-    color: #045e9f
+    color: #404040;
 }
 
 h2.subheading:after {
     content: ']';
+    color: #404040;
 }
 
 h2.subheading:hover:before {
-    transform: translateX(-5px);
+    transform: translateX(-10px);
+    color: white;
 }
 
 h2.subheading:hover:after {
-    transform: translateX(5px);
+    transform: translateX(10px);
+    color: white;
+}
+
+h2.subheading:hover {
+    font-weight: bold;
 }
 
 h3 {
@@ -82,8 +90,14 @@ h3 {
     background-clip: text;
     color: #ffffffbd;
     -webkit-background-clip: text;
+    transition: color .2s ease-in-out;
     font-size: 1.4rem;
     text-shadow: 1px 1px 5px #000000;
+}
+
+h3:hover {
+    transition: color .2s ease-in-out;
+    color: white;
 }
 
 h4 {
