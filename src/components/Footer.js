@@ -20,6 +20,18 @@ const Footer = () => {
     setShowResume(false);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const displayResume = () => {
+    setShowResume(true);
+    scrollToTop();
+  };
+
   function handleScrollEffects() {
     const { scrollY, innerHeight } = window;
     const { scrollHeight } = document.documentElement;
@@ -279,7 +291,7 @@ const Footer = () => {
             className="social-icon-button"
             onClick={(e) => {
               e.preventDefault();
-              setShowResume(true);
+              displayResume();
             }}
             aria-label="View Resume"
             title="View Resume"

@@ -183,7 +183,7 @@ a[href*='skillsoft.com'] svg.at-bottom {
     backdrop-filter: blur(6px);
     background-color: rgba(0, 0, 0, 0.5);
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -195,9 +195,9 @@ a[href*='skillsoft.com'] svg.at-bottom {
     border-radius: 15px;
     background: white;
     padding: 1rem;
-    max-width: 90vw;
-    max-height: 90vh;
-    overflow: hidden;
+    width: auto;
+    height: 90vh;
+    overflow: initial;
 }
 
 .resume-container img {
@@ -211,7 +211,6 @@ a[href*='skillsoft.com'] svg.at-bottom {
     object-fit: contain;
 }
 
-/* Zoomed state */
 .resume-container img.zoomed {
     transform: scale(2);
     cursor: zoom-out;
@@ -221,6 +220,7 @@ a[href*='skillsoft.com'] svg.at-bottom {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
+    transition: all 0.2s ease;
     cursor: pointer;
     border: none;
     background: transparent;
