@@ -212,6 +212,30 @@
     font-size: 0.9rem;
 }
 
+.awards {
+    margin-top: 1rem;
+    border-left: 3px solid #ccc;
+    padding-left: 1rem;
+}
+
+.awards strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 1rem;
+}
+
+.awards ul {
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+
+.awards li {
+    cursor: help;
+    margin-bottom: 0.25rem;
+}
+
+
 @media only screen and (max-width: 768px) {
     .work-history {
         margin: 5% 3% 0% 3%;

@@ -8,10 +8,37 @@ const workData = [
     start: "Jan 2014",
     end: "Apr 2018",
     title: "Sr System Engineer",
-    location: "Mumbai, India (On-site)",
+    location: {
+      city: "Mumbai",
+      country: "India",
+      work_mode: "On-site",
+    },
     team_size: 10,
-    domains: "Insurance, Enterprise Software",
-    tools_used: "Python, Selenium, ALM, SharePoint, SoapUI",
+    project_domains: ["Insurance", "Enterprise Software"],
+    tools_used: [
+      "Python",
+      "Selenium",
+      "Java",
+      "TestNG",
+      "Maven",
+      "SQL",
+      "AQT",
+      "ALM",
+      "SharePoint",
+      "SoapUI",
+    ],
+    awards: [
+      {
+        title: "Excellence & Eminence Award",
+        year: 2016,
+        description: "For delivering multiple releases with utmost passion.",
+      },
+      {
+        title: "Manager's Choice Award",
+        year: 2014,
+        description: "For Restlessly Reinventing IBM and Ourselves.",
+      },
+    ],
     logo: require("./images/ibm.png"),
   },
   {
@@ -20,11 +47,38 @@ const workData = [
     start: "May 2018",
     end: "Dec 2020",
     title: "Consultant",
-    location: "Hyderabad, India (Remote)",
+    location: {
+      city: "Hyderabad",
+      country: "India",
+      work_mode: "Remote",
+    },
     team_size: 15,
-    domains: "Insurance, FinTech",
-    tools_used:
-      "Robot Framework, Python, Selenium, Java, Guidewire, BitBucket, Power Automate",
+    project_domains: ["Insurance", "FinTech"],
+    tools_used: [
+      "Robot Framework",
+      "Python",
+      "Selenium",
+      "Java",
+      "Guidewire",
+      "GitLab",
+      "BitBucket",
+      "Power Automate",
+      "PowerShell",
+    ],
+    awards: [
+      {
+        title: "Applause Award",
+        year: 2019,
+        description:
+          "For good work, zeal, and attitude to enhance overall automation.",
+      },
+      {
+        title: "Spot Award",
+        year: 2018,
+        description:
+          "For enhancing the automation framework and integration with TeamCity.",
+      },
+    ],
     logo: require("./images/deloitte.png"),
   },
   {
@@ -33,10 +87,23 @@ const workData = [
     start: "Dec 2020",
     end: "Mar 2021",
     title: "Sr SDET",
-    location: "Hyderabad, India (Remote)",
+    location: {
+      city: "Hyderabad",
+      country: "India",
+      work_mode: "Remote",
+    },
     team_size: 6,
-    domains: "Mapping",
-    tools_used: "Python, PyTest, Postman, Allure, GitHub",
+    project_domains: ["Mapping"],
+    tools_used: [
+      "Python",
+      "PyTest",
+      "Requests",
+      "Selenium",
+      "Postman",
+      "Allure",
+      "GitHub",
+    ],
+    awards: [],
     logo: require("./images/techsophy.png"),
   },
   {
@@ -45,11 +112,33 @@ const workData = [
     start: "May 2021",
     end: "Jan 2023",
     title: "Sr Automation Engineer",
-    location: "Noida, India (Remote)",
+    location: {
+      city: "Noida",
+      country: "India",
+      work_mode: "Remote",
+    },
     team_size: 10,
-    domains: "E-commerce, Payments",
-    tools_used:
-      "Node.js, Protractor, Jenkins, PowerShell, GitHub, Sauce Labs, BlazeMeter",
+    project_domains: ["E-commerce", "Payments"],
+    tools_used: [
+      "Node.js",
+      "Protractor",
+      "Jasmine",
+      "Jenkins",
+      "PowerShell",
+      "GitHub",
+      "Azure DevOps",
+      "Sauce Labs",
+      "BlazeMeter",
+      "Postman",
+      "Newman",
+    ],
+    awards: [
+      {
+        title: "Employee of the Year",
+        year: 2021,
+        description: "For exemplary work and acumen.",
+      },
+    ],
     logo: require("./images/9yards.png"),
   },
   {
@@ -59,11 +148,26 @@ const workData = [
     start: "Feb 2023",
     end: "Present",
     title: "Sr QA Automation Engineer",
-    location: "Bengaluru, India (Hybrid)",
+    location: {
+      city: "Bengaluru",
+      country: "India",
+      work_mode: "Hybrid",
+    },
     team_size: 10,
-    domains: "IoT (Internet of Things), R&D",
-    tools_used:
-      "SeleniumBase, Pytest, Jenkins, Docker, JMeter, MongoDB, Postman, RabbitMQ, Azure",
+    project_domains: ["IoT", "R&D"],
+    tools_used: [
+      "SeleniumBase",
+      "Pytest",
+      "Jenkins",
+      "Docker",
+      "JMeter",
+      "MongoDB",
+      "Postman",
+      "RabbitMQ",
+      "Azure",
+      "Swagger",
+    ],
+    awards: [],
     logo: require("./images/hitachi.png"),
   },
 ];
@@ -101,6 +205,46 @@ function JobItem({ job, index, isExpanded, toggleExpand }) {
           <strong>{job.company}</strong> — {job.start} to {job.end}
         </div>
       </div>
+
+      <div className={`job-details ${isExpanded ? "show" : ""}`}>
+        <p>
+          <i>{job.company_official_name}</i>
+        </p>
+        <p>
+          <strong>Role:</strong> {job.title}
+        </p>
+        <p>
+          <strong>Domains:</strong> {job.project_domains.join(", ")}
+        </p>
+        <p>
+          <strong>Tech Stack:</strong> {job.tools_used.join(", ")}
+        </p>
+        <p>
+          <strong>Location:</strong> {job.location.city}, {job.location.country}{" "}
+          ({job.location.work_mode})
+        </p>
+
+        {/* <p>
+          <strong>Team Size:</strong> {job.team_size}
+        </p> */}
+
+        {job.awards.length > 0 && (
+          <div className="awards">
+            <strong>Awards & Recognition:</strong>
+            <ul>
+              {job.awards.map((award, i) => (
+                <li
+                  key={i}
+                  title={`Awarded ${award.title} ${award.description}`}
+                >
+                  <strong>{award.title}</strong> ({award.year})
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+
       <div className={`job-details ${isExpanded ? "show" : ""}`}>
         <p>
           <i>{job.company_official_name}</i>
