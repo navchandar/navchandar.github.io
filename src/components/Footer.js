@@ -8,13 +8,7 @@ const Footer = () => {
 
   const [showResume, setShowResume] = useState(false);
 
-  const [isZoomed, setIsZoomed] = useState(false);
-
   const [scale, setScale] = useState(1);
-
-  const toggleZoom = () => {
-    setIsZoomed((prev) => !prev);
-  };
 
   const hideResume = () => {
     setShowResume(false);
@@ -112,11 +106,7 @@ const Footer = () => {
             <button className="close-btn" onClick={hideResume}>
               ×
             </button>
-            <img
-              src={resume}
-              alt="Resume"
-              className={isZoomed ? "zoomed" : ""}
-            />
+            <img src={resume} alt="Resume" />
           </div>
         </div>
       )}
