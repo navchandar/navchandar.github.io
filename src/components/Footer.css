@@ -34,10 +34,10 @@
 
 
 .social-icon-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  padding: 0;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
 }
 
 
@@ -83,6 +83,13 @@ a[href*='skillsoft.com'] svg:hover {
     color: #2e4592;
 }
 
+#footer button svg:hover {
+    border-radius: 6px;
+    background-color: #ffffffc4;
+    padding: 1.5px;
+    color: rgb(46, 69, 146);
+}
+
 .social-links a {
     border-bottom: none;
     text-decoration: none;
@@ -97,9 +104,10 @@ a[href*='skillsoft.com'] svg:hover {
     transition: all 0.1s ease;
 }
 
-a[href*='linkedin.com'] svg.at-bottom > g > path:nth-child(1) {
+a[href*='linkedin.com'] svg.at-bottom>g>path:nth-child(1) {
     fill: #0077B5;
 }
+
 a[href*='linkedin.com'] svg.at-bottom {
     color: #ffffff;
 }
@@ -138,6 +146,13 @@ a[href*='skillsoft.com'] svg.at-bottom {
     color: #2e4592;
 }
 
+#footer button svg.at-bottom {
+    border-radius: 6px;
+    background-color: #ffffffc4;
+    padding: 1.5px;
+    color: #3033F6E0;
+}
+
 
 /* Style for the copyright text */
 #footer p {
@@ -167,24 +182,39 @@ a[href*='skillsoft.com'] svg.at-bottom {
     z-index: 9999;
     backdrop-filter: blur(6px);
     background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .resume-container {
+    display: flex;
     position: relative;
-    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
     background: white;
     padding: 1rem;
-    max-width: 90%;
-    max-height: 90%;
-    overflow: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: hidden;
 }
 
 .resume-container img {
     display: block;
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+    width: auto;
     max-width: 100%;
     height: auto;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Zoomed state */
+.resume-container img.zoomed {
+    transform: scale(2);
+    cursor: zoom-out;
 }
 
 .close-btn {
@@ -196,4 +226,9 @@ a[href*='skillsoft.com'] svg.at-bottom {
     background: transparent;
     color: #333;
     font-size: 2rem;
+}
+
+.close-btn:hover {
+    color: #000000;
+    font-size: 2.5rem;
 }

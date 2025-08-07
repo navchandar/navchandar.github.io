@@ -8,7 +8,17 @@ const Footer = () => {
 
   const [showResume, setShowResume] = useState(false);
 
+  const [isZoomed, setIsZoomed] = useState(false);
+
   const [scale, setScale] = useState(1);
+
+  const toggleZoom = () => {
+    setIsZoomed((prev) => !prev);
+  };
+
+  const hideResume = () => {
+    setShowResume(false);
+  };
 
   function handleScrollEffects() {
     const { scrollY, innerHeight } = window;
@@ -71,7 +81,7 @@ const Footer = () => {
   useEffect(() => {
     const handleEsc = (e) => {
       if (e.key === "Escape") {
-        setShowResume(false);
+        hideResume();
       }
     };
 
@@ -82,15 +92,20 @@ const Footer = () => {
   return (
     <>
       {showResume && (
-        <div className="resume-overlay" onClick={() => setShowResume(false)}>
+        <div className="resume-overlay" onClick={hideResume}>
           <div
             className="resume-container"
             onClick={(e) => e.stopPropagation()}
           >
-            <button className="close-btn" onClick={() => setShowResume(false)}>
+            <button className="close-btn" onClick={hideResume}>
               ×
             </button>
-            <img src={resume} alt="Resume" />
+            <img
+              src={resume}
+              alt="Resume"
+              className={isZoomed ? "zoomed" : ""}
+              onClick={toggleZoom}
+            />
           </div>
         </div>
       )}
