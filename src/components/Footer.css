@@ -33,6 +33,14 @@
 }
 
 
+.social-icon-button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+
 a[href*='linkedin.com'] svg:hover>g>path:nth-child(1) {
     fill: #0077B5;
 }

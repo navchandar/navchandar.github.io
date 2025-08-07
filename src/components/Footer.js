@@ -260,8 +260,8 @@ const Footer = () => {
             </svg>
           </a>
 
-          <a
-            href="#"
+          <button
+            className="social-icon-button"
             onClick={(e) => {
               e.preventDefault();
               setShowResume(true);
@@ -280,7 +280,7 @@ const Footer = () => {
             >
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM13 3.5V9h5.5L13 3.5zM8 14h8v2H8v-2zm0-4h8v2H8v-2z" />
             </svg>
-          </a>
+          </button>
         </div>
 
         <i>
