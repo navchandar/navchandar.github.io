@@ -79,7 +79,7 @@ a[href*='credly.com'] svg:hover {
 
 a[href*='skillsoft.com'] svg:hover {
     border-radius: 6px;
-    background-color: #ffffffd4;
+    background-color: #c7ffedd4;
     padding: 2px 1px 0px 3px;
     color: #2e4592;
 }
@@ -196,7 +196,6 @@ a[href*='skillsoft.com'] svg.at-bottom {
     align-items: center;
     border-radius: 15px;
     background: white;
-    padding: 1rem;
     width: auto;
     height: 100%;
     overflow: initial;
@@ -207,7 +206,6 @@ a[href*='skillsoft.com'] svg.at-bottom {
     position: fixed;
     top: 5%;
     transition: transform 0.3s ease;
-    cursor: zoom-in;
     width: auto;
     max-width: 100%;
     height: auto;
@@ -217,18 +215,17 @@ a[href*='skillsoft.com'] svg.at-bottom {
 
 .resume-container img.zoomed {
     transform: scale(2);
-    cursor: zoom-out;
 }
 
 .close-btn {
     position: fixed;
-    top: 6%;
-    right: 0.5rem;
+    top: 2%;
+    right: 18rem;
     transition: all 0.2s ease;
     cursor: pointer;
     border: none;
     background: transparent;
-    color: #333;
+    color: white;
     font-size: 2rem;
 }
 
