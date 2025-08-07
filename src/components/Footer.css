@@ -18,7 +18,8 @@
     display: inline-flex;
     gap: 25px;
     transition: transform 0.3s ease-in-out;
-    margin-bottom: 2px;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
 }
 
 .social-icon {
@@ -64,7 +65,7 @@ a[href*='bsky.app'] svg:hover {
 
 a[href*='stackoverflow.com'] svg:hover {
     border-radius: 7px;
-    background-color: #ffffffd4;
+    background-color: #1b1b1bd4;
     padding: 1px 1px 0px 1px;
     color: #f48024;
 }
@@ -127,7 +128,7 @@ a[href*='bsky.app'] svg.at-bottom {
 
 a[href*='stackoverflow.com'] svg.at-bottom {
     border-radius: 7px;
-    background-color: #ffffffd4;
+    background-color: #1b1b1bd4;
     padding: 1px 1px 0px 1px;
     color: #f48024;
 }
@@ -189,19 +190,22 @@ a[href*='skillsoft.com'] svg.at-bottom {
 
 .resume-container {
     display: flex;
-    position: relative;
+    position: fixed;
+    top: 0;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
     background: white;
     padding: 1rem;
     width: auto;
-    height: 90vh;
+    height: 100%;
     overflow: initial;
 }
 
 .resume-container img {
     display: block;
+    position: fixed;
+    top: 5%;
     transition: transform 0.3s ease;
     cursor: zoom-in;
     width: auto;
@@ -217,8 +221,8 @@ a[href*='skillsoft.com'] svg.at-bottom {
 }
 
 .close-btn {
-    position: absolute;
-    top: 0.5rem;
+    position: fixed;
+    top: 6%;
     right: 0.5rem;
     transition: all 0.2s ease;
     cursor: pointer;
@@ -231,4 +235,29 @@ a[href*='skillsoft.com'] svg.at-bottom {
 .close-btn:hover {
     color: #000000;
     font-size: 2.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .resume-container {
+        position: fixed;
+        top: 0;
+        padding: 0;
+        width: auto;
+        height: 100%;
+        overflow: initial;
+    }
+
+    .resume-container img {
+        position: fixed;
+        top: 8%;
+    }
+
+    .close-btn {
+        position: fixed;
+        top: 6%;
+        right: 0.25%;
+        z-index: 0;
+        transition: all .2s ease;
+        color: white;
+    }
 }

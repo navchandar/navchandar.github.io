@@ -116,7 +116,6 @@ const Footer = () => {
               src={resume}
               alt="Resume"
               className={isZoomed ? "zoomed" : ""}
-              onClick={toggleZoom}
             />
           </div>
         </div>
