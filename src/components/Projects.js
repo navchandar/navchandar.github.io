@@ -17,13 +17,6 @@ const projects = [
     repo: "navchandar/look-like-scanned",
   },
   {
-    title: "Civic Media Scout",
-    description:
-      "Web app to curate publicly available contact information from official govt websites",
-    link: "https://navchandar.github.io/civic-media-scout/",
-    repo: "navchandar/civic-media-scout",
-  },
-  {
     title: "Random Name Generator",
     description:
       "Python data provider module. Useful for testing with random data",
@@ -36,6 +29,13 @@ const projects = [
       "Automatically update your Naukri profiles daily using Selenium based script",
     link: "https://github.com/navchandar/Naukri/?tab=readme-ov-file#daily-naukri-update/",
     repo: "navchandar/Naukri",
+  },
+  {
+    title: "Civic Media Scout",
+    description:
+      "Web app to curate publicly available contact information from official govt websites",
+    link: "https://navchandar.github.io/civic-media-scout/",
+    repo: "navchandar/civic-media-scout",
   },
   {
     title: "Laboratory",

@@ -172,7 +172,7 @@ const workData = [
   },
 ];
 
-function JobItem({ job, index, isExpanded, toggleExpand }) {
+function JobItem({ job, index, isExpanded, toggleExpand, collapse }) {
   const handleItemClick = (e) => {
     if (e.target.closest(".job-details")) return;
     toggleExpand(index);
@@ -181,6 +181,8 @@ function JobItem({ job, index, isExpanded, toggleExpand }) {
   const handleKeyDown = (e) => {
     if (e.key === "Enter" || e.key === " ") {
       toggleExpand(index);
+    } else if (e.key === "Escape") {
+      collapse();
     }
   };
 
@@ -229,7 +231,7 @@ function JobItem({ job, index, isExpanded, toggleExpand }) {
         </p> */}
 
         {job.awards.length > 0 && (
-          <div className="awards">
+          <p className="awards">
             <strong>Awards & Recognition:</strong>
             <ul>
               {job.awards.map((award, i) => (
@@ -241,7 +243,7 @@ function JobItem({ job, index, isExpanded, toggleExpand }) {
                 </li>
               ))}
             </ul>
-          </div>
+          </p>
         )}
       </div>
     </li>
@@ -294,6 +296,7 @@ function WorkHistory() {
             index={index}
             isExpanded={expandAll || expandedIndex === index}
             toggleExpand={toggleExpand}
+            collapse={() => setExpandedIndex(null)}
           />
         ))}
       </ul>
@@ -340,7 +343,7 @@ const certifications = [
   },
   {
     title: "Bachelor of Engineering",
-    issuer: "Anna University",
+    issuer: "CEG, Anna University",
     id: "286454",
     logo: require("./images/ceg.png"),
     url: "https://www.annauniv.edu/",
