@@ -34,7 +34,7 @@ const Footer = () => {
     const distanceFromBottom = scrollHeight - scrollBottom;
 
     // Show title up when nearing end of the page
-    setShowTitle(distanceFromBottom <= 100);
+    setShowTitle(distanceFromBottom <= 200);
 
     // Scale icons smoothly from 1 to 1.5 max
     const maxDistance = 250;
@@ -43,8 +43,8 @@ const Footer = () => {
       Math.min(maxDistance, distanceFromBottom)
     );
     const newScale = 1 + ((maxDistance - clampedDistance) / maxDistance) * 0.5;
-
-    setScale((prev) => (Math.abs(prev - newScale) > 0.05 ? newScale : prev));
+    // Update every once in a while and not too frequently
+    setScale((prev) => (Math.abs(prev - newScale) > 0.1 ? newScale : prev));
 
     const socialIcons = document.querySelectorAll(".social-icon");
     socialIcons.forEach((el) => {
