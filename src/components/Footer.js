@@ -103,10 +103,12 @@ const Footer = () => {
             className="resume-container"
             onClick={(e) => e.stopPropagation()}
           >
-            <button className="close-btn" onClick={hideResume}>
-              ×
-            </button>
-            <img src={resume} alt="Resume" />
+            <div class="image-wrapper">
+              <button className="close-btn" onClick={hideResume}>
+                ×
+              </button>
+              <img src={resume} alt="Resume" />
+            </div>
           </div>
         </div>
       )}

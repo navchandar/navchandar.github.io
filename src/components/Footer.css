@@ -181,7 +181,6 @@ a[href*='skillsoft.com'] svg.at-bottom {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    backdrop-filter: blur(6px);
     background-color: rgba(0, 0, 0, 0.5);
     width: 100vw;
     height: 100%;
@@ -217,24 +216,51 @@ a[href*='skillsoft.com'] svg.at-bottom {
     transform: scale(2);
 }
 
+
+.image-wrapper {
+    display: inline-block;
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.image-wrapper img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+}
+
 .close-btn {
-    position: fixed;
-    top: 2%;
-    right: 18rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
     transition: all 0.2s ease;
     cursor: pointer;
     border: none;
-    background: transparent;
+    border-radius: 0 0 8px 0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.25rem 0.5rem;
     color: white;
     font-size: 2rem;
 }
 
 .close-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
     color: #000000;
     font-size: 2.5rem;
 }
 
+
 @media only screen and (max-width: 768px) {
+
+    .social-links {
+        gap: 15px;
+    }
+
     .resume-container {
         position: fixed;
         top: 0;
@@ -249,12 +275,4 @@ a[href*='skillsoft.com'] svg.at-bottom {
         top: 8%;
     }
 
-    .close-btn {
-        position: fixed;
-        top: 6%;
-        right: 0.25%;
-        z-index: 0;
-        transition: all .2s ease;
-        color: white;
-    }
 }
