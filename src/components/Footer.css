@@ -30,7 +30,7 @@
 
 .social-icon:hover {
     transform: scale(1.8) translateY(-5px) !important;
-    transition: transform 0.3s ease, color 0.1s ease, background-color 0.1s ease;
+    transition: transform 0.2s ease, color 0.1s ease, background-color 0.1s ease;
 }
 
 
@@ -157,15 +157,17 @@ a[href*='skillsoft.com'] svg.at-bottom {
 
 /* Style for the copyright text */
 #footer p {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+    width: 90vw;
 }
 
 .footer-title {
     transform: translateY(20px);
     opacity: 0;
-    transition: all 0.4s ease;
-    margin: 15px 0;
+    transition: all 0.1s ease-in-out;
+    margin: 15px auto;
+    width: 90vw;
 }
 
 .footer-title.visible {
