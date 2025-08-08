@@ -189,7 +189,6 @@ a[href*='skillsoft.com'] svg.at-bottom {
 
 .resume-container {
     display: flex;
-    position: fixed;
     top: 0;
     justify-content: center;
     align-items: center;
@@ -236,7 +235,7 @@ a[href*='skillsoft.com'] svg.at-bottom {
 .close-btn {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 10;
     transition: all 0.2s ease;
     cursor: pointer;
@@ -258,7 +257,7 @@ a[href*='skillsoft.com'] svg.at-bottom {
 @media only screen and (max-width: 768px) {
 
     .social-links {
-        gap: 15px;
+        gap: 20px;
     }
 
     .resume-container {
