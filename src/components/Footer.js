@@ -44,7 +44,7 @@ const Footer = () => {
     );
     const newScale = 1 + ((maxDistance - clampedDistance) / maxDistance) * 0.5;
 
-    setScale((prev) => (Math.abs(prev - newScale) > 0.1 ? newScale : prev));
+    setScale((prev) => (Math.abs(prev - newScale) > 0.05 ? newScale : prev));
 
     const socialIcons = document.querySelectorAll(".social-icon");
     socialIcons.forEach((el) => {

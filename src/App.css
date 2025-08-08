@@ -15,6 +15,7 @@
     transition: width 0.1s ease;
     background: linear-gradient(to right, #00c6ff, #0072ff);
     width: 0%;
+    max-width: 100% !important;
     height: 4px;
 }
 
