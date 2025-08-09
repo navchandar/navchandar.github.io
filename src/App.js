@@ -10,13 +10,16 @@ import Projects from "./components/Projects";
 const useProgressBar = (progressBarRef) => {
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
-      // update progress bar percent
-      if (progressBarRef.current) {
-        progressBarRef.current.style.width = `${scrollPercent}%`;
+      // Only run scroll effects if resume overlay is NOT present
+      if (document.querySelector(".resume-overlay") === null) {
+        const scrollTop = window.scrollY;
+        const docHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        // update progress bar percent
+        if (progressBarRef.current) {
+          progressBarRef.current.style.width = `${scrollPercent}%`;
+        }
       }
     };
 

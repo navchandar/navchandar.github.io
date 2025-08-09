@@ -69,12 +69,15 @@ const Footer = () => {
     let ticking = false;
 
     const scrollHandler = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          handleScrollEffects();
-          ticking = false;
-        });
-        ticking = true;
+      // Only run scroll effects if resume overlay is NOT present
+      if (document.querySelector(".resume-overlay") === null) {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            handleScrollEffects();
+            ticking = false;
+          });
+          ticking = true;
+        }
       }
     };
 
