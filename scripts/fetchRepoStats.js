@@ -88,6 +88,26 @@ async function saveRepoStats(repos) {
   }
 }
 
+function generateSitemapXml(urls) {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls
+  .map(
+    ({ loc, lastmod, priority }) => `
+  <url>
+    <loc>${loc}</loc>
+    ${
+      lastmod && lastmod !== null
+        ? `<lastmod>${new Date(lastmod).toISOString().split("T")[0]}</lastmod>`
+        : ""
+    }
+    <priority>${priority}</priority>
+  </url>`
+  )
+  .join("\n")}
+</urlset>`;
+}
+
 // 🗺️ Generate sitemap
 async function generateSitemap(repos) {
   try {
@@ -108,24 +128,7 @@ async function generateSitemap(repos) {
       sitemapUrls.push({ loc, lastmod, priority });
     }
 
-    const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sitemapUrls
-  .map(
-    ({ loc, lastmod, priority }) => `
-  <url>
-    <loc>${loc}</loc>
-    ${
-      lastmod
-        ? `<lastmod>${new Date(lastmod).toISOString().split("T")[0]}</lastmod>`
-        : ""
-    }
-    <priority>${priority}</priority>
-  </url>`
-  )
-  .join("\n")}
-</urlset>`;
-
+    const sitemapContent = generateSitemapXml(sitemapUrls);
     fs.writeFileSync(sitemapPath, sitemapContent);
     console.log(sitemapUrls);
     console.log(
