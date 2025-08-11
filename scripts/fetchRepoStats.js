@@ -2,28 +2,29 @@ const fs = require("fs");
 const path = require("path");
 const https = require("https");
 
+// 🔧 Configuration
 const username = "navchandar";
+const mainRepo = `${username}.github.io`;
 const perPage = 100;
+const userAgentHeader = { headers: { "User-Agent": "node.js" } };
 
+const repoStatsPath = path.join(__dirname, "../src/data/repoStats.json");
+const sitemapPath = path.join(__dirname, "../public/sitemap.xml");
+
+// 📦 Fetch all repositories
 function fetchAllRepos(page = 1, allRepos = []) {
   const url = `https://api.github.com/users/${username}/repos?per_page=${perPage}&page=${page}`;
-  const options = {
-    headers: {
-      "User-Agent": "node.js",
-    },
-  };
 
   return new Promise((resolve, reject) => {
     https
-      .get(url, options, (res) => {
+      .get(url, userAgentHeader, (res) => {
         let data = "";
         res.on("data", (chunk) => (data += chunk));
         res.on("end", async () => {
           try {
             const repos = JSON.parse(data);
             if (repos.length === 0) return resolve(allRepos);
-            const combined = allRepos.concat(repos);
-            resolve(await fetchAllRepos(page + 1, combined));
+            resolve(await fetchAllRepos(page + 1, allRepos.concat(repos)));
           } catch (err) {
             reject(err);
           }
@@ -33,30 +34,117 @@ function fetchAllRepos(page = 1, allRepos = []) {
   });
 }
 
-async function fetchStats() {
-  try {
-    const repos = await fetchAllRepos();
-    const results = {};
+// 🌐 Check if GitHub Pages exists
+function checkGitHubPages(repoName) {
+  const url = `https://${username}.github.io/${repoName}/`;
+  return new Promise((resolve) => {
+    https
+      .get(url, (res) => {
+        resolve(res.statusCode === 200);
+      })
+      .on("error", () => resolve(false));
+  });
+}
 
+// 🕒 Get last modified date of gh-pages branch
+function fetchGhPagesUpdatedAt(repoName) {
+  const url = `https://api.github.com/repos/${username}/${repoName}/branches/gh-pages`;
+  return new Promise((resolve) => {
+    https
+      .get(url, userAgentHeader, (res) => {
+        let data = "";
+        res.on("data", (chunk) => (data += chunk));
+        res.on("end", () => {
+          try {
+            const branchInfo = JSON.parse(data);
+            const lastModified = branchInfo?.commit?.commit?.committer?.date;
+            resolve(lastModified || null);
+          } catch {
+            resolve(null);
+          }
+        });
+      })
+      .on("error", () => resolve(null));
+  });
+}
+
+// ⭐ Save repo stats
+async function saveRepoStats(repos) {
+  try {
+    const repoStats = {};
     for (const repo of repos) {
-      results[repo.full_name] = {
+      const fullName = repo.full_name;
+      repoStats[fullName] = {
         stars: repo.stargazers_count || 0,
         forks: repo.forks_count || 0,
       };
     }
 
-    const outputDir = path.join(__dirname, "../src/data");
-    const outputPath = path.join(outputDir, "repoStats.json");
-
-    console.log(results);
-    fs.mkdirSync(outputDir, { recursive: true });
-    fs.writeFileSync(outputPath, JSON.stringify(results, null, 4));
-
-    console.log(`✅ Fetched ${repos.length} repos`);
-    console.log(`✅ GitHub repo stats saved to ${outputPath}`);
+    fs.mkdirSync(path.dirname(repoStatsPath), { recursive: true });
+    fs.writeFileSync(repoStatsPath, JSON.stringify(repoStats, null, 4));
+    console.log(`✅ GitHub repo stats saved to ${repoStatsPath}`);
   } catch (err) {
-    console.error("❌ Error fetching repo stats:", err.message);
+    console.error("❌ Error:", err.message);
   }
 }
 
-fetchStats();
+// 🗺️ Generate sitemap
+async function generateSitemap(repos) {
+  try {
+    const sitemapUrls = [];
+
+    for (const repo of repos) {
+      const repoName = repo.name;
+      const isMainRepo = repoName === mainRepo;
+      const hasPages = isMainRepo || (await checkGitHubPages(repoName));
+      if (!hasPages) continue;
+
+      const lastmod = await fetchGhPagesUpdatedAt(repoName);
+      const loc = isMainRepo
+        ? `https://${username}.github.io/`
+        : `https://${username}.github.io/${repoName}/`;
+      const priority = isMainRepo ? "1.0" : "0.5";
+
+      sitemapUrls.push({ loc, lastmod, priority });
+    }
+
+    const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapUrls
+  .map(
+    ({ loc, lastmod, priority }) => `
+  <url>
+    <loc>${loc}</loc>
+    ${
+      lastmod
+        ? `<lastmod>${new Date(lastmod).toISOString().split("T")[0]}</lastmod>`
+        : ""
+    }
+    <priority>${priority}</priority>
+  </url>`
+  )
+  .join("\n")}
+</urlset>`;
+
+    fs.writeFileSync(sitemapPath, sitemapContent);
+    console.log(sitemapUrls);
+    console.log(
+      `✅ sitemap.xml created with ${sitemapUrls.length} entries at ${sitemapPath}`
+    );
+  } catch (err) {
+    console.error("❌ Error:", err.message);
+  }
+}
+
+// 🚀 Main function
+async function run() {
+  try {
+    const repos = await fetchAllRepos();
+    await saveRepoStats(repos);
+    await generateSitemap(repos);
+  } catch (err) {
+    console.error("❌ Error:", err.message);
+  }
+}
+
+run();
