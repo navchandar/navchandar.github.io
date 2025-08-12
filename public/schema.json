@@ -1,0 +1,72 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Naveenchandar Shanmugam",
+  "alternateName": [
+    "NaveenChandar",
+    "navchandar",
+    "Naveen Chandar",
+    "NaveenChandar Shanmugam"
+  ],
+  "jobTitle": "Senior QA Automation Engineer",
+  "description": "ISTQB Certified QA Automation Engineer with expertise in Python, Selenium, DevOps, and test architecture. Experienced in building scalable automation frameworks and delivering quality software.",
+  "url": "https://navchandar.github.io/",
+  "image": "https://navchandar.github.io/images/logo.png",
+  "sameAs": [
+    "https://github.com/navchandar",
+    "https://linkedin.com/in/navchandar",
+    "https://bsky.app/profile/navchandar.bsky.social",
+    "https://stackoverflow.com/users/7964299/naveen"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Hitachi Digital Services"
+  },
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "QA Automation Engineer",
+    "description": "Specializes in test automation, DevOps integration, and quality assurance for enterprise and cloud-based applications."
+  },
+  "knowsAbout": [
+    "Python",
+    "Node.js",
+    "Selenium",
+    "Robot Framework",
+    "Linux",
+    "DevOps",
+    "PowerShell",
+    "Test Automation",
+    "Quality Assurance",
+    "Jenkins",
+    "Docker",
+    "Azure",
+    "Postman",
+    "CI/CD"
+  ],
+  "knowsLanguage": ["English", "Tamil", "Hindi", "Kannada"],
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "Anna University"
+  },
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Certification",
+      "name": "ISTQB Certified Advanced Level Test Automation Engineer"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Certification",
+      "name": "SAFe 5 Practitioner"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Certification",
+      "name": "ITIL v3 Foundation"
+    }
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://navchandar.github.io/"
+  }
+}
