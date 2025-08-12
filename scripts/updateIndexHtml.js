@@ -11,7 +11,7 @@ const jsonPath = path.join(__dirname, "../public/schema.json");
 const jsonData = fs.readFileSync(jsonPath, "utf-8");
 
 // Inject before </body>
-const updatedHtml = indexHtml.replace("</body>", `\n${noscriptHtml}\n</body>`);
+let updatedHtml = indexHtml.replace("</body>", `\n${noscriptHtml}\n</body>`);
 
 const scriptTag = `\n<script type="application/ld+json">\n${jsonData}\n</script>\n`;
 // Inject before </head>
