@@ -35,9 +35,9 @@ try {
   fs.writeFileSync(indexPath, indexHtml, "utf-8");
   console.log("✅ index.html updated successfully.");
 
-  noscriptHtml = noscriptHtml.replace("</noscript>", "</body>");
-  noscriptHtml = noscriptHtml.replace("<noscript>", "<body>");
-  fs.writeFileSync(noscriptPath, noscriptHtml, "utf-8");
+  let noscript = noscriptHtml.replace("</noscript>", "</body>");
+  noscript = noscript.replace("<noscript>", "<body>");
+  fs.writeFileSync(noscriptPath, noscript, "utf-8");
   console.log("✅ text-only.html updated successfully.");
 } catch (error) {
   console.error("❌ Error updating index.html:", error.message);
