@@ -82,30 +82,32 @@ async function saveRepoStats(repos) {
 
     fs.mkdirSync(path.dirname(repoStatsPath), { recursive: true });
     fs.writeFileSync(repoStatsPath, JSON.stringify(repoStats, null, 4));
+    console.log(JSON.stringify(repoStats, null, 4));
     console.log(`✅ GitHub repo stats saved to ${repoStatsPath}`);
   } catch (err) {
     console.error("❌ Error:", err.message);
   }
 }
 
-function generateSitemapXml(urls) {
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls
-  .map(
-    ({ loc, lastmod, priority }) => `
-  <url>
+function formatLastMod(lastmod) {
+  if (!lastmod) return "";
+  const date = new Date(lastmod).toISOString().split("T")[0];
+  return `    <lastmod>${date}</lastmod>\n`;
+}
+
+function formatUrlEntry({ loc, lastmod, priority }) {
+  return `  <url>
     <loc>${loc}</loc>
-    ${
-      lastmod && lastmod !== null
-        ? `<lastmod>${new Date(lastmod).toISOString().split("T")[0]}</lastmod>`
-        : ""
-    }
-    <priority>${priority}</priority>
-  </url>`
-  )
-  .join("\n")}
-</urlset>`;
+${formatLastMod(lastmod)}    <priority>${priority}</priority>
+  </url>`;
+}
+
+function generateSitemapXml(urls) {
+  const header = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+  const footer = `</urlset>`;
+  const entries = urls.map(formatUrlEntry).join("\n");
+  return `${header}\n${entries}\n${footer}`;
 }
 
 // 🗺️ Generate sitemap
@@ -131,6 +133,7 @@ async function generateSitemap(repos) {
     const sitemapContent = generateSitemapXml(sitemapUrls);
     fs.writeFileSync(sitemapPath, sitemapContent);
     console.log(sitemapUrls);
+    console.log(sitemapContent)
     console.log(
       `✅ sitemap.xml created with ${sitemapUrls.length} entries at ${sitemapPath}`
     );
