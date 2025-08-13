@@ -1,0 +1,126 @@
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+  text-align: center;
+}
+
+.App {
+  margin: 20px auto;
+  text-align: center;
+}
+
+#title {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.subtitle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.subheading {
+  margin: 5px 15px;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+.work-history {
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.work-history-header h3 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.job-list {
+  padding: 0;
+  list-style: none;
+}
+
+.job-item {
+  margin-bottom: 15px;
+}
+
+.job-summary {
+  display: inline-block;
+  margin-top: 10px;
+  border-left: 4px solid #007acc;
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+
+.certifications {
+  display: block;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.certifications h3 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.certification-list {
+  padding: 0;
+  list-style: none;
+}
+
+.certification-item {
+  margin-bottom: 10px;
+}
+
+.cert-info a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+.cert-info a:hover {
+  text-decoration: underline;
+}
+
+.projects {
+  display: block;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.projects h3 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.projects p {
+  margin: 5px 0;
+}
+
+#footer {
+  margin-top: 30px;
+  font-size: large;
+  text-align: center;
+}
+
+#footer a {
+  padding: 10px;
+  color: rgb(149, 149, 149) !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
