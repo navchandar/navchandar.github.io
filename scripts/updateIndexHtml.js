@@ -37,6 +37,7 @@ try {
 
   let noscript = noscriptHtml.replace("</noscript>", "</body>");
   noscript = noscript.replace("<noscript>", "<body>");
+  noscript = noscript.replace("<h3>JavaScript is Disabled. Please enable JavaScript!</h3>", "");
   fs.writeFileSync(noscriptPath, noscript, "utf-8");
   console.log("✅ text-only.html updated successfully.");
 } catch (error) {
