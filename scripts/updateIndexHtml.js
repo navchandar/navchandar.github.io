@@ -3,7 +3,7 @@ const path = require("path");
 
 const indexPath = path.join(__dirname, "../public/index.html");
 const noscriptPath = path.join(__dirname, "../public/text-only.html");
-const jsonPath = path.join(__dirname, "../public/schema.json");
+const jsonPath = path.join(__dirname, "../public/static/schema.json");
 
 try {
   let indexHtml = fs.readFileSync(indexPath, "utf-8");
@@ -35,9 +35,8 @@ try {
   fs.writeFileSync(indexPath, indexHtml, "utf-8");
   console.log("✅ index.html updated successfully.");
 
-  noscriptHtml
-    .replace("</noscript>", "</body>")
-    .replace("<noscript>", "<body>");
+  noscriptHtml = noscriptHtml.replace("</noscript>", "</body>");
+  noscriptHtml = noscriptHtml.replace("<noscript>", "<body>");
   fs.writeFileSync(noscriptPath, noscriptHtml, "utf-8");
   console.log("✅ text-only.html updated successfully.");
 } catch (error) {
