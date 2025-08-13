@@ -2,17 +2,17 @@ const fs = require("fs");
 const path = require("path");
 
 const indexPath = path.join(__dirname, "../public/index.html");
-const noscriptPath = path.join(__dirname, "../public/text-only.html");
+const litePath = path.join(__dirname, "../public/lite.html");
 const jsonPath = path.join(__dirname, "../public/static/schema.json");
 
 try {
   let indexHtml = fs.readFileSync(indexPath, "utf-8");
-  const noscriptHtml = fs.readFileSync(noscriptPath, "utf-8").trim();
+  const liteHtml = fs.readFileSync(litePath, "utf-8").trim();
   const jsonData = fs.readFileSync(jsonPath, "utf-8").trim();
 
-  const noscriptTag = noscriptHtml.startsWith("<noscript>")
-    ? noscriptHtml
-    : `<noscript>\n${noscriptHtml}\n</noscript>`;
+  const noscriptTag = liteHtml.startsWith("<noscript>")
+    ? liteHtml
+    : `<noscript>\n${liteHtml}\n</noscript>`;
 
   const scriptTag = `<script type="application/ld+json">\n${jsonData}\n</script>`;
 
@@ -35,11 +35,11 @@ try {
   fs.writeFileSync(indexPath, indexHtml, "utf-8");
   console.log("✅ index.html updated successfully.");
 
-  let noscript = noscriptHtml.replace("</noscript>", "</body>");
+  let noscript = liteHtml.replace("</noscript>", "</body>");
   noscript = noscript.replace("<noscript>", "<body>");
   noscript = noscript.replace("<h3>JavaScript is Disabled. Please enable JavaScript!</h3>", "");
-  fs.writeFileSync(noscriptPath, noscript, "utf-8");
-  console.log("✅ text-only.html updated successfully.");
+  fs.writeFileSync(litePath, noscript, "utf-8");
+  console.log("✅ lite.html updated successfully.");
 } catch (error) {
   console.error("❌ Error updating index.html:", error.message);
 }
