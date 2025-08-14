@@ -139,7 +139,7 @@
 .job-details {
     visibility: hidden;
     opacity: 0;
-    transition: max-height 0.3s ease, height 0.3s ease;
+    transition: all 0.75s ease;
     width: 0px;
     height: 0px;
     max-height: 0;
@@ -150,7 +150,7 @@
 .job-details.show {
     visibility: visible;
     opacity: 1;
-    transition: max-height 0.3s ease, height 0.3s ease;
+    transition: all 0.75s ease;
     cursor: text;
     margin: 5px 0px 5px -2em;
     width: auto;

@@ -5,7 +5,7 @@
     z-index: 10;
     cursor: default;
     background-image: linear-gradient(180deg, #eee0, #445a69);
-    padding: 6px 0px;
+    padding: 3px 0;
     width: 100%;
     height: auto;
     color: white;
@@ -17,9 +17,9 @@
 .social-links {
     display: inline-flex;
     gap: 25px;
-    transition: transform 0.3s ease-in-out;
+    transition: all .3s ease-in-out;
     margin-top: 1em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0em;
 }
 
 .social-icon {
@@ -30,7 +30,7 @@
 
 .social-icon:hover {
     transform: scale(1.8) translateY(-5px) !important;
-    transition: transform 0.2s ease, color 0.1s ease, background-color 0.1s ease;
+    transition: transform 0.2s ease, color 0.1s ease, background-color 0.1s ease, fill 0.1s ease;
 }
 
 
@@ -70,7 +70,7 @@ a[href*='stackoverflow.com'] svg:hover {
     color: #f48024;
 }
 
-a[href *='stackoverflow.com'] svg:hover > path:nth-child(1) {
+a[href *='stackoverflow.com'] svg:hover>path:nth-child(1) {
     fill: #ffffffd4;
 }
 
@@ -137,7 +137,7 @@ a[href*='stackoverflow.com'] svg.at-bottom {
     color: #f48024;
 }
 
-a[href *='stackoverflow.com'] svg.at-bottom > path:nth-child(1) {
+a[href *='stackoverflow.com'] svg.at-bottom>path:nth-child(1) {
     fill: #ffffffd4;
 }
 
