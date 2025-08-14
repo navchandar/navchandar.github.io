@@ -180,6 +180,7 @@ function JobItem({ job, index, isExpanded, toggleExpand, collapse }) {
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
       toggleExpand(index);
     } else if (e.key === "Escape") {
       collapse();
