@@ -70,6 +70,10 @@ a[href*='stackoverflow.com'] svg:hover {
     color: #f48024;
 }
 
+a[href *='stackoverflow.com'] svg:hover > path:nth-child(1) {
+    fill: #ffffffd4;
+}
+
 a[href*='credly.com'] svg:hover {
     border-radius: 6px;
     background-color: #ffffffd4;
@@ -133,6 +137,11 @@ a[href*='stackoverflow.com'] svg.at-bottom {
     color: #f48024;
 }
 
+a[href *='stackoverflow.com'] svg.at-bottom > path:nth-child(1) {
+    fill: #ffffffd4;
+}
+
+
 a[href*='credly.com'] svg.at-bottom {
     border-radius: 6px;
     background-color: #ffffffd4;
@@ -142,7 +151,7 @@ a[href*='credly.com'] svg.at-bottom {
 
 a[href*='skillsoft.com'] svg.at-bottom {
     border-radius: 6px;
-    background-color: #ffffffd4;
+    background-color: #c7ffedd4;
     padding: 2px 1px 0px 3px;
     color: #2e4592;
 }
