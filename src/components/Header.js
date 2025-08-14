@@ -18,7 +18,6 @@ export const Subtitle = () => {
       </div>
       <div className="subtitle">
         <h2 className="subheading">Software Developer</h2>
-        <h2 className="subheading">DevOps Specialist</h2>
         <h2 className="subheading">Test Architect</h2>
       </div>
     </section>

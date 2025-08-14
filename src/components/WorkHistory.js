@@ -283,7 +283,7 @@ function WorkHistory() {
   return (
     <div className="work-history" ref={containerRef}>
       <div className="work-history-header">
-        <h3>My Work History</h3>
+        <h3>Work History</h3>
         <button onClick={toggleExpandAll}>
           {expandAll ? "Collapse All" : "Expand All"}
         </button>
@@ -353,7 +353,7 @@ const certifications = [
 function Certifications() {
   return (
     <div className="certifications">
-      <h3>My Credentials</h3>
+      <h3>Credentials</h3>
       <ul className="certification-list">
         {certifications.map((cert, index) => (
           <li key={index} className="certification-item job-item">

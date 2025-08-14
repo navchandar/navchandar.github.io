@@ -117,7 +117,7 @@ const Footer = () => {
       )}
 
       <h3 className={`footer-title ${showTitle ? "visible" : ""}`}>
-        My Social Links
+        Social Links
       </h3>
       <div id="footer">
         <div className="social-links">
@@ -197,7 +197,11 @@ const Footer = () => {
             >
               <defs>
                 <linearGradient x1="0" y1="0" x2="0" y2="1" id="sky">
-                  <stop offset="0" stop-color="currentColor" stop-opacity="0.8" />
+                  <stop
+                    offset="0"
+                    stop-color="currentColor"
+                    stop-opacity="0.8"
+                  />
                   <stop offset="1" stop-color="currentColor" stop-opacity="1" />
                 </linearGradient>
               </defs>
