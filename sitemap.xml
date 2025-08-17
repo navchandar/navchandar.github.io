@@ -24,4 +24,44 @@
     <lastmod>2025-07-21</lastmod>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://navchandar.github.io/civic-media-scout/</loc>
+    <lastmod>2025-08-04</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/alphabet/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/color/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/number/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/shapes/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/look-like-scanned/</loc>
+    <lastmod>2025-07-28</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/</loc>
+    <lastmod>2025-08-14</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/Python-Random-Name-Generator/</loc>
+    <lastmod>2025-07-21</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>
