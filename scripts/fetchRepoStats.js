@@ -9,6 +9,7 @@ const targetRepo = "lab";
 const perPage = 100;
 const userAgentHeader = { headers: { "User-Agent": "node.js" } };
 
+const repoStatsPath = path.join(__dirname, "../src/data/repoStats.json");
 const sitemapPath = path.join(__dirname, "../public/sitemap.xml");
 
 // 📦 Fetch all repositories
@@ -31,6 +32,18 @@ function fetchAllRepos(page = 1, allRepos = []) {
         });
       })
       .on("error", reject);
+  });
+}
+
+// 🌐 Check if GitHub Pages exists
+function checkGitHubPages(repoName) {
+  const url = `https://${username}.github.io/${repoName}/`;
+  return new Promise((resolve) => {
+    https
+      .get(url, (res) => {
+        resolve(res.statusCode === 200);
+      })
+      .on("error", () => resolve(false));
   });
 }
 
@@ -116,10 +129,26 @@ async function saveRepoStats(repos) {
 // 🗺️ Generate sitemap
 async function generateSitemap(repos) {
   const sitemapUrls = [];
+  for (const repo of repos) {
+    const repoName = repo.name;
+    const isMainRepo = repoName === mainRepo;
+    const hasPages = isMainRepo || (await checkGitHubPages(repoName));
+    if (!hasPages) continue;
+
+    const lastmod = await fetchGhPagesUpdatedAt(repoName);
+    const loc = isMainRepo
+      ? `https://${username}.github.io/`
+      : `https://${username}.github.io/${repoName}/`;
+    const priority = isMainRepo ? "1.0" : "0.5";
+
+    sitemapUrls.push({ loc, lastmod, priority });
+  }
 
   for (const repo of repos) {
     const repoName = repo.name;
     const isMainRepo = repoName === mainRepo;
+    const hasPages = isMainRepo || (await checkGitHubPages(repoName));
+    if (!hasPages) continue;
 
     if (isMainRepo) {
       const lastmod = await fetchGhPagesUpdatedAt(repoName);
@@ -128,6 +157,14 @@ async function generateSitemap(repos) {
         lastmod,
         priority: "1.0",
       });
+    } else {
+      const lastmod = await fetchGhPagesUpdatedAt(repoName);
+      const loc = isMainRepo
+        ? `https://${username}.github.io/`
+        : `https://${username}.github.io/${repoName}/`;
+      const priority = isMainRepo ? "1.0" : "0.8";
+
+      sitemapUrls.push({ loc, lastmod, priority });
     }
 
     if (repoName === targetRepo) {
@@ -150,7 +187,7 @@ async function generateSitemap(repos) {
 
   const sitemapContent = generateSitemapXml(sitemapUrls);
   console.log(sitemapUrls);
-  console.log(sitemapContent)
+  console.log(sitemapContent);
 
   fs.writeFileSync(sitemapPath, sitemapContent);
   console.log(`✅ sitemap.xml created with ${sitemapUrls.length} entries`);
