@@ -4,7 +4,7 @@ import "./Header.css";
 
 export const Header = () => (
   <div id="header">
-    <img id="about" alt="Naveen Chandar Photo" src={Logo} />
+    <img id="about" alt="Naveen Chandar" src={Logo} />
     <h1 id="title">Naveen Chandar</h1>
   </div>
 );
