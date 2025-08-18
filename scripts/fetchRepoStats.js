@@ -167,18 +167,17 @@ async function generateSitemap(repos) {
         const lastmod = await new Promise((resolve) => {
           https
             .get(indexUrl, userAgentHeader, (res) => {
-              let data = "";
-              res.on("data", (chunk) => (data += chunk));
-              res.on("end", () => {
-                try {
-                  const fileInfo = JSON.parse(data);
-                  resolve(
-                    fileInfo?.git_url ? fileInfo?.last_modified || null : null
-                  );
-                } catch {
-                  resolve(null);
-                }
-              });
+              if (res.statusCode !== 200) return resolve(null);
+              try {
+                const lastModifiedHeader = res.headers["last-modified"];
+                resolve(
+                  lastModifiedHeader
+                    ? new Date(lastModifiedHeader).toISOString()
+                    : null
+                );
+              } catch {
+                resolve(null);
+              }
             })
             .on("error", () => resolve(null));
         });
