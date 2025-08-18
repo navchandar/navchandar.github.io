@@ -168,15 +168,9 @@ async function generateSitemap(repos) {
   }
 
   const sitemapContent = generateSitemapXml(sitemapUrls);
-  const timestamp = new Date().toISOString();
-
   console.log(sitemapUrls);
   console.log(sitemapContent);
-
-  fs.writeFileSync(
-    sitemapPath,
-    `<!-- Generated on ${timestamp} -->\n${sitemapContent}`
-  );
+  fs.writeFileSync(sitemapPath, sitemapContent);
   console.log(`✅ sitemap.xml created with ${sitemapUrls.length} entries`);
 }
 
