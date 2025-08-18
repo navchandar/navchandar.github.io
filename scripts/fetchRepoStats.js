@@ -128,7 +128,16 @@ async function saveRepoStats(repos) {
 
 // 🗺️ Generate sitemap
 async function generateSitemap(repos) {
+  const seenUrls = new Set();
   const sitemapUrls = [];
+
+  function addUniqueURL(urlObj) {
+    if (!seenUrls.has(urlObj.loc)) {
+      seenUrls.add(urlObj.loc);
+      sitemapUrls.push(urlObj);
+    }
+  }
+
   for (const repo of repos) {
     const repoName = repo.name;
     const isMainRepo = repoName === mainRepo;
@@ -139,34 +148,11 @@ async function generateSitemap(repos) {
     const loc = isMainRepo
       ? `https://${username}.github.io/`
       : `https://${username}.github.io/${repoName}/`;
-    const priority = isMainRepo ? "1.0" : "0.5";
+    const priority = isMainRepo ? "1.0" : "0.8";
 
-    sitemapUrls.push({ loc, lastmod, priority });
-  }
+    addUniqueURL({ loc, lastmod, priority });
 
-  for (const repo of repos) {
-    const repoName = repo.name;
-    const isMainRepo = repoName === mainRepo;
-    const hasPages = isMainRepo || (await checkGitHubPages(repoName));
-    if (!hasPages) continue;
-
-    if (isMainRepo) {
-      const lastmod = await fetchGhPagesUpdatedAt(repoName);
-      sitemapUrls.push({
-        loc: `https://${username}.github.io/`,
-        lastmod,
-        priority: "1.0",
-      });
-    } else {
-      const lastmod = await fetchGhPagesUpdatedAt(repoName);
-      const loc = isMainRepo
-        ? `https://${username}.github.io/`
-        : `https://${username}.github.io/${repoName}/`;
-      const priority = isMainRepo ? "1.0" : "0.8";
-
-      sitemapUrls.push({ loc, lastmod, priority });
-    }
-
+    // Special handling for targetRepo
     if (repoName === targetRepo) {
       const rootContents = await fetchRepoRootContents(repoName);
       const folders = rootContents.filter((item) => item.type === "dir");
@@ -174,22 +160,23 @@ async function generateSitemap(repos) {
       for (const folder of folders) {
         const hasIndex = await checkFolderForIndexHtml(repoName, folder.name);
         if (hasIndex) {
-          const lastmod = await fetchGhPagesUpdatedAt(repoName);
-          sitemapUrls.push({
-            loc: `https://${username}.github.io/${repoName}/${folder.name}/`,
-            lastmod,
-            priority: "0.8",
-          });
+          const folderLoc = `https://${username}.github.io/${repoName}/${folder.name}/`;
+          addUniqueURL({ loc: folderLoc, lastmod, priority: "0.8" });
         }
       }
     }
   }
 
   const sitemapContent = generateSitemapXml(sitemapUrls);
+  const timestamp = new Date().toISOString();
+
   console.log(sitemapUrls);
   console.log(sitemapContent);
 
-  fs.writeFileSync(sitemapPath, sitemapContent);
+  fs.writeFileSync(
+    sitemapPath,
+    `<!-- Generated on ${timestamp} -->\n${sitemapContent}`
+  );
   console.log(`✅ sitemap.xml created with ${sitemapUrls.length} entries`);
 }
 
