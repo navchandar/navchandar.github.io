@@ -144,13 +144,17 @@ async function generateSitemap(repos) {
     const hasPages = isMainRepo || (await checkGitHubPages(repoName));
     if (!hasPages) continue;
 
-    const lastmod = await fetchGhPagesUpdatedAt(repoName);
-    const loc = isMainRepo
+    const repoLastmod = await fetchGhPagesUpdatedAt(repoName);
+    const repoLoc = isMainRepo
       ? `https://${username}.github.io/`
       : `https://${username}.github.io/${repoName}/`;
-    const priority = isMainRepo ? "1.0" : "0.8";
+    const repoPriority = isMainRepo ? "1.0" : "0.8";
 
-    addUniqueURL({ loc, lastmod, priority });
+    addUniqueURL({
+      loc: repoLoc,
+      lastmod: repoLastmod,
+      priority: repoPriority,
+    });
 
     // Special handling for targetRepo
     if (repoName === targetRepo) {
@@ -158,10 +162,30 @@ async function generateSitemap(repos) {
       const folders = rootContents.filter((item) => item.type === "dir");
 
       for (const folder of folders) {
-        const hasIndex = await checkFolderForIndexHtml(repoName, folder.name);
-        if (hasIndex) {
+        const indexUrl = `https://api.github.com/repos/${username}/${repoName}/contents/${folder.name}/index.html`;
+
+        const lastmod = await new Promise((resolve) => {
+          https
+            .get(indexUrl, userAgentHeader, (res) => {
+              let data = "";
+              res.on("data", (chunk) => (data += chunk));
+              res.on("end", () => {
+                try {
+                  const fileInfo = JSON.parse(data);
+                  resolve(
+                    fileInfo?.git_url ? fileInfo?.last_modified || null : null
+                  );
+                } catch {
+                  resolve(null);
+                }
+              });
+            })
+            .on("error", () => resolve(null));
+        });
+
+        if (lastmod) {
           const folderLoc = `https://${username}.github.io/${repoName}/${folder.name}/`;
-          addUniqueURL({ loc: folderLoc, lastmod, priority: "0.8" });
+          addUniqueURL({ loc: folderLoc, lastmod, priority: "0.75" });
         }
       }
     }
