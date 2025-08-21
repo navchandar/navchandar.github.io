@@ -8,7 +8,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: "0 0 * * 0"
 
 jobs:
   build-and-deploy:
@@ -16,12 +16,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: "18"
 
       - name: Cache node modules
         uses: actions/cache@v3
@@ -32,15 +32,42 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm ci
-        
+        run: |
+          npm ci
+          npm install -g htmlhint csslint eslint@8
+
       - name: Update caniuse database
         run: npx update-browserslist-db@latest --yes
 
       - name: Build the React app
         run: npm run build
 
+      - name: Validate HTML
+        run: htmlhint --config config/.htmlhintrc ./build
+
+      - name: Validate CSS
+        run: |
+          css_files=$(find ./build -name "*.css" -type f -size +0c)
+          csslint --errors=box-model,duplicate-properties,empty-rules,universal-selector $css_files
+
+      - name: Validate JS
+        run: eslint -c config/.eslintrc.js "build/**/*.js" --ignore-pattern config/.eslintrc.js
+
+      - name: Validate Broken Links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          workingDirectory: ./build
+          args: --base . --verbose --no-progress "./**/*.html"
+
+      - name: Validate Spelling
+        uses: rojopolis/spellcheck-github-actions@0.51.0
+        with:
+          config_path: config/.spellcheck.yml
+          task_name: HTML
+          source_files: build/**/*.html
+
       - name: Deploy to gh-pages branch
+        if: github.event_name == 'push'
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
@@ -48,4 +75,3 @@ jobs:
           publish_branch: gh-pages
           user_name: github-actions[bot]
           user_email: github-actions[bot]@users.noreply.github.com
-

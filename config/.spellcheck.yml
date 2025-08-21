@@ -1,0 +1,20 @@
+matrix:
+  - name: Built HTML
+    dictionary:
+      wordlists:
+        - config/wordlist.txt
+    sources:
+      - "./build/**/*.html"
+    pipeline:
+      - pyspelling.filters.html:
+          comments: false
+          attributes:
+            - title
+            - alt
+          ignores:
+            - :matches(code, pre)
+            - script
+            - style
+    aspell:
+      lang: en
+      mode: html
