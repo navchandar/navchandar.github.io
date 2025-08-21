@@ -68,7 +68,7 @@ jobs:
         with:
           config_path: config/.spellcheck.yml
           task_name: HTML
-          source_files: build/**/*.html
+          source_files: ./build/**/*.html
 
       - name: Deploy to gh-pages branch
         if: github.event_name == 'push'
