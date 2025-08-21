@@ -44,18 +44,19 @@ jobs:
       - name: Build the React app
         run: npm run build
 
-      - name: Validate HTML
+      # Validate source files
+      - name: Lint Source HTML
         run: |
-          html_files=$(find ./build -name "*.html" | grep -v "lite.html")
+          html_files=$(find ./src -name "*.html" | grep -v "lite.html")
           htmlhint --config config/.htmlhintrc $html_files
 
-      - name: Validate CSS
-        run: |
-          npx stylelint "build/**/*.css" --config config/.stylelintrc.json
+      - name: Lint Source CSS
+        run: npx stylelint "src/**/*.css" --config config/.stylelintrc.json
 
-      - name: Validate JS
-        run: eslint -c config/.eslintrc.js "build/**/*.js" --ignore-pattern config/.eslintrc.js
+      - name: Lint Source JS
+        run: eslint -c config/.eslintrc.js "src/**/*.js" --ignore-pattern config/.eslintrc.js
 
+      # Validate build output
       - name: Validate Broken Links
         uses: lycheeverse/lychee-action@v2
         with:
