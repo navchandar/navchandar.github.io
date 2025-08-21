@@ -41,51 +41,70 @@
     padding: 0;
 }
 
-
-a[href*='linkedin.com'] svg:hover>g>path:nth-child(1) {
-    fill: #0077B5;
-}
-
-a[href*='linkedin.com'] svg:hover {
-    color: #ffffff;
-}
-
-a[href*='github.com'] svg:hover {
-    border-radius: 6px;
-    background-color: #ffffffd4;
-    color: #24292f;
-}
-
-a[href*='bsky.app'] svg:hover {
+/* Shared styles for hover and at-bottom */
+a[href*='github.com'] svg:hover,
+a[href*='github.com'] svg.at-bottom,
+a[href*='credly.com'] svg:hover,
+a[href*='credly.com'] svg.at-bottom,
+a[href*='bsky.app'] svg:hover,
+a[href*='bsky.app'] svg.at-bottom,
+a[href*='stackoverflow.com'] svg:hover,
+a[href*='stackoverflow.com'] svg.at-bottom {
     border-radius: 6px;
     background-color: #ffffffd4;
     padding: 1px 1px 0px 1px;
-    color: #1DA1F2;
 }
 
-a[href*='stackoverflow.com'] svg:hover {
-    border-radius: 7px;
-    background-color: #1b1b1bd4;
-    padding: 1px 1px 0px 1px;
-    color: #f48024;
-}
-
-a[href *='stackoverflow.com'] svg:hover>path:nth-child(1) {
-    fill: #ffffffd4;
-}
-
-a[href*='credly.com'] svg:hover {
-    border-radius: 6px;
-    background-color: #ffffffd4;
-    padding: 1px 1px 0px 1px;
-    color: #FF6A00;
-}
-
-a[href*='skillsoft.com'] svg:hover {
+a[href*='skillsoft.com'] svg:hover,
+a[href*='skillsoft.com'] svg.at-bottom {
     border-radius: 6px;
     background-color: #c7ffedd4;
     padding: 2px 1px 0px 3px;
     color: #2e4592;
+}
+
+a[href*='linkedin.com'] svg:hover,
+a[href*='linkedin.com'] svg.at-bottom {
+    color: #ffffff;
+}
+
+a[href*='linkedin.com'] svg:hover>g>path:nth-child(1),
+a[href*='linkedin.com'] svg.at-bottom>g>path:nth-child(1) {
+    fill: #0077B5;
+}
+
+a[href*='stackoverflow.com'] svg:hover>path:nth-child(1),
+a[href*='stackoverflow.com'] svg.at-bottom>path:nth-child(1) {
+    fill: #ffffffd4;
+}
+
+a[href*='stackoverflow.com'] svg:hover,
+a[href*='stackoverflow.com'] svg.at-bottom {
+    border-radius: 7px;
+    background-color: #1b1b1bd4;
+    color: #f48024;
+}
+
+a[href*='github.com'] svg:hover,
+a[href*='github.com'] svg.at-bottom {
+    color: #24292f;
+}
+
+a[href*='bsky.app'] svg:hover,
+a[href*='bsky.app'] svg.at-bottom {
+    color: #1DA1F2;
+}
+
+a[href*='credly.com'] svg:hover,
+a[href*='credly.com'] svg.at-bottom {
+    color: #FF6A00;
+}
+
+#footer button svg.at-bottom {
+    border-radius: 6px;
+    background-color: #ffffffc4;
+    padding: 1.5px;
+    color: #3033F6E0;
 }
 
 #footer button svg:hover {
@@ -107,60 +126,6 @@ a[href*='skillsoft.com'] svg:hover {
 
 .social-icon.at-bottom {
     transition: all 0.1s ease;
-}
-
-a[href*='linkedin.com'] svg.at-bottom>g>path:nth-child(1) {
-    fill: #0077B5;
-}
-
-a[href*='linkedin.com'] svg.at-bottom {
-    color: #ffffff;
-}
-
-a[href*='github.com'] svg.at-bottom {
-    border-radius: 6px;
-    background-color: #ffffffd4;
-    color: #24292f;
-}
-
-a[href*='bsky.app'] svg.at-bottom {
-    border-radius: 6px;
-    background-color: #ffffffd4;
-    padding: 1px 1px 0px 1px;
-    color: #1DA1F2;
-}
-
-a[href*='stackoverflow.com'] svg.at-bottom {
-    border-radius: 7px;
-    background-color: #1b1b1bd4;
-    padding: 1px 1px 0px 1px;
-    color: #f48024;
-}
-
-a[href *='stackoverflow.com'] svg.at-bottom>path:nth-child(1) {
-    fill: #ffffffd4;
-}
-
-
-a[href*='credly.com'] svg.at-bottom {
-    border-radius: 6px;
-    background-color: #ffffffd4;
-    padding: 1px 1px 0px 1px;
-    color: #FF6A00;
-}
-
-a[href*='skillsoft.com'] svg.at-bottom {
-    border-radius: 6px;
-    background-color: #c7ffedd4;
-    padding: 2px 1px 0px 3px;
-    color: #2e4592;
-}
-
-#footer button svg.at-bottom {
-    border-radius: 6px;
-    background-color: #ffffffc4;
-    padding: 1.5px;
-    color: #3033F6E0;
 }
 
 
