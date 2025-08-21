@@ -2,6 +2,9 @@
 
 Web [Portfolio](https://navchandar.github.io) to showcase my skills, experience, projects and social profile links.
 
+[![Build Status](https://github.com/navchandar/navchandar.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/navchandar/navchandar.github.io/actions/workflows/deploy.yml)
+[![Deployment Status](https://github.com/navchandar/navchandar.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/navchandar/navchandar.github.io/actions/workflows/pages/pages-build-deployment)
+
 
 ## Technologies Used
 
