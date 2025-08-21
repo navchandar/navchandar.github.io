@@ -47,7 +47,7 @@ jobs:
       # Validate source files
       - name: Lint Source HTML
         run: |
-          html_files=$(find ./src -name "*.html" | grep -v "lite.html")
+          html_files=$(find ./public -name "*.html" | grep -v "lite.html")
           htmlhint --config config/.htmlhintrc $html_files
 
       - name: Lint Source CSS
