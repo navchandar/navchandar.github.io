@@ -35,7 +35,8 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
-          npm install -g htmlhint csslint eslint@8
+          npm install -g htmlhint eslint@8
+          npm install --save-dev stylelint stylelint-config-standard
 
       - name: Update caniuse database
         run: npx update-browserslist-db@latest --yes
@@ -44,14 +45,13 @@ jobs:
         run: npm run build
 
       - name: Validate HTML
-        run: |        
+        run: |
           html_files=$(find ./build -name "*.html" | grep -v "lite.html")
           htmlhint --config config/.htmlhintrc $html_files
 
       - name: Validate CSS
         run: |
-          css_files=$(find ./build -name "*.css" -type f -size +0c)
-          csslint --errors=box-model,duplicate-properties,empty-rules,universal-selector $css_files
+          npx stylelint "build/**/*.css" --config config/.stylelintrc.json
 
       - name: Validate JS
         run: eslint -c config/.eslintrc.js "build/**/*.js" --ignore-pattern config/.eslintrc.js
