@@ -68,14 +68,14 @@ a[href*='linkedin.com'] svg.at-bottom {
     color: #ffffff;
 }
 
-a[href*='linkedin.com'] svg:hover>g>path:nth-child(1),
-a[href*='linkedin.com'] svg.at-bottom>g>path:nth-child(1) {
-    fill: #0077B5;
-}
-
 a[href*='stackoverflow.com'] svg:hover>path:nth-child(1),
 a[href*='stackoverflow.com'] svg.at-bottom>path:nth-child(1) {
     fill: #ffffffd4;
+}
+
+a[href*='linkedin.com'] svg:hover>g>path:nth-child(1),
+a[href*='linkedin.com'] svg.at-bottom>g>path:nth-child(1) {
+    fill: #0077B5;
 }
 
 a[href*='stackoverflow.com'] svg:hover,

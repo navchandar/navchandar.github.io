@@ -49,8 +49,8 @@ h2.subheading {
     transition: font-weight .4s ease-in-out;
 }
 
-h2.subheading:before,
-h2.subheading:after {
+h2.subheading::before,
+h2.subheading::after {
     display: inline-block;
     position: relative;
     top: 1px;
@@ -61,21 +61,21 @@ h2.subheading:after {
     font-size: 1.25em;
 }
 
-h2.subheading:before {
+h2.subheading::before {
     color: #404040;
 }
 
-h2.subheading:after {
+h2.subheading::after {
     content: ']';
     color: #404040;
 }
 
-h2.subheading:hover:before {
+h2.subheading:hover::before {
     transform: translateX(-10px);
     color: white;
 }
 
-h2.subheading:hover:after {
+h2.subheading:hover::after {
     transform: translateX(10px);
     color: white;
 }

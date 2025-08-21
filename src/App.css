@@ -22,11 +22,11 @@
 
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
-        animation: App-logo-spin infinite 20s linear;
+        animation: app-logo-spin infinite 20s linear;
     }
 }
 
-.App-header {
+.app-header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,7 +41,7 @@
     color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+@keyframes app-logo-spin {
     from {
         transform: rotate(0deg);
     }
@@ -54,11 +54,11 @@
 
 .fade-in {
     opacity: 0;
-    animation: fadeInAnimation ease 1s;
+    animation: fade-in-animation ease 1s;
     animation-fill-mode: forwards;
 }
 
-@keyframes fadeInAnimation {
+@keyframes fade-in-animation {
     0% {
         transform: translateY(20px);
         opacity: 0;
