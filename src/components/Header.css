@@ -11,10 +11,10 @@
 h1#title {
     background: linear-gradient(0deg, #fff 0, #f6fbff);
     background-clip: text;
-    -webkit-text-fill-color: #ffffff9e;
+    -webkit-text-fill-color: #fff9e;
     text-transform: uppercase;
     -webkit-background-clip: text;
-    margin: 0px 0px;
+    margin: 0 0;
     font-size: xx-large;
 }
 
@@ -22,7 +22,7 @@ h2 {
     margin: 0 10px;
     background-image: linear-gradient(0deg, #fff, #787878);
     background-clip: text;
-    color: #ffffffe0;
+    color: #fffe0;
     font-weight: 500;
     text-shadow: 1px 2px 5px #0000007d;
     -webkit-background-clip: text;
@@ -88,7 +88,7 @@ h3 {
     margin: 10px;
     background-image: linear-gradient(0deg, #fff, #787878);
     background-clip: text;
-    color: #ffffffbd;
+    color: #fffbd;
     -webkit-background-clip: text;
     transition: color .2s ease-in-out;
     font-size: 1.4rem;
@@ -101,7 +101,7 @@ h3:hover {
 }
 
 h4 {
-    margin: 0.3rem 0px 0.5rem 0px;
+    margin: 0.3rem 0 0.5rem 0;
 }
 
 a {
@@ -118,7 +118,7 @@ a:hover {
 
 img#about {
     margin: 10px 10px 0;
-    box-shadow: 0px 0px 15px -3px #000;
+    box-shadow: 0 0 15px -3px #000;
     border: 1px solid #7fa1b9;
     border-radius: 50%;
     background-color: white;

@@ -2,7 +2,6 @@
   "extends": "stylelint-config-standard",
   "rules": {
     "font-family-name-quotes": null,
-    "length-zero-no-unit": null,
     "property-no-vendor-prefix": null,
     "media-feature-range-notation": null,
     "rule-empty-line-before": null,

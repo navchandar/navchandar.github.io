@@ -16,13 +16,13 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     border: 1px solid #acacac;
     border-radius: 8px;
-    background: #ffffff70;
+    background: #fff70;
     padding: 0.5rem;
     width: 12%;
 }
 
 .project-card:hover {
-    box-shadow: 0px 3px 5px #4e2fff61;
+    box-shadow: 0 3px 5px #4e2fff61;
     border-style: solid;
     border-image: linear-gradient(to right, #8bffeaeb, #7eb9faed) 1;
     background-color: #e9f5ff;
@@ -66,16 +66,16 @@
 }
 
 .fork-icon {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     font-weight: bold;
     font-size: 1.5em;
     line-height: 0;
 }
 
 .star-icon {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     font-weight: bold;
     line-height: 1em;
 }
@@ -84,14 +84,14 @@
     transform: scale(1.1);
     transition: transform .2s ease-in-out, color .3s ease, background-color .3s ease;
     background-color: #000000;
-    color: #ffffff;
+    color: #fff;
 }
 
 .forks:hover {
     transform: scale(1.1);
     transition: transform .2s ease-in-out, color .3s ease, background-color .3s ease;
     background-color: #00748a;
-    color: #ffffff;
+    color: #fff;
 }
 
 .repo-stats {

@@ -174,7 +174,9 @@ const workData = [
 
 function JobItem({ job, index, isExpanded, toggleExpand, collapse }) {
   const handleItemClick = (e) => {
-    if (e.target.closest(".job-details")) return;
+    if (e.target.closest(".job-details")) {
+      return;
+    }
     toggleExpand(index);
   };
 
@@ -257,7 +259,9 @@ function WorkHistory() {
   const containerRef = useRef(null);
 
   const toggleExpand = (index) => {
-    if (expandAll) return;
+    if (expandAll) {
+      return;
+    }
     setExpandedIndex((prev) => (prev === index ? null : index));
   };
 

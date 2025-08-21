@@ -52,7 +52,7 @@
 }
 
 .work-history li.job-item:hover {
-    box-shadow: 0px 3px 5px #4e2fff61;
+    box-shadow: 0 3px 5px #4e2fff61;
     border-style: solid;
     border-image: linear-gradient(to right, #8bffeaeb, #7eb9faed) 1;
     background-color: #e9f5ff;
@@ -63,7 +63,7 @@
     position: relative;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    margin: 10px 0px;
+    margin: 10px 0;
 }
 
 .expanded {
@@ -83,16 +83,16 @@
     cursor: pointer;
     border: none;
     background: none;
-    padding: 0px 20px 0px 20px;
+    padding: 0 20px 0 20px;
     color: white;
     font-size: 13px;
     text-decoration: none;
-    text-shadow: 0px 0px 1px #000000af;
+    text-shadow: 0 0 1px #000000af;
 }
 
 .work-history-header button:hover {
     text-decoration: underline;
-    text-shadow: 0px 0px 1px #000000e6;
+    text-shadow: 0 0 1px #000000e6;
 }
 
 .job-list {
@@ -142,8 +142,8 @@
     visibility: hidden;
     opacity: 0;
     transition: all 0.75s ease;
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
     max-height: 0;
     overflow: hidden;
     text-align: left;
@@ -154,7 +154,7 @@
     opacity: 1;
     transition: all 0.75s ease;
     cursor: text;
-    margin: 5px 0px 5px -2em;
+    margin: 5px 0 5px -2em;
     width: auto;
     height: auto;
     max-height: 300px;
@@ -242,16 +242,16 @@
     }
 
     .work-history li.job-item {
-        gap: 0px;
+        gap: 0;
         padding: .1rem 0.1rem;
         font-size: small;
         text-align: left;
     }
 
     .work-history-header button {
-        padding: 0px;
+        padding: 0;
         padding-left: 4px;
-        text-shadow: 0px 0px 1px #000000e6;
+        text-shadow: 0 0 1px #000000e6;
     }
 
     .company-logo {

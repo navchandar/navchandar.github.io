@@ -11,7 +11,7 @@
     color: white;
     font-size: 0.6rem;
     text-align: center;
-    text-shadow: 0px 0px 1px #000000bf;
+    text-shadow: 0 0 1px #000000bf;
 }
 
 .social-links {
@@ -51,26 +51,26 @@ a[href*='bsky.app'] svg.at-bottom,
 a[href*='stackoverflow.com'] svg:hover,
 a[href*='stackoverflow.com'] svg.at-bottom {
     border-radius: 6px;
-    background-color: #ffffffd4;
-    padding: 1px 1px 0px 1px;
+    background-color: #fffd4;
+    padding: 1px 1px 0 1px;
 }
 
 a[href*='skillsoft.com'] svg:hover,
 a[href*='skillsoft.com'] svg.at-bottom {
     border-radius: 6px;
     background-color: #c7ffedd4;
-    padding: 2px 1px 0px 3px;
+    padding: 2px 1px 0 3px;
     color: #2e4592;
 }
 
 a[href*='linkedin.com'] svg:hover,
 a[href*='linkedin.com'] svg.at-bottom {
-    color: #ffffff;
+    color: #fff;
 }
 
 a[href*='stackoverflow.com'] svg:hover>path:nth-child(1),
 a[href*='stackoverflow.com'] svg.at-bottom>path:nth-child(1) {
-    fill: #ffffffd4;
+    fill: #fffd4;
 }
 
 a[href*='linkedin.com'] svg:hover>g>path:nth-child(1),
@@ -102,14 +102,14 @@ a[href*='credly.com'] svg.at-bottom {
 
 #footer button svg.at-bottom {
     border-radius: 6px;
-    background-color: #ffffffc4;
+    background-color: #fffc4;
     padding: 1.5px;
     color: #3033F6E0;
 }
 
 #footer button svg:hover {
     border-radius: 6px;
-    background-color: #ffffffc4;
+    background-color: #fffc4;
     padding: 1.5px;
     color: rgb(46, 69, 146);
 }
