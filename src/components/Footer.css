@@ -19,7 +19,7 @@
     gap: 25px;
     transition: all .3s ease-in-out;
     margin-top: 1em;
-    margin-bottom: 0em;
+    margin-bottom: 0;
 }
 
 .social-icon {
@@ -51,7 +51,7 @@ a[href*='bsky.app'] svg.at-bottom,
 a[href*='stackoverflow.com'] svg:hover,
 a[href*='stackoverflow.com'] svg.at-bottom {
     border-radius: 6px;
-    background-color: #fffd4;
+    background-color: #ffffffd4;
     padding: 1px 1px 0 1px;
 }
 
@@ -70,7 +70,7 @@ a[href*='linkedin.com'] svg.at-bottom {
 
 a[href*='stackoverflow.com'] svg:hover>path:nth-child(1),
 a[href*='stackoverflow.com'] svg.at-bottom>path:nth-child(1) {
-    fill: #fffd4;
+    fill: #ffffffd4;
 }
 
 a[href*='linkedin.com'] svg:hover>g>path:nth-child(1),
@@ -102,14 +102,14 @@ a[href*='credly.com'] svg.at-bottom {
 
 #footer button svg.at-bottom {
     border-radius: 6px;
-    background-color: #fffc4;
+    background-color: #ffffffc4;
     padding: 1.5px;
     color: #3033F6E0;
 }
 
 #footer button svg:hover {
     border-radius: 6px;
-    background-color: #fffc4;
+    background-color: #ffffffc4;
     padding: 1.5px;
     color: rgb(46, 69, 146);
 }
