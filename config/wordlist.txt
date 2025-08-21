@@ -1,4 +1,5 @@
 Naveenchandar
+Naveenchandar's
 IPv
 IPv4
 IPv6
@@ -7,3 +8,17 @@ api.ipify.org
 api64.ipify.org
 Incrementor
 Auto-Play
+Naveen
+Chandar
+Deloitte
+Techsophy
+SDET
+SAFe
+ISTQB
+ITIL
+CLI
+Naukri
+Bluesky
+Credly
+LinkedIn
+Skillsoft
