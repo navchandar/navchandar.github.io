@@ -1,5 +1,5 @@
-tasks:
-  HTML:
+matrix:
+  - name: HTML
     dictionary:
       wordlists:
         - config/wordlist.txt
