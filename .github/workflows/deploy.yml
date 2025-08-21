@@ -61,7 +61,7 @@ jobs:
         uses: lycheeverse/lychee-action@v2
         with:
           workingDirectory: ./build
-          args: --base-url https://navchandar.github.io --verbose --no-progress "./**/*.html" --exclude '^/(static)'
+          args: --base-url https://navchandar.github.io --verbose --no-progress "./**/*.html" --exclude "(.*\/static\/.*)"
 
       - name: Validate Spelling
         uses: rojopolis/spellcheck-github-actions@0.51.0
