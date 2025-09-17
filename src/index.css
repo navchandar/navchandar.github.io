@@ -7,7 +7,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: background-position 0.05s ease-out;
-    background-image: url('./components/images/background.png');
+    background-image: url('./components/images/background.webp');
     background-position: center var(--background-offset, 0);
     background-size: cover;
     background-repeat: no-repeat;
