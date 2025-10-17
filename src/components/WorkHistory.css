@@ -107,8 +107,9 @@
     cursor: pointer;
     margin-bottom: 10px;
     border: 1px solid #ccc;
+    border-bottom: 3px solid #424242;
     border-radius: 5px;
-    background-color: #f9f9f9a1;
+    background-color: #f9f9f9d9;
     padding: 10px;
 }
 
@@ -135,7 +136,7 @@
 }
 
 .job-item:hover {
-    background-color: #f9f9f9d5;
+    background-color: #f9f9f9;
 }
 
 .job-details {

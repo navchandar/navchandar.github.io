@@ -47,6 +47,7 @@ section {
 h2.subheading {
     position: relative;
     transition: font-weight .4s ease-in-out;
+    font-weight: bold;
 }
 
 h2.subheading::before,
@@ -57,17 +58,17 @@ h2.subheading::after {
     transition: all 0.3s ease-in-out;
     height: 100%;
     content: '[';
-    color: #000;
+    color: whitesmoke;
     font-size: 1.25em;
 }
 
 h2.subheading::before {
-    color: #404040;
+    color: whitesmoke;
 }
 
 h2.subheading::after {
     content: ']';
-    color: #404040;
+    color: whitesmoke;
 }
 
 h2.subheading:hover::before {
@@ -82,6 +83,7 @@ h2.subheading:hover::after {
 
 h2.subheading:hover {
     font-weight: bold;
+    text-shadow: 1px 2px 5px #000;
 }
 
 h3 {

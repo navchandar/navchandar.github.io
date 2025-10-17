@@ -15,8 +15,9 @@
     transition: background-color 0.2s ease;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     border: 1px solid #acacac;
+    border-bottom: 5px solid #424242;
     border-radius: 8px;
-    background: #ffffff70;
+    background: #fffc;
     padding: 0.5rem;
     width: 12%;
 }
