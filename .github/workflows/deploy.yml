@@ -71,7 +71,6 @@ jobs:
           source_files: ./build/**/*.html
 
       - name: Deploy to gh-pages branch
-        if: github.event_name == 'push'
         uses: peaceiris/actions-gh-pages@v4
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
@@ -79,3 +78,4 @@ jobs:
           publish_branch: gh-pages
           user_name: github-actions[bot]
           user_email: github-actions[bot]@users.noreply.github.com
+
