@@ -351,7 +351,7 @@ const certifications = [
     issuer: "CEG, Anna University",
     id: "286454",
     logo: require("./images/ceg.png"),
-    url: "https://www.annauniv.edu/",
+    url: "https://www.auegov.ac.in/#about/",
   },
 ];
 
@@ -395,3 +395,4 @@ function WorkHistoryPage() {
 }
 
 export default WorkHistoryPage;
+
