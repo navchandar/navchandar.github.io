@@ -64,7 +64,7 @@ jobs:
           args: --base-url https://navchandar.github.io --verbose --no-progress "./**/*.html" --exclude "(.*\/static\/.*)"
 
       - name: Validate Spelling
-        uses: rojopolis/spellcheck-github-actions@0.54.0
+        uses: rojopolis/spellcheck-github-actions@0.55.0
         with:
           config_path: config/.spellcheck.yml
           task_name: HTML
