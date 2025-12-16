@@ -41,7 +41,7 @@ const projects = [
     title: "Laboratory",
     description:
       "Multiple creative experiments and interactive web apps for fun and learning",
-    link: "https://navchandar.github.io/lab/",
+    link: "https://github.com/navchandar/lab?tab=readme-ov-file#-project-index/",
     repo: "navchandar/lab",
   },
 ];
@@ -82,3 +82,4 @@ function Projects() {
 }
 
 export default Projects;
+
