@@ -3,9 +3,9 @@
 | Status         | Count |
 |----------------|-------|
 | 🔍 Total       | 22    |
-| ✅ Successful  | 18    |
+| ✅ Successful  | 19    |
 | ⏳ Timeouts    | 0     |
-| 🔀 Redirected  | 2     |
+| 🔀 Redirected  | 1     |
 | 👻 Excluded    | 2     |
 | ❓ Unknown     | 0     |
 | 🚫 Errors      | 0     |
@@ -16,5 +16,4 @@
 ### Redirects in lite.html
 
 * [200] <https://bsky.app/profile/navchandar.bsky.social/> | Redirect: Followed 1 redirect resolving to the final status of: OK. Redirects: https://bsky.app/profile/navchandar.bsky.social/ --> https://bsky.app/profile/navchandar.bsky.social
-* [200] <https://stackoverflow.com/users/7964299/naveen?tab=profile/> | Redirect: Followed 1 redirect resolving to the final status of: OK. Redirects: https://stackoverflow.com/users/7964299/naveen?tab=profile/ --> https://stackoverflow.com/users/7964299/naveenchandar?tab=profile/
-[Full Github Actions output](https://github.com/navchandar/navchandar.github.io/actions/runs/20596465631?check_suite_focus=true)
+[Full Github Actions output](https://github.com/navchandar/navchandar.github.io/actions/runs/20596748805?check_suite_focus=true)
