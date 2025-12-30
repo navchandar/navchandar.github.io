@@ -213,7 +213,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="https://stackoverflow.com/users/7964299/naveen?tab=profile/"
+            href="https://stackoverflow.com/users/7964299/naveenchandar?tab=profile/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Stack Overflow Profile"
