@@ -15,7 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "prebuild": "node scripts/updateIndexHtml.js && node scripts/fetchRepoStats.js",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp favicon.ico build/",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",

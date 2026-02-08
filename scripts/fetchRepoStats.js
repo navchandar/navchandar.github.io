@@ -159,20 +159,35 @@ async function generateSitemap(repos) {
 
             for (const folder of folders) {
               try {
-                const lastmod = await fetchLastCommitDate(
-                  repoName,
-                  folder.name,
-                );
-                if (lastmod) {
-                  sitemapUrls.push({
-                    loc: `https://${username}.github.io/${repoName}/${folder.name}/`,
-                    lastmod,
-                    priority: "0.75",
-                  });
+                // Check if index.html actually exists in this folder
+                const fileCheckUrl = `https://api.github.com/repos/${username}/${repoName}/contents/${folder.name}/index.html`;
+                const fileInfo = await makeRequest(fileCheckUrl);
+
+                // If fileInfo is null or has no 'name', the file doesn't exist
+                if (fileInfo && fileInfo.name === "index.html") {
+                  // Since the file exists, get the last commit date
+                  const lastmod = await fetchLastCommitDate(
+                    repoName,
+                    folder.name,
+                  );
+
+                  if (lastmod) {
+                    sitemapUrls.push({
+                      loc: `https://${username}.github.io/${repoName}/${folder.name}/`,
+                      lastmod,
+                      priority: "0.75",
+                    });
+                    Log.info(`Added valid lab project: ${folder.name}`);
+                  }
+                } else {
+                  Log.warn(
+                    `Skipping folder: ${folder.name} (No index.html found)`,
+                  );
                 }
               } catch (folderErr) {
+                // the folder doesn't contain the specific file
                 Log.warn(
-                  `Skipping folder ${folder.name} in ${targetRepo}: ${folderErr.message}`,
+                  `Skipping folder: ${folder.name} - ${folderErr.message}`,
                 );
               }
             }
