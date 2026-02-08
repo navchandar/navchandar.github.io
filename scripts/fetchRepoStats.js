@@ -76,11 +76,13 @@ async function fetchAllRepos() {
 
 // 🕒 Get last modified date via Commits API
 async function fetchLastCommitDate(repoName, filePath = "") {
-  const url = `https://api.github.com/repos/${username}/${repoName}/commits?per_page=1${filePath ? `&path=${filePath}` : ""}`;
+  // Adding 'sha' or branch name if you use something other than main
+  const url = `https://api.github.com/repos/${username}/${repoName}/commits?per_page=1${filePath ? `&path=${encodeURIComponent(filePath)}` : ""}`;
   try {
     const commits = await makeRequest(url);
     if (commits && Array.isArray(commits) && commits.length > 0) {
-      return commits[0].commit.committer.date;
+      // Return the most recent date available in the commit object
+      return commits[0].commit.committer.date || commits[0].commit.author.date;
     }
     return null;
   } catch (err) {
@@ -159,7 +161,7 @@ async function generateSitemap(repos) {
               try {
                 const lastmod = await fetchLastCommitDate(
                   repoName,
-                  `${folder.name}/index.html`,
+                  folder.name,
                 );
                 if (lastmod) {
                   sitemapUrls.push({
