@@ -12,220 +12,216 @@ const userAgentHeader = { headers: { "User-Agent": "node.js" } };
 const repoStatsPath = path.join(__dirname, "../src/data/repoStats.json");
 const sitemapPath = path.join(__dirname, "../public/sitemap.xml");
 
+// 🎨 Logging Helpers
+const Log = {
+  info: (msg) => console.log(`\x1b[36mℹ\x1b[0m ${msg}`),
+  success: (msg) => console.log(`\x1b[32m✅ ${msg}\x1b[0m`),
+  warn: (msg) => console.warn(`\x1b[33m⚠️ ${msg}\x1b[0m`),
+  error: (msg, err) => console.error(`\x1b[31m❌ ${msg}\x1b[0m`, err || ""),
+  progress: (current, total, name) =>
+    console.log(
+      `\x1b[90m[${current}/${total}]\x1b[0m Processing: \x1b[35m${name}\x1b[0m`,
+    ),
+};
+
+// 🌐 Generic HTTPS Helper
+function makeRequest(url) {
+  return new Promise((resolve, reject) => {
+    https
+      .get(url, userAgentHeader, (res) => {
+        let data = "";
+        res.on("data", (chunk) => (data += chunk));
+        res.on("end", () => {
+          if (res.statusCode === 200) {
+            try {
+              resolve(JSON.parse(data));
+            } catch (e) {
+              reject(new Error("JSON Parse failed"));
+            }
+          } else if (res.statusCode === 403) {
+            reject(new Error("GitHub API Rate limit exceeded."));
+          } else if (res.statusCode === 404) {
+            resolve(null); // Not found is sometimes expected
+          } else {
+            reject(new Error(`Request failed with status ${res.statusCode}`));
+          }
+        });
+      })
+      .on("error", (err) => reject(err));
+  });
+}
+
 // 📦 Fetch all repositories
-function fetchAllRepos(page = 1, allRepos = []) {
-  const url = `https://api.github.com/users/${username}/repos?per_page=${perPage}&page=${page}`;
-  console.log(url);
-  return new Promise((resolve, reject) => {
-    https
-      .get(url, userAgentHeader, (res) => {
-        let data = "";
-        res.on("data", (chunk) => (data += chunk));
-        res.on("end", async () => {
-          try {
-            const repos = JSON.parse(data);
-            if (repos.length === 0) return resolve(allRepos);
-            resolve(await fetchAllRepos(page + 1, allRepos.concat(repos)));
-          } catch (err) {
-            reject(err);
-          }
-        });
-      })
-      .on("error", reject);
-  });
+async function fetchAllRepos() {
+  let allRepos = [];
+  let page = 1;
+  Log.info(`Starting repository fetch for user: ${username}`);
+
+  while (true) {
+    try {
+      const url = `https://api.github.com/users/${username}/repos?per_page=${perPage}&page=${page}`;
+      const repos = await makeRequest(url);
+
+      if (!repos || repos.length === 0) break;
+      allRepos = allRepos.concat(repos);
+      Log.info(`Fetched page ${page} (${repos.length} repos)`);
+      page++;
+    } catch (err) {
+      Log.error("Failed to fetch repositories list", err.message);
+      throw err;
+    }
+  }
+  return allRepos;
 }
 
-// 🌐 Check if GitHub Pages exists
-function checkGitHubPages(repoName) {
-  const url = `https://${username}.github.io/${repoName}/`;
-  return new Promise((resolve) => {
-    https
-      .get(url, (res) => {
-        resolve(res.statusCode === 200);
-      })
-      .on("error", () => resolve(false));
-  });
-}
-
-// 📁 Get contents of a repo's root
-function fetchRepoRootContents(repoName) {
-  const url = `https://api.github.com/repos/${username}/${repoName}/contents/`;
-  console.log(url);
-  return new Promise((resolve, reject) => {
-    https
-      .get(url, userAgentHeader, (res) => {
-        let data = "";
-        res.on("data", (chunk) => (data += chunk));
-        res.on("end", () => {
-          try {
-            const contents = JSON.parse(data);
-            resolve(contents);
-          } catch (err) {
-            reject(err);
-          }
-        });
-      })
-      .on("error", reject);
-  });
-}
-
-// 🔍 Check if folder has index.html
-function checkFolderForIndexHtml(repoName, folderName) {
-  const url = `https://api.github.com/repos/${username}/${repoName}/contents/${folderName}/index.html`;
-  console.log(url);
-  return new Promise((resolve) => {
-    https
-      .get(url, userAgentHeader, (res) => {
-        resolve(res.statusCode === 200);
-      })
-      .on("error", () => resolve(false));
-  });
-}
-
-// 🕒 Get last modified date of gh-pages branch
-function fetchGhPagesUpdatedAt(repoName) {
-  const url = `https://api.github.com/repos/${username}/${repoName}/branches/gh-pages`;
-  console.log(url);
-  return new Promise((resolve) => {
-    https
-      .get(url, userAgentHeader, (res) => {
-        let data = "";
-        res.on("data", (chunk) => (data += chunk));
-        res.on("end", () => {
-          try {
-            const branchInfo = JSON.parse(data);
-            const lastModified = branchInfo?.commit?.commit?.committer?.date;
-            resolve(lastModified || null);
-          } catch {
-            resolve(null);
-          }
-        });
-      })
-      .on("error", () => resolve(null));
-  });
+// 🕒 Get last modified date via Commits API
+async function fetchLastCommitDate(repoName, filePath = "") {
+  const url = `https://api.github.com/repos/${username}/${repoName}/commits?per_page=1${filePath ? `&path=${filePath}` : ""}`;
+  try {
+    const commits = await makeRequest(url);
+    if (commits && Array.isArray(commits) && commits.length > 0) {
+      return commits[0].commit.committer.date;
+    }
+    return null;
+  } catch (err) {
+    Log.warn(
+      `Could not fetch date for ${repoName}${filePath ? "/" + filePath : ""}: ${err.message}`,
+    );
+    return null;
+  }
 }
 
 // ⭐ Save repo stats
 async function saveRepoStats(repos) {
   try {
     const repoStats = {};
-    for (const repo of repos) {
-      const fullName = repo.full_name;
-      repoStats[fullName] = {
+    repos.forEach((repo) => {
+      repoStats[repo.full_name] = {
         stars: repo.stargazers_count || 0,
         forks: repo.forks_count || 0,
       };
-    }
+    });
 
     fs.mkdirSync(path.dirname(repoStatsPath), { recursive: true });
     fs.writeFileSync(repoStatsPath, JSON.stringify(repoStats, null, 4));
-    console.log(JSON.stringify(repoStats, null, 4));
-    console.log(`✅ GitHub repo stats saved to ${repoStatsPath}`);
+    Log.success(
+      `Saved stats for ${repos.length} repositories to ${repoStatsPath}`,
+    );
   } catch (err) {
-    console.error("❌ Error:", err.message);
+    Log.error("Failed to save repo stats file", err.message);
   }
 }
 
 // 🗺️ Generate sitemap
 async function generateSitemap(repos) {
-  const seenUrls = new Set();
   const sitemapUrls = [];
+  let processedCount = 0;
 
-  function addUniqueURL(urlObj) {
-    if (!seenUrls.has(urlObj.loc)) {
-      seenUrls.add(urlObj.loc);
-      sitemapUrls.push(urlObj);
-    }
-  }
+  Log.info("Generating sitemap entries...");
 
-  for (const repo of repos) {
-    const repoName = repo.name;
-    const isMainRepo = repoName === mainRepo;
-    const hasPages = isMainRepo || (await checkGitHubPages(repoName));
-    if (!hasPages) continue;
+  await Promise.all(
+    repos.map(async (repo) => {
+      const repoName = repo.name;
+      const isMainRepo = repoName === mainRepo;
 
-    const repoLastmod = await fetchGhPagesUpdatedAt(repoName);
-    const repoLoc = isMainRepo
-      ? `https://${username}.github.io/`
-      : `https://${username}.github.io/${repoName}/`;
-    const repoPriority = isMainRepo ? "1.0" : "0.8";
+      try {
+        if (!repo.has_pages && !isMainRepo) return;
 
-    addUniqueURL({
-      loc: repoLoc,
-      lastmod: repoLastmod,
-      priority: repoPriority,
-    });
+        processedCount++;
+        Log.progress(
+          processedCount,
+          repos.filter((r) => r.has_pages || r.name === mainRepo).length,
+          repoName,
+        );
 
-    // Special handling for targetRepo
-    if (repoName === targetRepo) {
-      const rootContents = await fetchRepoRootContents(repoName);
-      const folders = rootContents.filter((item) => item.type === "dir");
+        const repoLastmod = await fetchLastCommitDate(repoName);
+        const repoLoc = isMainRepo
+          ? `https://${username}.github.io/`
+          : `https://${username}.github.io/${repoName}/`;
 
-      for (const folder of folders) {
-        const indexUrl = `https://api.github.com/repos/${username}/${repoName}/contents/${folder.name}/index.html`;
-
-        const lastmod = await new Promise((resolve) => {
-          https
-            .get(indexUrl, userAgentHeader, (res) => {
-              if (res.statusCode !== 200) return resolve(null);
-              try {
-                const lastModifiedHeader = res.headers["last-modified"];
-                resolve(
-                  lastModifiedHeader
-                    ? new Date(lastModifiedHeader).toISOString()
-                    : null
-                );
-              } catch {
-                resolve(null);
-              }
-            })
-            .on("error", () => resolve(null));
+        sitemapUrls.push({
+          loc: repoLoc,
+          lastmod: repoLastmod,
+          priority: isMainRepo ? "1.0" : "0.8",
         });
 
-        if (lastmod) {
-          const folderLoc = `https://${username}.github.io/${repoName}/${folder.name}/`;
-          addUniqueURL({ loc: folderLoc, lastmod, priority: "0.75" });
+        // Sub-folder processing for 'lab' repo
+        if (repoName === targetRepo) {
+          Log.info(`Scanning internal folders for: ${targetRepo}`);
+          const contents = await makeRequest(
+            `https://api.github.com/repos/${username}/${repoName}/contents/`,
+          );
+
+          if (Array.isArray(contents)) {
+            const folders = contents.filter((item) => item.type === "dir");
+
+            for (const folder of folders) {
+              try {
+                const lastmod = await fetchLastCommitDate(
+                  repoName,
+                  `${folder.name}/index.html`,
+                );
+                if (lastmod) {
+                  sitemapUrls.push({
+                    loc: `https://${username}.github.io/${repoName}/${folder.name}/`,
+                    lastmod,
+                    priority: "0.75",
+                  });
+                }
+              } catch (folderErr) {
+                Log.warn(
+                  `Skipping folder ${folder.name} in ${targetRepo}: ${folderErr.message}`,
+                );
+              }
+            }
+          }
         }
+      } catch (repoErr) {
+        Log.error(`Error processing repo ${repoName}`, repoErr.message);
       }
-    }
+    }),
+  );
+
+  try {
+    const sitemapContent = generateSitemapXml(sitemapUrls);
+    fs.mkdirSync(path.dirname(sitemapPath), { recursive: true });
+    fs.writeFileSync(sitemapPath, sitemapContent);
+    Log.success(`Sitemap created with ${sitemapUrls.length} total URLs.`);
+  } catch (err) {
+    Log.error("Failed to write sitemap file", err.message);
   }
-
-  const sitemapContent = generateSitemapXml(sitemapUrls);
-  console.log(sitemapUrls);
-  console.log(sitemapContent);
-  fs.writeFileSync(sitemapPath, sitemapContent);
-  console.log(`✅ sitemap.xml created with ${sitemapUrls.length} entries`);
 }
 
-// 🧱 Sitemap formatting helpers
-function formatLastMod(lastmod) {
-  if (!lastmod) return "";
-  const date = new Date(lastmod).toISOString().split("T")[0];
-  return `    <lastmod>${date}</lastmod>\n`;
-}
-
+// 🧱 XML Formatters
 function formatUrlEntry({ loc, lastmod, priority }) {
+  const dateStr = lastmod
+    ? `\n    <lastmod>${lastmod.split("T")[0]}</lastmod>`
+    : "";
   return `  <url>
-    <loc>${loc}</loc>
-${formatLastMod(lastmod)}    <priority>${priority}</priority>
+    <loc>${loc}</loc>${dateStr}
+    <priority>${priority}</priority>
   </url>`;
 }
 
 function generateSitemapXml(urls) {
-  const header = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
-  const footer = `</urlset>`;
-  const entries = urls.map(formatUrlEntry).join("\n");
-  return `${header}\n${entries}\n${footer}`;
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(formatUrlEntry).join("\n")}
+</urlset>`;
 }
 
-// 🚀 Main function
+// 🚀 Execute
 async function run() {
+  const startTime = Date.now();
   try {
     const repos = await fetchAllRepos();
     await saveRepoStats(repos);
     await generateSitemap(repos);
+    const duration = ((Date.now() - startTime) / 1000).toFixed(2);
+    Log.success(`All tasks completed successfully in ${duration}s!`);
   } catch (err) {
-    console.error("❌ Error:", err.message);
+    Log.error("Script execution halted due to critical error:", err.message);
+    process.exit(1);
   }
 }
 
