@@ -9,7 +9,7 @@
     "NaveenChandar Shanmugam"
   ],
   "jobTitle": "Senior QA Automation Engineer",
-  "description": "ISTQB Certified QA Automation Engineer with expertise in Python, Selenium, DevOps, and test architecture. Experienced in building scalable automation frameworks and delivering quality software.",
+  "description": "ISTQB Certified Senior QA Automation Engineer with 12+ years of experience in Test Architecture, Python, and CI/CD. Specialized in building scalable automation frameworks and leading quality strategy.",
   "url": "https://navchandar.github.io/",
   "image": "https://navchandar.github.io/images/logo.png",
   "sameAs": [
@@ -27,75 +27,76 @@
   "hasOccupation": {
     "@type": "Occupation",
     "name": "Senior QA Automation Engineer",
-    "description": "Specializes in test automation, performance testing, DevOps integration, and quality assurance for enterprise and cloud-based applications.",
-    "estimatedSalary": [
-      {
-        "@type": "MonetaryAmountDistribution",
-        "name": "base",
-        "currency": "INR",
-        "duration": "P1Y",
-        "minValue": 1000000,
-        "maxValue": 2000000,
-        "median": 1500000
-      }
-    ],
+    "description": "Architecting enterprise-level automation strategies, mentoring teams, and integrating quality gates into CI/CD pipelines.",
+    "skills": "Test Automation, Python, Selenium, Performance Testing, DevOps, CI/CD, Quality Assurance Leadership",
     "occupationLocation": {
       "@type": "City",
       "name": "Bengaluru, Karnataka, IN"
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://navchandar.github.io/"
     }
   },
   "knowsAbout": [
-    "Python",
-    "Node.js",
-    "Selenium",
+    {
+      "@type": "DefinedTerm",
+      "name": "Python",
+      "description": "Core language for automation framework development."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Selenium",
+      "description": "Browser automation for web applications."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "CI/CD",
+      "description": "Continuous Integration and Deployment via Jenkins and Azure DevOps."
+    },
     "Robot Framework",
+    "Node.js",
     "Linux",
-    "DevOps",
-    "PowerShell",
-    "Test Automation",
-    "Quality Assurance",
-    "Jenkins",
     "Docker",
-    "Azure",
-    "Postman",
-    "CI/CD"
+    "Test Architecture",
+    "QA Leadership",
+    "Performance Testing"
   ],
-  "knowsLanguage": ["English", "Tamil", "Hindi", "Kannada"],
+  "knowsLanguage": [
+    { "@type": "Language", "name": "English" },
+    { "@type": "Language", "name": "Tamil" },
+    { "@type": "Language", "name": "Hindi" },
+    { "@type": "Language", "name": "Kannada" }
+  ],
   "alumniOf": {
     "@type": "EducationalOrganization",
-    "name": "Anna University"
+    "name": "Anna University",
+    "sameAs": "https://www.annauniv.edu/"
   },
   "hasCredential": [
     {
       "@type": "EducationalOccupationalCredential",
+      "name": "ISTQB Certified Advanced Level Test Automation Engineer",
       "credentialCategory": "Certification",
-      "name": "ISTQB Certified Advanced Level Test Automation Engineer"
+      "recognizedBy": { "@type": "Organization", "name": "ISTQB" }
     },
     {
       "@type": "EducationalOccupationalCredential",
+      "name": "SAFe 5 Practitioner",
       "credentialCategory": "Certification",
-      "name": "SAFe 5 Practitioner"
+      "recognizedBy": { "@type": "Organization", "name": "Scaled Agile" }
     },
     {
       "@type": "EducationalOccupationalCredential",
+      "name": "ITIL v3 Foundation",
       "credentialCategory": "Certification",
-      "name": "ITIL v3 Foundation"
+      "description": "Information Technology Infrastructure Library certification focusing on IT service management."
     }
   ],
   "award": [
     "Employee of the Year at 9 Yards Technology",
     "Applause Award at Deloitte",
-    "Spot Award at Deloitte",
-    "Eminence & Excellence SPARK Award at IBM",
-    "Deep Skill Adder Award at IBM"
+    "Eminence & Excellence SPARK Award at IBM"
   ],
-  "gender": "Male",
   "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://navchandar.github.io/"
+    "@type": "ProfilePage",
+    "@id": "https://navchandar.github.io/",
+    "headline": "Professional Portfolio of Naveenchandar"
   }
 }
