@@ -184,6 +184,7 @@ async function generateSitemap(repos) {
 
   try {
     const sitemapContent = generateSitemapXml(sitemapUrls);
+    Log.info(sitemapContent);
     fs.mkdirSync(path.dirname(sitemapPath), { recursive: true });
     fs.writeFileSync(sitemapPath, sitemapContent);
     Log.success(`Sitemap created with ${sitemapUrls.length} total URLs.`);
