@@ -41,7 +41,7 @@ const projects = [
     title: "Laboratory",
     description:
       "Multiple creative experiments and interactive web apps for fun and learning",
-    link: "https://github.com/navchandar/lab?tab=readme-ov-file#-project-index/",
+    link: "https://github.com/navchandar/lab?tab=readme-ov-file#project-index:~:text=Project%20Index",
     repo: "navchandar/lab",
   },
 ];
