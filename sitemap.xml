@@ -2,28 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://navchandar.github.io/civic-media-scout/</loc>
-    <lastmod>2026-01-21</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-02-24</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/look-like-scanned/</loc>
+    <lastmod>2026-02-23</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/</loc>
+    <lastmod>2026-02-24</lastmod>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/Python-Random-Name-Generator/</loc>
     <lastmod>2025-04-15</lastmod>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://navchandar.github.io/look-like-scanned/</loc>
-    <lastmod>2026-02-17</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://navchandar.github.io/</loc>
-    <lastmod>2026-02-08</lastmod>
-    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/alphabet/</loc>
@@ -37,7 +37,7 @@
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/clock/</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
@@ -47,22 +47,22 @@
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/company/</loc>
-    <lastmod>2026-02-21</lastmod>
+    <lastmod>2026-02-24</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/hospitals/</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/ip/</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/jobs/</loc>
-    <lastmod>2026-02-21</lastmod>
+    <lastmod>2026-02-24</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
@@ -87,7 +87,7 @@
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/smart-dom-inspector/</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
