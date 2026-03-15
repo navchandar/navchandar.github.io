@@ -6,18 +6,18 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://navchandar.github.io/Python-Random-Name-Generator/</loc>
-    <lastmod>2025-04-15</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://navchandar.github.io/lab/</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/look-like-scanned/</loc>
-    <lastmod>2026-03-02</lastmod>
+    <lastmod>2026-03-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/Python-Random-Name-Generator/</loc>
+    <lastmod>2025-04-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -47,7 +47,7 @@
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/company/</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/jobs/</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-15</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
@@ -72,7 +72,7 @@
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/pm-e-drive/</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-15</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
@@ -92,12 +92,12 @@
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/type/</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/world/</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-09</lastmod>
     <priority>0.75</priority>
   </url>
 </urlset>
