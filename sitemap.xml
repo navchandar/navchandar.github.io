@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://navchandar.github.io/civic-media-scout/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://navchandar.github.io/Python-Random-Name-Generator/</loc>
     <lastmod>2025-04-15</lastmod>
     <priority>0.8</priority>
@@ -12,7 +17,7 @@
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -21,13 +26,8 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://navchandar.github.io/civic-media-scout/</loc>
-    <lastmod>2026-04-13</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://navchandar.github.io/lab/alphabet/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
@@ -37,87 +37,87 @@
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/clock/</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/color/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/company/</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-04-24</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/diff/</loc>
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/hospitals/</loc>
-    <lastmod>2026-03-31</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/ip/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/jobs/</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/number/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/pm-e-drive/</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/polyforge/</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/serviceability/</loc>
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/shapes/</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/smart-dom-inspector/</loc>
-    <lastmod>2026-03-04</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/type/</loc>
-    <lastmod>2026-04-09</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/whistle-counter/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/words/</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/world/</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.75</priority>
   </url>
 </urlset>
