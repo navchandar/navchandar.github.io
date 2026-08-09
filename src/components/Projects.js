@@ -38,6 +38,19 @@ const projects = [
     repo: "navchandar/civic-media-scout",
   },
   {
+    title: "Persistent Containers",
+    description: "Mozilla Firefox extension to make containers persistent and sticky",
+    link: "https://navchandar.github.io/persistent-containers/",
+    repo: "navchandar/persistent-containers",
+  },
+  {
+    title: "Token Copier",
+    description:
+      "Browser extension to copy your application's bearer token to the clipboard and use it any API tool",
+    link: "https://github.com/navchandar/token-copier/",
+    repo: "navchandar/token-copier",
+  },
+  {
     title: "Laboratory",
     description:
       "Multiple creative experiments and interactive web apps for fun and learning",
