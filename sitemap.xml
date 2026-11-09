@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://navchandar.github.io/look-like-scanned/</loc>
-    <lastmod>2026-11-09</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://navchandar.github.io/civic-media-scout/</loc>
     <lastmod>2026-10-26</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://navchandar.github.io/lab/</loc>
-    <lastmod>2026-11-08</lastmod>
+    <loc>https://navchandar.github.io/look-like-scanned/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/Python-Random-Name-Generator/</loc>
+    <lastmod>2025-04-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -26,8 +26,8 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://navchandar.github.io/Python-Random-Name-Generator/</loc>
-    <lastmod>2025-04-15</lastmod>
+    <loc>https://navchandar.github.io/lab/</loc>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -67,6 +67,86 @@
   </url>
   <url>
     <loc>https://navchandar.github.io/lab/ip/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/jobs/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/number/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/paint/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/pm-e-drive/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/polyforge/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/serviceability/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/shapes/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/shark/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/simon-says/</loc>
+    <lastmod>2026-08-08</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/smart-dom-inspector/</loc>
+    <lastmod>2026-08-08</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/snacks/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/type/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/video-convertor/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/whistle-counter/</loc>
+    <lastmod>2026-08-08</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/words/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://navchandar.github.io/lab/world/</loc>
     <lastmod>2026-11-08</lastmod>
     <priority>0.75</priority>
   </url>
